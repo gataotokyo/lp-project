@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おひげさんのボードゲーム会 | 200種の知識で楽しむ社会人向けボードゲームコミュニティ（東京・都内）</title>
+    <meta name="description"
+        content="日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ。おひげさんが所有する200種類のボドゲ知識を活かして、初めての方でも優しくレクチャー。明日へのエネルギーになる温かい居場所を提供します。">
+    
+    <!-- SEO & OGP Meta Tags -->
+    <link rel="canonical" href="https://ohigesan.netlify.app/">
+    <meta property="og:title" content="おひげさんのボードゲーム会 | 200種の知識で楽しむ社会人向けボードゲームコミュニティ（東京・都内）">
+    <meta property="og:description" content="日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ。おひげさんが所有する200種類のボドゲ知識を活かして、初めての方でも優しくレクチャー。明日へのエネルギーになる温かい居場所を提供します。">
+    <meta property="og:image" content="https://ohigesan.netlify.app/images/ogp-placeholder.png">
+    <meta property="og:url" content="https://ohigesan.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="おひげさんのボードゲーム会">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="おひげさんのボードゲーム会 | 200種の知識で楽しむ社会人向けボードゲームコミュニティ（東京・都内）">
+    <meta name="twitter:description" content="日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ。おひげさんが所有する200種類のボドゲ知識を活かして、初めての方でも優しくレクチャー。明日へのエネルギーになる温かい居場所を提供します。">
+    <meta name="twitter:image" content="https://ohigesan.netlify.app/images/ogp-placeholder.png">
+
+    <!-- LocalBusiness Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "おひげさんのボードゲーム会",
+      "image": "https://ohigesan.netlify.app/images/fv_bg.png",
+      "@id": "https://ohigesan.netlify.app/#localbusiness",
+      "url": "https://ohigesan.netlify.app/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "東京都"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "東京都"
+      },
+      "description": "日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ。200種類のボドゲ知識を活かして、初めての方でも優しくレクチャーし、温かい居場所を提供します。",
+      "priceRange": "￥0 - ￥500"
+    }
+    </script>
+
+    <!-- Google Fonts: Inter/Outfit for headings & Noto Sans JP for readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="site-sidebar">
+            <div class="sidebar-brand" id="logo-link" style="cursor: pointer;">
+                <span class="logo-emoji">🎲</span>
+                <div class="brand-text-wrapper">
+                    <span class="brand-name">おひげさん<span class="brand-dot">.com</span></span>
+                    <span class="brand-sub">Board Game Club</span>
+                </div>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="メニューを開閉する">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <ul>
+                    <li>
+                        <button class="nav-item active" data-section="home">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-label">ホーム</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item" data-section="activities">
+                            <span class="nav-icon">🧩</span>
+                            <span class="nav-label">ボードゲーム会紹介</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item" data-section="profile">
+                            <span class="nav-icon">🧔</span>
+                            <span class="nav-label">プロフィール</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item" data-section="gallery">
+                            <span class="nav-icon">📸</span>
+                            <span class="nav-label">フォトギャラリー</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item" data-section="blog">
+                            <span class="nav-icon">📝</span>
+                            <span class="nav-label">お役立ちコラム</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item nav-cta" data-section="reservation">
+                            <span class="nav-icon">📅</span>
+                            <span class="nav-label">日程・予約</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <p>&copy; 2026 おひげさん.com</p>
+            </div>
+        </aside>
+
+        <!-- Right Main Content Area (SPA Style Sections) -->
+        <main class="main-content">
+            
+            <!-- SECTION 1: HOME (Hero & Achievements) -->
+            <section id="home" class="page-section active animate-fade-in">
+                <div class="hero-block">
+                    <div class="hero-content">
+                        <span class="hero-badge">🧠 もやもやを抱える社会人のための場</span>
+                        <h1 class="hero-catch">
+                            <span style="font-size: 0.45em; display: block; font-weight: 500; letter-spacing: 0.1em; margin-bottom: 5px; color: var(--color-primary-hover);">東京・都内開催！社会人のサードプレイス</span>
+                            200種の知識で楽しむ<br>
+                            <span class="text-gradient">ボードゲーム会</span>
+                        </h1>
+                        <p class="hero-sub">
+                            「毎日同じことの繰り返しで焦りがある…」そんな30代以降の社会人へ。ボードゲームの『楽しさ』と『学び』で、明日へのエネルギーに変えてみませんか？東京・都内にて開催中。
+                        </p>
+                        <div class="hero-ctas">
+                            <button class="cta-button primary link-to-section" data-target="activities">ボードゲーム会を見る</button>
+                            <button class="cta-button secondary link-to-section" data-target="reservation">直近の日程・予約</button>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper">
+                        <img src="images/fv_bg.png" alt="東京・都内のボードゲーム会でおひげさんとボードゲームを楽しむ社会人のイラスト" class="hero-img">
+                    </div>
+                </div>
+
+                <!-- Achievement Block -->
+                <div class="achievement-block">
+                    <h2 class="section-title">安心と信頼の実績</h2>
+                    <p class="section-subtitle">ボードゲームを通じて、仕事や生活に役立つ思考と心地よいリフレッシュを提供します。</p>
+                    <div class="achievement-grid">
+                        <div class="achievement-card">
+                            <div class="ach-icon">🎲</div>
+                            <div class="ach-number-wrapper">
+                                <span class="ach-number">200</span><span class="ach-unit">種以上</span>
+                            </div>
+                            <h3>ボードゲーム体験数</h3>
+                            <p>これまでに200種類以上のボードゲームを自ら体験。初心者向けから、じっくり考える戦略ゲームまで幅広く用意しています。</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="ach-icon">🏢</div>
+                            <div class="ach-number-wrapper">
+                                <span class="ach-number">東京</span><span class="ach-unit">開催</span>
+                            </div>
+                            <h3>都内アクセスの良い会場</h3>
+                            <p>上野や秋葉原、新宿などのアクセス良好なレンタルスペースやカフェにて開催。仕事帰りの社会人も気軽に参加できます。</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="ach-icon">💡</div>
+                            <div class="ach-number-wrapper">
+                                <span class="ach-number">100</span><span class="ach-unit">%</span>
+                            </div>
+                            <h3>社会人のサードプレイス</h3>
+                            <p>余計な肩書きや年齢を外してフラットに会話できる温かい空気感を約束。明日へのエネルギーを引き出す場を目指しています。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: ACTIVITIES (Generated Dynamically via JS) -->
+            <section id="activities" class="page-section animate-fade-in">
+                <div class="container-inner">
+                    <h2 class="section-title">ボードゲーム会紹介</h2>
+                    <p class="section-subtitle">おひげさんが主催する、プレイスタイルや目的に合わせた特徴的なボードゲーム会です。</p>
+                    
+                    <!-- JSが GAME_MEETING_TYPES に基づくカード群を動的に生成・挿入します -->
+                    <div class="activities-grid" id="activities-container">
+                        <!-- Dynamic content here -->
+                    </div>
+                    <noscript>
+                        <div class="noscript-activities" style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-top: 20px;">
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">【ゲームで楽しく学ぶ!】伝わる!コミュニケーション力向上ワークショップ</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">大人気のボードゲーム『はぁっていうゲーム』と『カタカナーシ』を使い、言葉の奥にある感情や意図を読み取る力、そして自分の伝えたいことを的確に表現する力を養う実践的なワークショップです。東京・都内にて開催中。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">初心者向け!カタンを楽しむ会</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">「ボードゲームは人生ゲームくらいしかやったことない」という方でも安心。資源を集め、道を繋ぎ、交渉しながらポイントを集める世界的人気ゲーム「カタン」を、ルールから丁寧に説明しながら楽しむ会です。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">「ボードゲームマスターが教える」モノポリーを楽しむ会(初心者向け)</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">サイコロを振ってマスを進め、不動産を購入して通行料を得て、再投資する。世界中で愛される「モノポリー」を通じて、投資の考え方やお金持ちに近づくチャンスを楽しく学ぶ会です。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">初心者向けのキャッシュフローゲーム会</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">世界中で人気のキャッシュフローゲームを体験しながら、「お金の流れ」の仕組みや「資産を築く考え方」を実践的に学ぶことができる初心者向けイベントです。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">お金の不安を「楽しい」に変える!NISAボードゲーム会</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">「NISAが学べる投資ゲーム」という専用ボードゲームを使って、遊びながら新NISAの仕組みや、投資でお金が増えていく仕組みを楽しく実感できる勉強会です。</p>
+                        </div>
+                    </noscript>
+                </div>
+            </section>
+
+            <!-- SECTION 3: PROFILE -->
+            <section id="profile" class="page-section animate-fade-in">
+                <div class="container-inner">
+                    <h2 class="section-title">主催者プロフィール</h2>
+                    <p class="section-subtitle">ボードゲーム会を主催する「おひげさん」のご紹介です。</p>
+                    
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar-container">
+                                <img src="images/profile_keisuke.png" alt="おひげさん (Ohige-san)" class="profile-avatar">
+                            </div>
+                            <div class="profile-title">
+                                <span class="profile-age">葛飾区在住 / 3児のパパ</span>
+                                <h3>おひげさん <span class="sub-name">(Ohige-san)</span></h3>
+                                <p class="profile-tags">
+                                    <span>#ボードゲーム愛好家</span>
+                                    <span>#社会人向けボドゲ主催</span>
+                                    <span>#3児のパパ</span>
+                                    <span>#カラオケ100点</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="profile-body">
+                            <div class="profile-story">
+                                <h4>■ 日々の繰り返しへの焦りと、葛藤</h4>
+                                <p>
+                                    葛飾区で3人の子どもを育てる父親です。<br>
+                                    かつての私は、毎日同じことの繰り返しに強い疑問と焦りを感じていました。仕事で昇進をしても、「このままこれをずっと続けていきたいのか？」と問われると本気になれず、もやもやとした感情を抱える日々。それでも、家族を養っていく責任があるため、簡単に環境を変えることも、立ち止まることもできませんでした。
+                                </p>
+                                
+                                <h4>■ ボードゲームとの出会いと、そこに隠された価値</h4>
+                                <p>
+                                    そんな葛藤の中で出会ったのが、ボードゲームでした。<br>
+                                    これまでに200種類以上のゲームを体験するうちに、これが単なる娯楽ではないことに気づきました。ボードゲームは、コミュニケーションスキルやビジネススキル、さらには生活や仕事で直接役立つさまざまな考え方を身につけられる、非常に優れたツールだったのです。しかも、それを「心から楽しみながら」学べるという点に、大きな可能性を感じました。
+                                </p>
+
+                                <h4>■ 現状にもやもやしている人に向けた, ボードゲームの場を</h4>
+                                <p>
+                                    この気づきをきっかけに、過去の私と同じように「現状に焦りやもやもやを感じている人」に向けて、ボードゲーム会を開催したいと思うようになりました。<br>
+                                    私の会は、ただゲームで遊ぶだけでなく、ゲームを通じた気づきを明日からの仕事や生活のヒントにしてもらうことを目指しています。主催の私自身も完璧ではない等身大のパパです。日々の筋トレで体力を維持し、趣味のカラオケでは100点を出すなど何事もとことん追求する性格を活かして、皆様とフラットな目線で学び合える、温かいコミュニティを作りたいと考えています。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: GALLERY -->
+            <section id="gallery" class="page-section animate-fade-in">
+                <div class="container-inner">
+                    <h2 class="section-title">フォトギャラリー</h2>
+                    <p class="section-subtitle">ボードゲーム会や、日々の楽しそうな活動の様子をお届けします。</p>
+                    
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/fv_bg.png" alt="東京・都内で開催された社会人ボードゲーム会の和気あいあいとした風景">
+                            <div class="gallery-info">
+                                <h4>フラットに対話できるボドゲ会</h4>
+                                <p>年齢や肩書きを外して、社会人同士がゲームを通じて盛り上がる空間です。</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/gallery_zoom.png" alt="オンラインで開催されたおひげさんのボードゲーム交流会の様子">
+                            <div class="gallery-info">
+                                <h4>オンライン交流会の様子</h4>
+                                <p>自宅からリラックスして参加し、ボードゲームの魅力を語り合う場をご用意しています。</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-item-placeholder">
+                                <span class="gl-emoji">👑🎲✨</span>
+                                <h4>厳選した名作たち</h4>
+                                <p>『ロイヤルターフ』など、大人が知的スリルと交渉を楽しめるゲームを揃えています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: BLOG (★SEO Optimized) -->
+            <section id="blog" class="page-section animate-fade-in">
+                <div class="container-inner">
+                    <h2 class="section-title">お役立ちコラム ＆ ブログ</h2>
+                    <p class="section-subtitle">ボードゲームの魅力や大人の脳のリフレッシュ効果など、役立つ情報を発信中！</p>
+                    
+                    <!-- JSが BLOG_POSTS に基づいてカテゴリ別に自動生成します -->
+                    <div class="blog-container" id="blog-container">
+                        <!-- Dynamic content here -->
+                    </div>
+                    <noscript>
+                        <div class="noscript-blogs" style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-top: 20px;">
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">大人が本気で笑い合う！『はぁっていうゲーム』がもたらす最高の非言語体験</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">声と表情だけで感情を伝える『はぁっていうゲーム』の魅力。大人が本気になって表情を作り、笑い合うコミュニケーションの真髄をご紹介します。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">カタカナ禁止の知的縛りゲー！『カタカナーシ』で味わう脳のフル回転と表現力</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">日常のカタカナ語を日本語だけで説明する『カタカナーシ』。言葉の制限がもたらす極上のスリルと、ビジネスにも活きる「伝える力」を鍛える極意。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">カタン初心者必読！勝率が劇的にアップする『最初の3つのコツ』</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">無人島開拓ボードゲーム『カタン』で初心者でもすぐに実践できる「初期配置」「交渉のコツ」「リソース管理」をわかりやすくレクチャーします。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">億万長者のロードマップ！『モノポリー』で遊んで学ぶ資本主義のリアルな戦術</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">土地を買い、家を建て、通行料で複利の資産を築く『モノポリー』を通じて、現実の経済活動やキャッシュフローで勝ち抜く本質を学びます。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">ラットレースを脱出せよ！『キャッシュフローゲーム』で体験する「本物の資産」の作り方</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">ロバート・キヨサキ考案の『キャッシュフローゲーム』。毎月の給料のために働く生活から、不労所得を築いて経済的自由を手に入れる感動を体感。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">知識ゼロから新NISAの仕組みがスッキリわかる！話題の『投資ボードゲーム』の魅力</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">専用投資ゲームのシミュレーションを通じて、「非課税」が長期的にどれほど大きな差を生むのか、初心者にも直感的にわかる新NISAの学び。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">【東京・都内】仕事以外の繋がりがない社会人へ！ボードゲーム会が「最高の友達作り」になる理由</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">毎日会社と家の往復ばかりで出会いがないと悩む30代〜40代の社会人へ。会話が苦手でも自然と打ち解けられる、フラットな友達作りに最適なボドゲ会の秘密。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">スマホを閉じて知性で遊ぶ！ボードゲームがもたらす最高の脳リフレッシュ効果</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">スマホ画面やパソコン作業から離れて、アナログボードゲームならではの手触り、対面ならではのクリエイティブな思考刺激で脳をデトックスする方法。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">【初心者必読】初めてでも怖くない！失敗しない東京ボードゲーム会の選び方</h3>
+                            <p style="margin-bottom: 20px; line-height: 1.6;">「常連ばかりで入りづらい？」「怒られない？」そんな不安を解消する、初心者にとって本当に安全で温かいボードゲームコミュニティの見分け方。</p>
+                            
+                            <h3 style="color: var(--color-primary-hover); margin-bottom: 10px;">最高のビジネススクールはボードゲーム？交渉力・状況判断・対話力がゲームで磨かれる理由</h3>
+                            <p style="line-height: 1.6;">座学のセミナーでは身につかない、実践的なネゴシエーションやリソース管理。現実のビジネスリスクがゼロの状態で、頭脳と対話力を磨くゲームの有用性。</p>
+                        </div>
+                    </noscript>
+                </div>
+            </section>
+
+            <!-- SECTION 5.5: BLOG DETAIL (SPA details view) -->
+            <section id="blog-detail" class="page-section animate-fade-in">
+                <div class="container-inner">
+                    <div class="blog-detail-wrapper">
+                        <button class="back-to-blog-btn" id="back-to-blog">← コラム一覧に戻る</button>
+                        <article class="blog-detail-content">
+                            <span class="blog-detail-category" id="detail-category">カテゴリ</span>
+                            <span class="blog-detail-date" id="detail-date">日付</span>
+                            <h1 class="blog-detail-title" id="detail-title">コラムタイトル</h1>
+                            <div class="blog-detail-body" id="detail-body">
+                                <!-- 記事本文が動的に流し込まれます -->
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: RESERVATION (Form View) -->
+            <section id="reservation" class="page-section animate-fade-in">
+                <div class="container-inner">
+                    <div class="form-wrapper">
+                        <h2 class="section-title">スケジュール確認 ＆ 参加予約</h2>
+                        <p class="form-desc">下記フォームよりご希望の日程を選択し、お気軽にお申し込みください。ルールを知らなくてもおひげさんが優しくレクチャーします！</p>
+
+                        <form id="reservation-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="name">お名前 <span class="required">必須</span></label>
+                                <input type="text" id="name" name="お名前" placeholder="山田 太郎" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">メールアドレス <span class="required">必須</span></label>
+                                <input type="email" id="email" name="メールアドレス" placeholder="example@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="study-group-type">希望するボードゲーム会（種類） <span class="required">必須</span></label>
+                                <select id="study-group-type" name="希望する勉強会" required>
+                                    <option value="" disabled selected>読み込み中...</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="study-group-date">ご希望の日程 <span class="required">必須</span></label>
+                                <select id="study-group-date" name="希望日程" required>
+                                    <option value="" disabled selected>まずボードゲーム会を選択してください</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">おひげさんへのメッセージ (任意)</label>
+                                <textarea id="message" name="メッセージ" rows="4"
+                                    placeholder="初めての参加で少し緊張している、これが遊びたい！など、ご自由にお書きください。"></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button primary">この内容で最終確認する</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6.5: RESERVATION CONFIRMATION (SPA confirmation view) -->
+            <section id="reservation-confirm" class="page-section animate-fade-in">
+                <div class="container-inner">
+                    <div class="form-wrapper confirmation-wrapper">
+                        <h2 class="section-title">予約内容の最終確認</h2>
+                        <p class="form-desc" style="color:var(--color-primary-hover); font-weight:700;">まだ予約は確定していません。以下の内容をご確認の上、「確定する」ボタンを押してください。</p>
+
+                        <div class="confirmation-details">
+                            <table class="confirm-table">
+                                <tr>
+                                    <th>お名前</th>
+                                    <td id="confirm-name">山田 太郎</td>
+                                </tr>
+                                <tr>
+                                    <th>メールアドレス</th>
+                                    <td id="confirm-email">example@email.com</td>
+                                </tr>
+                                <tr>
+                                    <th>希望するボードゲーム会</th>
+                                    <td id="confirm-event">6/7(日) 13:00〜16:00 - 思考整理・初心者ボドゲ会</td>
+                                </tr>
+                                <tr>
+                                    <th>メッセージ</th>
+                                    <td id="confirm-message" style="white-space: pre-wrap;">メッセージ内容</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div id="form-success-message" class="success-message" style="display: none; margin-bottom: 25px;">
+                            <span class="success-icon">✨</span>
+                            <h3>参加予約が確定しました</h3>
+                            <p>お申し込みありがとうございます。<br>折り返し、当日の案内メールをお送りいたしますので、今しばらくお待ちください。</p>
+                        </div>
+
+                        <div class="confirm-actions" id="confirm-buttons-area">
+                            <button type="button" class="submit-button primary" id="btn-confirm-submit">この内容で確定する</button>
+                            <button type="button" class="cta-button secondary" id="btn-confirm-back" style="width:100%; margin-top:12px; border-radius:var(--radius-sm);">入力内容を修正する</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- EmailJS & Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="schedule.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
