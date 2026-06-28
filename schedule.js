@@ -1,5 +1,5 @@
 /**
- * おひげさんのボードゲーム会スケジュール・コラムマスターデータ管理ファイル
+ * 東京ボードゲーム会スケジュール・コラムマスターデータ管理ファイル
  * 
  * 【メンテナンス方法】
  * 1. ボードゲーム会の「種類」を増やしたり減らしたりしたい場合：
@@ -91,7 +91,7 @@ const GAME_MEETING_TYPES = {
         ],
         details: "モノポリーは誰でも簡単に遊びながら不動産投資やお金の勉強ができます。普段からボードゲームを嗜む主催者が丁寧にレクチャーしますので、初心者も大歓迎です！",
         flow: "自己紹介 → ルール説明 → ゲームスタート（プレイしながら丁寧に教えます） → 振り返り → 終了",
-        fee: "無料（記載なし）",
+        fee: "無料",
         items: "なし",
         notes: [
             "営業、宣伝、勧誘行為を目的とした参加はお辞めください。",
@@ -165,7 +165,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_1",
         typeKey: "communication_skills",
-        date: "2026/06/05 20:00-21:00",
+        date: "2026/06/19 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -176,7 +176,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_2",
         typeKey: "communication_skills",
-        date: "2026/06/08 20:00-21:00",
+        date: "2026/06/21 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -187,7 +187,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_3",
         typeKey: "communication_skills",
-        date: "2026/06/12 20:00-21:00",
+        date: "2026/06/22 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -198,7 +198,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_4",
         typeKey: "communication_skills",
-        date: "2026/06/15 20:00-21:00",
+        date: "2026/06/24 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -209,7 +209,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_5",
         typeKey: "communication_skills",
-        date: "2026/06/19 20:00-21:00",
+        date: "2026/06/26 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -220,7 +220,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_2_june_1",
         typeKey: "catan",
-        date: "2026/06/09 13:00-16:00",
+        date: "2026/06/19 13:00-16:00",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -231,7 +231,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_2_june_2",
         typeKey: "catan",
-        date: "2026/06/16 13:00-16:00",
+        date: "2026/06/22 13:00-16:00",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -242,7 +242,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_2_june_3",
         typeKey: "catan",
-        date: "2026/06/23 13:00-16:00",
+        date: "2026/06/24 13:00-16:00",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -253,7 +253,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_1",
         typeKey: "monopoly",
-        date: "2026/06/10 19:30-21:30",
+        date: "2026/06/19 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
@@ -264,7 +264,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_2",
         typeKey: "monopoly",
-        date: "2026/06/11 19:30-21:30",
+        date: "2026/06/22 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
@@ -275,7 +275,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_3",
         typeKey: "monopoly",
-        date: "2026/06/17 19:30-21:30",
+        date: "2026/06/24 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -286,7 +286,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_4",
         typeKey: "monopoly",
-        date: "2026/06/18 19:30-21:30",
+        date: "2026/06/26 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
@@ -297,7 +297,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_1",
         typeKey: "cashflow",
-        date: "2026/06/09 19:00-21:00",
+        date: "2026/06/19 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -308,7 +308,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_2",
         typeKey: "cashflow",
-        date: "2026/06/16 19:00-21:00",
+        date: "2026/06/22 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -319,7 +319,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_3",
         typeKey: "cashflow",
-        date: "2026/06/23 19:00-21:00",
+        date: "2026/06/24 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -330,7 +330,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_4",
         typeKey: "cashflow",
-        date: "2026/06/30 19:00-21:00",
+        date: "2026/06/29 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -341,7 +341,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_1",
         typeKey: "nisa",
-        date: "2026/06/09 19:30-21:30",
+        date: "2026/06/18 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -352,7 +352,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_2",
         typeKey: "nisa",
-        date: "2026/06/12 19:30-21:30",
+        date: "2026/06/23 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
@@ -363,7 +363,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_3",
         typeKey: "nisa",
-        date: "2026/06/16 19:30-21:30",
+        date: "2026/06/24 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -374,7 +374,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_4",
         typeKey: "nisa",
-        date: "2026/06/19 19:30-21:30",
+        date: "2026/06/29 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
@@ -385,7 +385,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_5",
         typeKey: "nisa",
-        date: "2026/06/23 19:30-21:30",
+        date: "2026/06/30 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",

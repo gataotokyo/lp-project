@@ -277,6 +277,7 @@ img {
 .text-gradient {
     background: linear-gradient(135deg, #D28C5D 0%, #A95D2C 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1419,8 +1420,14 @@ input:focus, select:focus, textarea:focus {
     }
     
     .act-image-wrapper {
+        position: relative;
         width: 100%;
         height: 220px;
+        flex: none;
+        overflow: hidden;
+        min-width: 0;
+        align-self: stretch;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
     
     .act-content {
@@ -1481,4 +1488,240 @@ select option {
 }
 select option[disabled] {
     color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   Quick Info Grid & Fee Section Added
+   ========================================================================== */
+
+/* Quick Info Grid for Activity Card */
+.act-quick-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+    background-color: var(--color-bg-secondary);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(62, 50, 42, 0.05);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-bg-white);
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    font-weight: 700;
+}
+
+.info-val {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.info-val.font-highlight {
+    color: var(--color-primary-hover);
+    font-size: 1rem;
+}
+
+/* Fee Section */
+.fee-block {
+    background-color: var(--color-bg-primary);
+    padding: 80px 60px;
+    border-top: 1px solid rgba(62, 50, 42, 0.05);
+}
+
+.fee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.fee-card {
+    background-color: var(--color-bg-white);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(62, 50, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.fee-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+}
+
+.fee-card.offline::before {
+    background: linear-gradient(90deg, var(--color-accent-offline), var(--color-primary));
+}
+
+.fee-card.online::before {
+    background: linear-gradient(90deg, var(--color-accent-online), #38BDF8);
+}
+
+.fee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.fee-header {
+    margin-bottom: 20px;
+}
+
+.fee-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.fee-card.offline .fee-badge {
+    background-color: var(--color-accent-offline-bg);
+    color: var(--color-accent-offline);
+}
+
+.fee-card.online .fee-badge {
+    background-color: var(--color-accent-online-bg);
+    color: var(--color-accent-online);
+}
+
+.fee-card h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.fee-price {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: baseline;
+}
+
+.fee-price .currency {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin-right: 4px;
+}
+
+.fee-price .price-number {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--color-text-main);
+}
+
+.fee-price .tax {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-left: 6px;
+    font-weight: 700;
+}
+
+.fee-price .price-free {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--color-accent-online);
+}
+
+.fee-desc {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.fee-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-top: auto;
+}
+
+.fee-features li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.fee-features li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.fee-card.online .fee-features li::before {
+    color: var(--color-accent-online);
+}
+
+.fee-notice {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+/* Responsive adjustments for added styles */
+@media (max-width: 1024px) {
+    .fee-block {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .act-quick-info {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+    .fee-block {
+        padding: 60px 20px;
+    }
+    .fee-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .fee-card {
+        padding: 30px 20px;
+    }
 }

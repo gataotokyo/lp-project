@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     "organizer": {
                         "@type": "Person",
-                        "name": "おひげさん",
+                        "name": "東京ボードゲーム会（主催：おひげさん）",
                         "url": "https://ohigesan.netlify.app/"
                     }
                 };
@@ -327,6 +327,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="act-subtitle" style="font-size:0.9rem; color:var(--color-primary-hover); font-weight:700; margin-top:-8px; margin-bottom:12px;">${typeInfo.subtitle || ''}</p>
                     <p class="act-desc">${typeInfo.desc}</p>
                     
+                    <!-- Quick Info Grid (ユーザーが知りたい重要情報を一目で) -->
+                    <div class="act-quick-info">
+                        <div class="info-item">
+                            <span class="info-icon">💴</span>
+                            <div class="info-text-wrapper">
+                                <span class="info-label">参加費</span>
+                                <span class="info-val font-highlight">${typeInfo.fee || ''}</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div class="info-text-wrapper">
+                                <span class="info-label">開催場所</span>
+                                <span class="info-val">${typeInfo.badgeClass === 'online' ? 'オンライン(Zoom)' : '都内会場(新宿・北千住等)'}</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">💼</span>
+                            <div class="info-text-wrapper">
+                                <span class="info-label">持ち物</span>
+                                <span class="info-val">${typeInfo.items || 'なし'}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="act-recommend">
                         <h4 class="act-sub-heading">🎯 こんな方におすすめ</h4>
                         <ul class="recommend-list">
@@ -336,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div class="detail-accordion">
                         <button type="button" class="accordion-toggle-btn">
-                            <span>イベントの詳しい情報を見る</span>
+                            <span>さらに詳しい情報を見る（当日の流れ・声など）</span>
                             <span class="accordion-arrow">▼</span>
                         </button>
                         <div class="accordion-content">
@@ -348,12 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="inner-detail-block">
                                 <h4 class="act-sub-heading">⏰ 当日の流れ</h4>
                                 <p class="inner-detail-text">${typeInfo.flow || ''}</p>
-                            </div>
-
-                            <div class="inner-detail-block">
-                                <h4 class="act-sub-heading">💴 参加費・持ち物</h4>
-                                <p class="inner-detail-text"><strong>参加費：</strong>${typeInfo.fee || ''}</p>
-                                <p class="inner-detail-text"><strong>持ち物：</strong>${typeInfo.items || 'なし'}</p>
                             </div>
 
                             <div class="inner-detail-block">
