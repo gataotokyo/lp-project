@@ -122,9 +122,11 @@ img {
 
 .brand-name {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     font-weight: 900;
     color: var(--color-text-main);
+    white-space: nowrap;
+    letter-spacing: -0.02em;
 }
 
 .brand-name .brand-dot {
@@ -1725,3 +1727,115 @@ select option[disabled] {
         padding: 30px 20px;
     }
 }
+
+/* ==========================================================================
+   FAQ Section Styles
+   ========================================================================== */
+.faq-block {
+    background-color: var(--color-bg-primary);
+    padding: 80px 60px;
+    border-top: 1px solid rgba(62, 50, 42, 0.05);
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: var(--transition-smooth);
+    outline: none;
+}
+
+.faq-question:hover {
+    background-color: rgba(210, 140, 93, 0.03);
+}
+
+.faq-icon {
+    font-size: 0.8rem;
+    transition: var(--transition-smooth);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .faq-block {
+        padding: 60px 20px;
+    }
+}
+
+/* ==========================================================================
+   Activity Detail Card Styles (1-Column Stack Layout for Detail Page)
+   ========================================================================== */
+.activity-detail-card {
+    background-color: var(--color-bg-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(62, 50, 42, 0.04);
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.activity-detail-card .act-image-wrapper {
+    width: 100%;
+    height: 420px;
+    position: relative;
+}
+
+.activity-detail-card .act-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-detail-card .act-detail-content {
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.activity-detail-card .act-quick-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background-color: var(--color-bg-primary);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(62, 50, 42, 0.03);
+}
+
+.activity-detail-card .act-detail-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.activity-detail-card .inner-detail-block {
+    margin-bottom: 0;
+    box-shadow: none;
+    transition: var(--transition-smooth);
+}
+
+@media (max-width: 768px) {
+    .activity-detail-card .act-image-wrapper {
+        height: 250px;
+    }
+    .activity-detail-card .act-detail-content {
+        padding: 30px 20px;
+    }
+    .activity-detail-card .act-quick-info {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px 16px;
+    }
+}
+
+
+

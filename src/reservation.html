@@ -1,0 +1,84 @@
+<section id="reservation" class="page-section active animate-fade-in">
+    <div class="container-inner">
+        <div class="form-wrapper">
+            <h2 class="section-title">スケジュール確認 ＆ 参加予約</h2>
+            <p class="form-desc">下記フォームよりご希望の日程を選択し、お気軽にお申し込みください。ルールを知らなくてもおひげさんが優しくレクチャーします！</p>
+
+            <form id="reservation-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="name">お名前 <span class="required">必須</span></label>
+                    <input type="text" id="name" name="お名前" placeholder="山田 太郎" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">必須</span></label>
+                    <input type="email" id="email" name="メールアドレス" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="study-group-type">希望するボードゲーム会（種類） <span class="required">必須</span></label>
+                    <select id="study-group-type" name="希望する勉強会" required>
+                        <option value="" disabled selected>読み込み中...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="study-group-date">ご希望の日程 <span class="required">必須</span></label>
+                    <select id="study-group-date" name="希望日程" required>
+                        <option value="" disabled selected>まずボードゲーム会を選択してください</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">おひげさんへのメッセージ (任意)</label>
+                    <textarea id="message" name="メッセージ" rows="4"
+                        placeholder="初めての参加で少し緊張している、これが遊びたい！など、ご自由にお書きください。"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button primary">この内容で最終確認する</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 6.5: RESERVATION CONFIRMATION (SPA confirmation view within reservation page) -->
+<section id="reservation-confirm" class="page-section animate-fade-in" style="display: none;">
+    <div class="container-inner">
+        <div class="form-wrapper confirmation-wrapper">
+            <h2 class="section-title">予約内容の最終確認</h2>
+            <p class="form-desc" style="color:var(--color-primary-hover); font-weight:700;">まだ予約は確定していません。以下の内容をご確認の上、「確定する」ボタンを押してください。</p>
+
+            <div class="confirmation-details">
+                <table class="confirm-table">
+                    <tr>
+                        <th>お名前</th>
+                        <td id="confirm-name">山田 太郎</td>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td id="confirm-email">example@email.com</td>
+                    </tr>
+                    <tr>
+                        <th>希望するボードゲーム会</th>
+                        <td id="confirm-event">読み込み中...</td>
+                    </tr>
+                    <tr>
+                        <th>メッセージ</th>
+                        <td id="confirm-message" style="white-space: pre-wrap;">メッセージ内容</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="form-success-message" class="success-message" style="display: none; margin-bottom: 25px;">
+                <span class="success-icon">✨</span>
+                <h3>参加予約が確定しました</h3>
+                <p>お申し込みありがとうございます。<br>折り返し、当日の案内メールをお送りいたしますので、今しばらくお待ちください。</p>
+            </div>
+
+            <div class="confirm-actions" id="confirm-buttons-area">
+                <button type="button" class="submit-button primary" id="btn-confirm-submit">この内容で確定する</button>
+                <button type="button" class="cta-button secondary" id="btn-confirm-back" style="width:100%; margin-top:12px; border-radius:var(--radius-sm);">入力内容を修正する</button>
+            </div>
+        </div>
+    </div>
+</section>

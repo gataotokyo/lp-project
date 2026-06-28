@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    
+    <!-- SEO & OGP Meta Tags -->
+    <link rel="canonical" href="{{canonical}}">
+    <meta property="og:title" content="{{og_title}}">
+    <meta property="og:description" content="{{og_description}}">
+    <meta property="og:image" content="{{og_image}}">
+    <meta property="og:url" content="{{og_url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="東京ボードゲーム会">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{twitter_title}}">
+    <meta name="twitter:description" content="{{twitter_description}}">
+    <meta name="twitter:image" content="{{twitter_image}}">
+
+    <!-- Google Fonts: Inter/Outfit for headings & Noto Sans JP for readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Dynamic Structured Data (JSON-LD) -->
+    {{json_ld}}
+</head>
+
+<body>
+
+    <div class="app-container">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="site-sidebar">
+            <a href="/" class="sidebar-brand" id="logo-link">
+                <span class="logo-emoji">🎲</span>
+                <div class="brand-text-wrapper">
+                    <span class="brand-name">東京ボードゲーム会</span>
+                    <span class="brand-sub">主催：おひげさん</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="メニューを開閉する">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/" class="nav-item" id="nav-home">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-label">ホーム</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/events/" class="nav-item" id="nav-events">
+                            <span class="nav-icon">🧩</span>
+                            <span class="nav-label">ボードゲーム会紹介</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about/" class="nav-item" id="nav-about">
+                            <span class="nav-icon">🧔</span>
+                            <span class="nav-label">プロフィール</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/gallery/" class="nav-item" id="nav-gallery">
+                            <span class="nav-icon">📸</span>
+                            <span class="nav-label">フォトギャラリー</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog/" class="nav-item" id="nav-blog">
+                            <span class="nav-icon">📝</span>
+                            <span class="nav-label">お役立ちコラム</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/reservation/" class="nav-item nav-cta" id="nav-reservation">
+                            <span class="nav-icon">📅</span>
+                            <span class="nav-label">日程・予約</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <p>&copy; 2026 東京ボードゲーム会</p>
+            </div>
+        </aside>
+
+        <!-- Right Main Content Area -->
+        <main class="main-content">
+            {{content}}
+        </main>
+    </div>
+
+    <!-- EmailJS & Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="/schedule.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

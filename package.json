@@ -1,0 +1,17 @@
+{
+  "name": "tokyo-board-game-club",
+  "version": "1.0.0",
+  "description": "東京ボードゲーム会 公式サイト",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js",
+    "preview": "npx serve dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.35.2"
+  }
+}
