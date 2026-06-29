@@ -417,8 +417,8 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
 
     const detailContent = `
     <section class="page-section active animate-fade-in" style="max-width: 900px; margin: 0 auto;">
-        <div class="container-inner">
-            <div style="margin-bottom: 20px;">
+        <div class="container-inner event-detail-container">
+            <div style="margin-bottom: 12px;">
                 <a href="/events/" class="cta-button secondary" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.9rem; border-radius: var(--radius-sm); border: 1px solid rgba(62, 50, 42, 0.1);"><span class="arrow">←</span> ボードゲーム会紹介一覧へ戻る</a>
             </div>
 

@@ -1784,7 +1784,7 @@ select option[disabled] {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 1;
     height: auto;
     position: relative;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
@@ -1834,7 +1834,7 @@ select option[disabled] {
     .activity-detail-card .act-image-wrapper {
         max-width: 100%;
         margin: 0;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 2 / 1;
         height: auto;
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
@@ -1845,6 +1845,17 @@ select option[disabled] {
         grid-template-columns: 1fr;
         gap: 16px;
         padding: 20px 16px;
+    }
+}
+
+/* Event Detail Page - Custom Spacing to bring content higher up */
+.event-detail-container {
+    padding-top: 30px !important;
+}
+
+@media (max-width: 768px) {
+    .event-detail-container {
+        padding-top: 15px !important;
     }
 }
 
