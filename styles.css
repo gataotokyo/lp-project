@@ -460,7 +460,7 @@ img {
 .activity-card {
     background-color: var(--color-bg-white);
     border-radius: var(--radius-lg);
-    /* overflow: hidden を削除して sticky 配置に対応 */
+    overflow: hidden;
     box-shadow: var(--shadow-sm);
     border: 1px solid rgba(62, 50, 42, 0.04);
     display: flex;
@@ -474,8 +474,7 @@ img {
 }
 
 .act-image-wrapper {
-    position: sticky;
-    top: 20px;
+    position: relative;
     width: 35%;
     min-width: 300px;
     height: auto;
