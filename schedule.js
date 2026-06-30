@@ -45,7 +45,7 @@ const GAME_MEETING_TYPES = {
             { age: "30代女性（事務職）", text: "人見知りで緊張していましたが、ゲームが始まると自然と笑顔になれました。自分の意図が相手に伝わった時のスッキリ感がたまりません。" }
         ],
         relatedColumns: ["post_1", "post_2"],
-        imagePath: "images/communication_workshop.jpeg"
+        imagePath: "images/communication_workshop.png"
     },
     catan: {
         id: "catan",
@@ -75,7 +75,7 @@ const GAME_MEETING_TYPES = {
             { age: "40代女性（事務業）", text: "リソースを効率よく管理することが勝利へのカギだと感じました。新しい友達もできて嬉しかったです。" }
         ],
         relatedColumns: ["post_3", "post_7", "post_9"],
-        imagePath: "images/catan_meeting.jpeg"
+        imagePath: "images/catan_meeting.png"
     },
     monopoly: {
         id: "monopoly",
@@ -103,7 +103,7 @@ const GAME_MEETING_TYPES = {
             { age: "40代男性（事務職）", text: "ゲームを通じて学ぶことで、日常の仕事にも応用できる新しい視点が得られました。" }
         ],
         relatedColumns: ["post_4", "post_10"],
-        imagePath: "images/monopoly.jpeg"
+        imagePath: "images/monopoly.png"
     },
     cashflow: {
         id: "cashflow",
@@ -129,7 +129,7 @@ const GAME_MEETING_TYPES = {
             { age: "40代男性（エンジニア）", text: "自分のお金の流れを客観的に見直す良いきっかけになりました。初心者でも分かりやすくフォローしてもらえたので安心でした。" }
         ],
         relatedColumns: ["post_5", "post_8"],
-        imagePath: "images/cashflow_game.jpeg"
+        imagePath: "images/cashflow_game.png"
     },
     nisa: {
         id: "nisa",
@@ -155,7 +155,7 @@ const GAME_MEETING_TYPES = {
             { age: "30代男性（フリーランス）", text: "和気あいあいとした雰囲気で、質問もしやすかったです。ただの勉強ではなく、遊びながら学べるのであっという間の時間でした。" }
         ],
         relatedColumns: ["post_6", "post_7"],
-        imagePath: "images/nisa_game.jpeg"
+        imagePath: "images/nisa_game.png"
     }
 };
 
