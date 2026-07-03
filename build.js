@@ -179,7 +179,75 @@ const faqJsonLd = {
 // --------------------------------------------------------------------------
 
 // 1. ホーム (/)
-const homeContent = fs.readFileSync(path.join(srcDir, 'index.html'), 'utf8');
+let homeContent = fs.readFileSync(path.join(srcDir, 'index.html'), 'utf8');
+
+// EVENTS プレビュー HTML 生成
+const targetEventKeys = ['catan', 'communication_skills', 'nisa'];
+let eventsHtml = '<div class="slider-wrapper">';
+targetEventKeys.forEach(key => {
+    const event = GAME_MEETING_TYPES[key];
+    if (!event) return;
+    
+    let imageUrl = '/images/fv_bg.png';
+    let webpUrl = '/images/fv_bg.webp';
+    if (key === 'catan') {
+        imageUrl = '/images/event_catan.jpg';
+        webpUrl = '/images/event_catan.webp';
+    } else if (key === 'communication_skills') {
+        imageUrl = '/images/event_communication.jpg';
+        webpUrl = '/images/event_communication.webp';
+    } else if (key === 'nisa') {
+        imageUrl = '/images/event_cashflow.jpg';
+        webpUrl = '/images/event_cashflow.webp';
+    }
+
+    eventsHtml += `
+        <div class="slider-card">
+            <picture>
+                <source srcset="${webpUrl}" type="image/webp">
+                <img src="${imageUrl}" alt="${event.name}" class="slider-card-img" loading="lazy">
+            </picture>
+            <div class="slider-card-body">
+                <span class="slider-card-badge">${event.emoji || '🎲'} ${event.badge}</span>
+                <h3 class="slider-card-title">${event.name}</h3>
+                <p class="slider-card-desc">${event.subtitle}</p>
+                <div class="slider-card-footer">
+                    <div class="slider-card-price">参加費 <span>${event.fee}</span></div>
+                    <a href="/events/${event.id}/" class="slider-card-link">詳しく見る →</a>
+                </div>
+            </div>
+        </div>
+    `;
+});
+eventsHtml += '</div>';
+homeContent = homeContent.replace('<!-- EVENTS_PREVIEW -->', eventsHtml);
+
+// BLOG プレビュー HTML 生成
+const latestPosts = BLOG_POSTS.slice(0, 3);
+let blogHtml = '<div class="slider-wrapper">';
+latestPosts.forEach(post => {
+    const imageUrl = post.imagePath ? '/' + post.imagePath : '/images/ogp-placeholder.png';
+    const webpUrl = post.imagePath ? '/' + post.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/ogp-placeholder.webp';
+
+    blogHtml += `
+        <a href="/blog/${post.id}/" class="slider-card" style="text-decoration: none; color: inherit;">
+            <picture>
+                <source srcset="${webpUrl}" type="image/webp">
+                <img src="${imageUrl}" alt="${post.title}" class="slider-card-img" loading="lazy">
+            </picture>
+            <div class="slider-card-body">
+                <span class="slider-card-badge" style="color: var(--color-text-light); font-weight: 500;">${post.date}</span>
+                <h3 class="slider-card-title" style="margin-top: 4px; font-size: 1.1rem; flex-grow: 1;">${post.title}</h3>
+                <div class="slider-card-footer" style="border-top: none; padding-top: 0;">
+                    <span class="slider-card-link">記事を読む →</span>
+                </div>
+            </div>
+        </a>
+    `;
+});
+blogHtml += '</div>';
+homeContent = homeContent.replace('<!-- BLOG_PREVIEW -->', blogHtml);
+
 const homeHtml = renderTemplate(homeContent, {
     title: '東京ボードゲーム会 | 社会人向け・初心者歓迎【主催：おひげさん】',
     description: '毎日同じことの繰り返しに焦りを感じる社会人へ。200種以上のボードゲーム知識を持つおひげさんが、新宿・北千住・東京・渋谷で初心者歓迎のボードゲーム会を開催。オンライン参加も可能。',

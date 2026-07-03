@@ -19,32 +19,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // 1. Sidebar Navigation Active Class (パスベース判定)
+    // 1. Navigation Active Class & Mobile Drawer (パスベース判定)
     // ==========================================================================
     const path = window.location.pathname;
     let activeNavId = 'nav-home';
-    if (path.includes('/about/')) activeNavId = 'nav-about';
-    else if (path.includes('/gallery/')) activeNavId = 'nav-gallery';
-    else if (path.includes('/blog/')) activeNavId = 'nav-blog';
-    else if (path.includes('/events/')) activeNavId = 'nav-events';
-    else if (path.includes('/reservation/')) activeNavId = 'nav-reservation';
+    let activeDrawerId = 'drawer-home';
+    if (path.includes('/about/')) {
+        activeNavId = 'nav-about';
+        activeDrawerId = 'drawer-about';
+    } else if (path.includes('/gallery/')) {
+        activeNavId = 'nav-gallery';
+        activeDrawerId = 'drawer-gallery';
+    } else if (path.includes('/blog/')) {
+        activeNavId = 'nav-blog';
+        activeDrawerId = 'drawer-blog';
+    } else if (path.includes('/events/')) {
+        activeNavId = 'nav-events';
+        activeDrawerId = 'drawer-events';
+    } else if (path.includes('/reservation/')) {
+        activeNavId = 'nav-reservation';
+        activeDrawerId = 'drawer-reservation';
+    }
 
-    const navLinks = document.querySelectorAll('.sidebar-nav .nav-item');
+    const navLinks = document.querySelectorAll('.header-nav .nav-item, .drawer-nav .drawer-item');
     navLinks.forEach(link => {
-        if (link.id === activeNavId) {
+        if (link.id === activeNavId || link.id === activeDrawerId) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
         }
     });
 
-    // モバイル用メニュー開閉トグル
-    const sidebar = document.querySelector('.site-sidebar');
+    // モバイル用メニュー（ドロワー）開閉トグル
+    const mobileDrawer = document.getElementById('mobile-drawer');
     const menuToggle = document.getElementById('menu-toggle');
-    if (menuToggle && sidebar) {
+    if (menuToggle && mobileDrawer) {
         menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
+            mobileDrawer.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            // 背景スクロールを禁止
+            document.body.classList.toggle('no-scroll');
+        });
+    }
+
+    // スクロール時にヘッダーに影をつける
+    const header = document.getElementById('site-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     }
 
