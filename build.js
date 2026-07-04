@@ -182,7 +182,7 @@ const faqJsonLd = {
 let homeContent = fs.readFileSync(path.join(srcDir, 'index.html'), 'utf8');
 
 // EVENTS プレビュー HTML 生成
-const targetEventKeys = ['catan', 'communication_skills', 'nisa'];
+const targetEventKeys = ['catan', 'communication_skills', 'cashflow'];
 let eventsHtml = '<div class="slider-wrapper">';
 targetEventKeys.forEach(key => {
     const event = GAME_MEETING_TYPES[key];
@@ -196,7 +196,7 @@ targetEventKeys.forEach(key => {
     } else if (key === 'communication_skills') {
         imageUrl = '/images/event_communication.jpg';
         webpUrl = '/images/event_communication.webp';
-    } else if (key === 'nisa') {
+    } else if (key === 'cashflow') {
         imageUrl = '/images/event_cashflow.jpg';
         webpUrl = '/images/event_cashflow.webp';
     }
