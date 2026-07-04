@@ -230,7 +230,7 @@ latestPosts.forEach(post => {
     const webpUrl = post.imagePath ? '/' + post.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/ogp-placeholder.webp';
 
     blogHtml += `
-        <a href="/blog/${post.id}/" class="slider-card" style="text-decoration: none; color: inherit;">
+        <a href="/blog/${post.slug}/" class="slider-card" style="text-decoration: none; color: inherit;">
             <picture>
                 <source srcset="${webpUrl}" type="image/webp">
                 <img src="${imageUrl}" alt="${post.title}" class="slider-card-img" loading="lazy">
@@ -531,6 +531,14 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         </div>
                     </div>
                     
+                    <!-- 上部CTAジャンプボタン -->
+                    <div class="act-jump-action" style="margin-top: -10px; margin-bottom: 30px; display: flex; justify-content: flex-start;">
+                        <a href="#schedules-section" class="cta-button primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-size: 0.95rem; border-radius: var(--radius-sm); font-weight: 800; text-decoration: none; width: auto; box-shadow: var(--shadow-sm);">
+                            <span>📅 開催スケジュールを確認する</span>
+                            <span class="arrow" style="font-weight: 900;">↓</span>
+                        </a>
+                    </div>
+                    
                     <div style="border-top: 1px dashed rgba(62, 50, 42, 0.1); margin: 30px 0;"></div>
 
                     <!-- 1-Column Content Stack (Vertical, Widescreen Optimized) -->
@@ -567,7 +575,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                             </div>
                         </div>
 
-                        <div class="card-schedules" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                        <div class="card-schedules" id="schedules-section" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
                             <h4 class="card-schedules-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">📅 近日開催予定</h4>
                             <ul class="card-schedules-list" style="list-style: none; padding: 0; margin: 0;">
                                 ${scheduleHtml}
@@ -587,7 +595,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                     <div style="border-top: 1px dashed rgba(62, 50, 42, 0.1); margin: 40px 0 30px 0;"></div>
                     
                     <div class="act-actions" style="display: flex; justify-content: center;">
-                        <a href="/reservation/?event=${key}" class="cta-button primary" style="padding: 18px 40px; font-size: 1.1rem; font-weight: 800; border-radius: var(--radius-sm); text-align: center; width: 100%; max-width: 500px; box-shadow: var(--shadow-md); transition: var(--transition-smooth);">
+                        <a href="/reservation/?event=${key}" class="cta-button primary" style="padding: 18px 40px; font-size: 1.1rem; font-weight: 800; border-radius: var(--radius-sm); text-align: center; width: 100%; max-width: 500px; box-shadow: var(--shadow-md); transition: var(--transition-smooth); text-decoration: none;">
                             <span>日程を選んで参加を申し込む</span>
                             <span class="arrow">→</span>
                         </a>
@@ -596,6 +604,13 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             </div>
         </div>
     </section>
+    
+    <!-- 全デバイス共通下部固定（Sticky）CTA -->
+    <div class="sticky-cta-wrapper">
+        <a href="#schedules-section" class="sticky-cta-btn">
+            <span>📅 開催日程・空席状況を見る</span>
+        </a>
+    </div>
     `;
 
     // Schema.org Event JSON-LD 用の日付設定
