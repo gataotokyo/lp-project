@@ -15,7 +15,7 @@ const { GAME_MEETING_TYPES, SCHEDULE_DATA, BLOG_POSTS } = require(tempFile);
 fs.unlinkSync(tempFile);
 
 // 本番ドメイン
-const domain = 'https://ohigesan.netlify.app';
+const domain = 'https://tokyo-boardgame-club.netlify.app';
 
 // 記録用の生成されたパス一覧
 const generatedPages = [];
@@ -46,9 +46,9 @@ function renderTemplate(content, meta) {
     
     // メタ情報の設定
     const title = meta.title || '東京ボードゲーム会 | 200種の知識で楽しむ社会人向けボードゲームコミュニティ';
-    const description = meta.description || '日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ「東京ボードゲーム会」。おひげさんが所有する200種類のボドゲ知識を活かして、初めての方でも優しくレクチャー。明日へのエネルギーになる温かい居場所を提供します。';
+    const description = meta.description || '日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ「東京ボードゲーム会」。ゆるボドゲパパが所有する200種類のボドゲ知識を活かして、初めての方でも優しくレクチャー。明日へのエネルギーになる温かい居場所を提供します。';
     const canonical = meta.canonical || domain + '/';
-    const ogImage = meta.ogImage || domain + '/images/ogp-main.png';
+    const ogImage = meta.ogImage || domain + '/images/tokyo_logo_color.png?v=2';
     const ogUrl = meta.ogUrl || canonical;
     const pathDepth = meta.pathDepth || './';
     const jsonLd = meta.jsonLd ? `<script type="application/ld+json">\n${JSON.stringify(meta.jsonLd, null, 2)}\n</script>` : '';
@@ -118,10 +118,10 @@ const organizationJsonLd = {
     "@type": "Organization",
     "name": "東京ボードゲーム会",
     "url": domain + "/",
-    "logo": domain + "/images/profile_keisuke.png",
+    "logo": domain + "/images/tokyo_logo_color.png?v=2",
     "founder": {
         "@type": "Person",
-        "name": "おひげさん"
+        "name": "ゆるボドゲパパ"
     },
     "sameAs": []
 };
@@ -136,7 +136,7 @@ const faqJsonLd = {
             "name": "ボードゲーム初心者でも参加できますか？",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "はい、大歓迎です！当会では、ゲームを始める前に主催者（おひげさん）がルール説明（レクチャー）を丁寧に行います。「人生ゲームしかやったことがない」という方でも安心してご参加いただけます。"
+                "text": "はい、大歓迎です！当会では、ゲームを始める前に主催者（ゆるボドゲパパ）がルール説明（レクチャー）を丁寧に行います。「人生ゲームしかやったことがない」という方でも安心してご参加いただけます。"
             }
         },
         {
@@ -249,8 +249,8 @@ blogHtml += '</div>';
 homeContent = homeContent.replace('<!-- BLOG_PREVIEW -->', blogHtml);
 
 const homeHtml = renderTemplate(homeContent, {
-    title: '東京ボードゲーム会 | 社会人向け・初心者歓迎【主催：おひげさん】',
-    description: '毎日同じことの繰り返しに焦りを感じる社会人へ。200種以上のボードゲーム知識を持つおひげさんが、新宿・北千住・東京・渋谷で初心者歓迎のボードゲーム会を開催。オンライン参加も可能。',
+    title: '遊びながら学ぶボードゲーム会｜東京・社会人向け初心者歓迎',
+    description: '交渉力・投資・判断力がゲームで自然に身につく。東京（新宿・北千住）開催の社会人向けボードゲーム会。20〜30代・一人参加大多数・初心者歓迎・参加費500円〜。',
     canonical: domain + '/',
     pathDepth: './',
     jsonLd: [organizationJsonLd, faqJsonLd]
@@ -261,8 +261,8 @@ generatedPages.push('/');
 // 2. プロフィール (/about)
 const aboutContent = fs.readFileSync(path.join(srcDir, 'about.html'), 'utf8');
 const aboutHtml = renderTemplate(aboutContent, {
-    title: '主催者プロフィール｜東京ボードゲーム会（おひげさん）',
-    description: '東京ボードゲーム会を主催するおひげさんのプロフィールです。3児のパパであり、200種類以上のボードゲーム体験から得たコミュニケーションやビジネスの価値を伝えます。',
+    title: '主催者プロフィール｜ゆるボドゲパパ・200種以上のボードゲーム経験',
+    description: '葛飾区在住・3児の父・会社員。200種以上のボードゲームを体験したゆるボドゲパパが、遊びながら学べる東京ボードゲーム会を主催。初心者でも安心な会の主催者について。',
     canonical: domain + '/about/',
     pathDepth: '../',
     jsonLd: [
@@ -307,8 +307,8 @@ generatedPages.push('/gallery/');
 // 4. 日程・予約 (/reservation)
 const reservationContent = fs.readFileSync(path.join(srcDir, 'reservation.html'), 'utf8');
 const reservationHtml = renderTemplate(reservationContent, {
-    title: '日程・参加予約｜東京ボードゲーム会',
-    description: '東京ボードゲーム会の直近の開催日程スケジュール確認と参加予約フォームです。カタンやモノポリー、NISAなどお好みの勉強会を選んでお申し込みください。',
+    title: '日程・予約｜東京ボードゲーム会【新宿・北千住エリア開催】',
+    description: '東京（新宿・北千住エリア）で開催中のボードゲーム会の直近日程と予約フォーム。カタン・モノポリー・NISAボードゲームなど。初心者・一人参加歓迎・参加費500円〜。',
     canonical: domain + '/reservation/',
     pathDepth: '../',
     jsonLd: [
@@ -368,7 +368,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         <span class="info-icon">📍</span>
                         <div class="info-text-wrapper">
                             <span class="info-label">開催場所</span>
-                            <span class="info-val" style="font-size:0.82rem;">${typeInfo.badgeClass === 'online' ? 'オンライン' : '都内会場'}</span>
+                            <span class="info-val" style="font-size:0.78rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン' : '新宿・北千住エリア（申込後に詳細をご案内）'}</span>
                         </div>
                     </div>
                     <div class="info-item">
@@ -395,7 +395,7 @@ const eventsIndexContent = `
 <section id="activities" class="page-section active animate-fade-in">
     <div class="container-inner">
         <h2 class="section-title">ボードゲーム会紹介</h2>
-        <p class="section-subtitle">おひげさんが主催する、プレイスタイルや目的に合わせた特徴的なボードゲーム会です。</p>
+        <p class="section-subtitle">ゆるボドゲパパが主催する、プレイスタイルや目的に合わせた特徴的なボードゲーム会です。</p>
         <div class="activities-grid">
             ${eventCardsHtml}
         </div>
@@ -404,8 +404,8 @@ const eventsIndexContent = `
 `;
 
 const eventsIndexHtml = renderTemplate(eventsIndexContent, {
-    title: 'ボードゲーム会紹介一覧｜東京ボードゲーム会',
-    description: 'カタンを楽しむ会、モノポリーを楽しむ会、NISAボードゲーム会、コミュニケーション向上ワークショップなど、東京ボードゲーム会で提供している各ボードゲーム会の詳細一覧です。',
+    title: '学べるボードゲーム会一覧｜東京・社会人・初心者向け',
+    description: 'カタンで交渉力・モノポリーで投資判断・NISAボードゲームで資産形成。遊びながらリアルに使えるスキルが身につく会を東京で開催。参加費500円〜・一人参加歓迎。',
     canonical: domain + '/events/',
     pathDepth: '../',
     jsonLd: [
@@ -519,7 +519,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                             <span class="info-icon">📍</span>
                             <div class="info-text-wrapper">
                                 <span class="info-label">開催場所</span>
-                                <span class="info-val">${typeInfo.badgeClass === 'online' ? 'オンライン(Zoom)' : '都内会場(新宿・北千住等)'}</span>
+                                <span class="info-val" style="font-size:0.92rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン(Zoom)' : '新宿・北千住エリア（申込後に詳細をご案内）'}</span>
                             </div>
                         </div>
                         <div class="info-item">
@@ -577,9 +577,15 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
 
                         <div class="card-schedules" id="schedules-section" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
                             <h4 class="card-schedules-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">📅 近日開催予定</h4>
-                            <ul class="card-schedules-list" style="list-style: none; padding: 0; margin: 0;">
+                            <ul class="card-schedules-list" style="list-style: none; padding: 0; margin: 0; margin-bottom: 20px;">
                                 ${scheduleHtml}
                             </ul>
+                            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                                <a href="/reservation/?event=${key}" class="cta-button primary" style="padding: 12px 24px; font-size: 1rem; font-weight: 800; border-radius: var(--radius-sm); text-align: center; width: 100%; max-width: 320px; box-shadow: var(--shadow-sm); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                                    <span>日程を選んで<br class="sp-only">参加を申し込む</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
                         </div>
 
                         ${typeInfo.relatedColumns && typeInfo.relatedColumns.length > 0 ? `
@@ -596,7 +602,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                     
                     <div class="act-actions" style="display: flex; justify-content: center;">
                         <a href="/reservation/?event=${key}" class="cta-button primary" style="padding: 18px 40px; font-size: 1.1rem; font-weight: 800; border-radius: var(--radius-sm); text-align: center; width: 100%; max-width: 500px; box-shadow: var(--shadow-md); transition: var(--transition-smooth); text-decoration: none;">
-                            <span>日程を選んで参加を申し込む</span>
+                            <span>日程を選んで<br class="sp-only">参加を申し込む</span>
                             <span class="arrow">→</span>
                         </a>
                     </div>
@@ -654,7 +660,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         },
         "organizer": {
             "@type": "Person",
-            "name": "おひげさん"
+            "name": "ゆるボドゲパパ"
         }
     };
 
@@ -668,9 +674,38 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         ]
     };
 
-    const detailHtml = renderTemplate(detailContent, {
+    // 個別イベント用のタイトルとディスクリプションのマッピング (SEO最適化)
+    const eventSeoMeta = {
+        catan: {
+            title: 'カタンで交渉力を学ぶ会｜東京・初心者向けボードゲーム',
+            description: 'カタンは交渉・資源管理・駆け引きの連続。仕事に使える交渉力をゲームで体験。東京（新宿・北千住）開催・初心者大歓迎・一人参加多数・初回500円。'
+        },
+        communication_skills: {
+            title: 'コミュニケーション力をゲームで学ぶ会｜東京・社会人向け',
+            description: '話す力・聞く力・場の読み方をボードゲームで自然に鍛える。東京（新宿・北千住）開催の社会人向けコミュニケーションゲーム会。無料・初心者・一人参加歓迎。'
+        },
+        monopoly: {
+            title: 'モノポリーで投資と交渉を学ぶ会｜東京・初心者歓迎',
+            description: 'お金の流れ・不動産投資・交渉術をモノポリーで体験。ゲームを通じて投資判断力が磨かれる。東京（新宿・北千住）開催・無料・初心者大歓迎・一人参加が大多数。'
+        },
+        cashflow: {
+            title: 'お金の流れをゲームで学ぶ会｜東京・投資初心者向け',
+            description: '投資・資産形成の考え方をボードゲームで体験。難しい金融知識がゲームを通じて自然に身につく。東京（新宿・北千住）開催・500円・筆記用具と電卓（スマホ可）持参。'
+        },
+        nisa: {
+            title: 'NISAをボードゲームで学ぶ会｜東京・投資初心者歓迎',
+            description: '難しそうなNISA・投資の仕組みをボードゲームで楽しく体験。遊びながら資産形成の考え方が身につく。東京（新宿・北千住）開催・無料・初心者・一人参加歓迎。'
+        }
+    };
+
+    const seoMeta = eventSeoMeta[key] || {
         title: `${typeInfo.name}｜東京ボードゲーム会`,
-        description: `${typeInfo.subtitle || ''} ${typeInfo.desc.substring(0, 100)}...`,
+        description: `${typeInfo.subtitle || ''} ${typeInfo.desc.substring(0, 100)}...`
+    };
+
+    const detailHtml = renderTemplate(detailContent, {
+        title: seoMeta.title,
+        description: seoMeta.description,
         canonical: `${domain}/events/${key}/`,
         pathDepth: '../../',
         jsonLd: [organizationJsonLd, eventJsonLd, breadcrumbJsonLd]
@@ -736,8 +771,8 @@ const blogIndexContent = `
 `;
 
 const blogIndexHtml = renderTemplate(blogIndexContent, {
-    title: 'お役立ちコラム一覧｜東京ボードゲーム会',
-    description: 'カタンのコツ、モノポリーの戦術、新NISAの学び方、社会人の友達作りや脳のリフレッシュ効果など、ボードゲームにまつわる様々なお役立ち情報を発信するコラム一覧です。',
+    title: 'ボードゲームで学ぶコラム一覧｜東京ボードゲーム会',
+    description: 'カタン・モノポリー・NISA・キャッシュフローゲームなど、ボードゲームで仕事や投資に役立つスキルを学ぶコラム集。初心者向けの攻略・楽しみ方も紹介。',
     canonical: domain + '/blog/',
     pathDepth: '../',
     jsonLd: [
@@ -809,14 +844,14 @@ BLOG_POSTS.forEach((post, index) => {
         "dateModified": isoDate,
         "author": {
             "@type": "Person",
-            "name": "おひげさん"
+            "name": "ゆるボドゲパパ"
         },
         "publisher": {
             "@type": "Organization",
             "name": "東京ボードゲーム会",
             "logo": {
                 "@type": "ImageObject",
-                "url": domain + "/images/profile_keisuke.png"
+                "url": domain + "/images/tokyo_logo_color.png?v=2"
             }
         },
         "image": domain + "/images/ogp-main.png"
@@ -832,9 +867,58 @@ BLOG_POSTS.forEach((post, index) => {
         ]
     };
 
-    const detailHtml = renderTemplate(blogDetailContent, {
+    // 個別ブログ記事用のタイトルとディスクリプションのマッピング (SEO最適化)
+    const blogSeoMeta = {
+        'catan-beginner-tips': {
+            title: 'カタン初心者が最初に知るべき3つのコツ｜東京ボードゲーム会',
+            description: '「カタンってどうやって勝つの？」という初心者向けに、序盤の資源配置・交渉 of コツ・避けるべきミスを解説。東京のカタン会主催者が実体験をもとに紹介。'
+        },
+        'nisa-board-game': {
+            title: 'NISAをボードゲームで学ぶ方法｜初心者でもわかる投資の入口',
+            description: '難しそうなNISAも、ボードゲームで体験すると仕組みが自然に理解できます。東京で開催するNISAボードゲーム会の主催者が、初心者向けに分かりやすく解説。'
+        },
+        'cashflow-game': {
+            title: 'ボードゲームでお金の流れを学ぶ方法｜社会人向け入門ガイド',
+            description: '投資・資産形成の考え方をゲームで体験する方法を解説。難しい金融知識がゲームを通じて自然に身につく理由と、東京で参加できるボードゲーム会を紹介。'
+        },
+        'haa-tte-iu-game': {
+            title: 'はぁっていうゲームの魅力と非言語対話｜東京ボードゲーム会',
+            description: '声と表情だけで感情を伝える「はぁっていうゲーム」の魅力を解説。大人が本気で笑い合い、非言語コミュニケーションを楽しく鍛えられると評判です。東京で開催中の初心者歓迎ボードゲーム会で、仕事帰りの社会人も気軽に体験できます。'
+        },
+        'katakanashi': {
+            title: 'カタカナーシのルールと表現力の鍛え方｜東京ボードゲーム会',
+            description: 'カタカナ語を日本語だけで説明するゲーム「カタカナーシ」を解説。言葉の制限が表現力や説明力を鍛える知的トレーニングになります。東京の社会人向けボードゲーム会でも大人気で、初心者でも大笑いしながら脳をフル回転できます。'
+        },
+        'monopoly-capitalism': {
+            title: 'モノポリーで学ぶ資本主義と投資の基本｜東京ボードゲーム会',
+            description: '世界中で愛される「モノポリー」から学ぶ投資の基本や複利の戦術を解説。ゲームを通じて現実のビジネスや交渉力に役立つ知性を身につけられます。東京で開催中の初心者歓迎ボードゲーム会で、多くの社会人がワイワイ楽しくプレイしています。'
+        },
+        'board-game-friends': {
+            title: '社会人の友達作りとボードゲーム会の効果｜東京ボードゲーム会',
+            description: '仕事以外の繋がりが少ない社会人に、ボードゲーム会が最高の友達作りの場になる理由を解説。ゲームという共通テーマがあるため初対面でも自然に打ち解けられます。東京（新宿・北千住）で初心者でも安心して馴染めるコミュニティを紹介。'
+        },
+        'brain-refresh': {
+            title: 'ボードゲームがもたらす脳のリフレッシュ効果｜東京ボードゲーム会',
+            description: 'スマホやパソコンによるデジタル疲労に、アナログボードゲームがもたらす極上の脳リフレッシュ効果を解説。対面での知的スリルが脳をクリエイティブに刺激します。東京で開催中の初心者歓迎ボードゲーム会で、社会人も心地よいリラックスを。'
+        },
+        'beginner-guide-tokyo': {
+            title: '失敗しない東京のボードゲーム会の選び方｜東京ボードゲーム会',
+            description: '「常連ばかりで入りづらい？」と不安な初心者に向け、東京で失敗しないボードゲーム会の選び方を伝授。マナーや禁止事項、ルール説明の有無など3つのチェックポイントを解説。社会人でも一人で安心して参加できるアットホームな会を紹介。'
+        },
+        'negotiation-skills': {
+            title: 'ボードゲームでビジネスに必要な交渉力を磨く｜東京ボードゲーム会',
+            description: '交渉力や資金配分など、現実の仕事に役立つビジネススキルがボードゲームで鍛えられる理由を解説。ノーリスクで主体的な決断を繰り返せる有用性を紹介します。東京で開催中の初心者歓迎ボードゲーム会で、社会人も遊びながらスキルアップ。'
+        }
+    };
+
+    const seoMeta = blogSeoMeta[post.slug] || {
         title: `${post.title}｜東京ボードゲーム会`,
-        description: post.summary,
+        description: post.summary
+    };
+
+    const detailHtml = renderTemplate(blogDetailContent, {
+        title: seoMeta.title,
+        description: seoMeta.description,
         canonical: `${domain}/blog/${post.slug}/`,
         pathDepth: '../../',
         jsonLd: [organizationJsonLd, blogJsonLd, breadcrumbJsonLd]

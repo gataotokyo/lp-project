@@ -1,5 +1,5 @@
 <section id="home" class="page-section active animate-fade-in" style="padding: 0; max-width: 100%;">
-    
+
     <!-- [1] Hero Section -->
     <div class="hero-fullscreen">
         <picture class="hero-bg-picture">
@@ -8,9 +8,12 @@
         </picture>
         <div class="hero-fullscreen-content">
             <div class="hero-fullscreen-content-inner">
-                <span class="sub-copy">毎日同じことの繰り返しに、焦りを感じているあなたへ</span>
+                <div class="hero-logo-container">
+                    <img src="images/tokyo_logo_color.png?v=2" alt="東京ボードゲーム会 ロゴ" class="hero-logo">
+                </div>
+                <span class="sub-copy">20〜30代の「このままじゃいけない」と感じている人へ。</span>
                 <h1 class="main-title">東京ボードゲーム会</h1>
-                <p class="catch-copy">200種以上の知識を持つおひげさんが主催する, 社会人向けボードゲームコミュニティ</p>
+                <p class="catch-copy">遊びながら、人生を変えるヒントが見つかる場所。</p>
                 <a href="/events/" class="hero-cta-btn">ボードゲーム会を見てみる →</a>
             </div>
         </div>
@@ -25,31 +28,47 @@
         <div class="beginner-container">
             <div class="beginner-content">
                 <span class="sec-lead">初めての方でも安心</span>
-                <h2 class="section-ja" style="margin-bottom: 24px;">ルール説明から丁寧に、<br>おひげさんがサポートします</h2>
+                <h2 class="section-ja" style="margin-bottom: 24px;">ボードゲームで遊びながら、<br>仕事や人生に使えるスキルが身につく</h2>
                 <p>
+                    ゆるボドゲパパのボードゲーム会は「ただ遊ぶ場所」ではありません。<br>
+                    カタンでは交渉力と資源管理を、モノポリーでは投資判断と駆け引きを、<br>
+                    キャッシュフローゲームではお金の流れを——<br>
+                    ゲームの中に、リアルな社会で使える学びが詰まっています。<br><br>
                     「ボードゲームは人生ゲームしかやったことない」という方も大歓迎。<br>
-                    参加者の8割以上が初心者・一人参加からスタートしています。<br>
-                    当日は服装自由・持ち物なし。気軽に来てください。
+                    ルールの説明から丁寧にサポートするので、初心者でも安心して参加できます。
                 </p>
                 <div class="beginner-points">
-                    <div class="point-card">
-                        <span class="icon">🎲</span>
-                        <span class="text">ルールから丁寧に説明</span>
+                    <div class="point-card" style="align-items: flex-start;">
+                        <span class="icon">🎓</span>
+                        <div class="point-info" style="display: flex; flex-direction: column; gap: 4px;">
+                            <span class="text"
+                                style="font-size: 1.05rem; font-weight: 800; color: var(--color-text-main);">遊びながら学べる</span>
+                            <span class="desc"
+                                style="font-size: 0.88rem; line-height: 1.5; color: var(--color-text-muted);">交渉・投資・判断力など、仕事や人生に直結するスキルをゲームを通じて自然に体験できます</span>
+                        </div>
                     </div>
-                    <div class="point-card">
+                    <div class="point-card" style="align-items: flex-start;">
                         <span class="icon">👤</span>
-                        <span class="text">一人参加が大多数</span>
+                        <div class="point-info" style="display: flex; flex-direction: column; gap: 4px;">
+                            <span class="text"
+                                style="font-size: 1.05rem; font-weight: 800; color: var(--color-text-main);">一人参加が大多数</span>
+                            <span class="desc"
+                                style="font-size: 0.88rem; line-height: 1.5; color: var(--color-text-muted);">参加者の8割以上が一人参加からスタート。初対面でもすぐに打ち解けられる雰囲気づくりをしています</span>
+                        </div>
                     </div>
-                    <div class="point-card">
-                        <span class="icon">👕</span>
-                        <span class="text">服装・持ち物不要</span>
+                    <div class="point-card" style="align-items: flex-start;">
+                        <span class="icon">🎲</span>
+                        <div class="point-info" style="display: flex; flex-direction: column; gap: 4px;">
+                            <span class="text" style="font-size: 1.05rem; font-weight: 800; color: var(--color-text-main);">初心者歓迎・未経験OK</span>
+                            <span class="desc" style="font-size: 0.88rem; line-height: 1.5; color: var(--color-text-muted);">ルールは当日ゆるボドゲパパが丁寧に説明します。<br>服装自由・基本手ぶらでOK。<br>※キャッシュフローゲームのみ筆記用具と電卓（スマホ可）をご持参ください</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="beginner-image-wrapper">
                 <picture>
                     <source srcset="images/teaching_scene.webp" type="image/webp">
-                    <img src="images/teaching_scene.jpg" alt="おひげさんがルール説明している様子" loading="lazy">
+                    <img src="images/teaching_scene.jpg" alt="ゆるボドゲパパがルール説明している様子" loading="lazy">
                 </picture>
             </div>
         </div>
@@ -60,10 +79,14 @@
         <div class="slider-container">
             <p class="section-en">EVENTS</p>
             <h2 class="section-ja">ボードゲーム会紹介</h2>
-            
+
             <!-- Dynamic placeholder replaced by build.js -->
             <!-- EVENTS_PREVIEW -->
             
+            <div class="scroll-guide-indicator">
+                <span>← 左右にスワイプできます →</span>
+            </div>
+
             <div class="slider-cta-wrapper">
                 <a href="/events/" class="slider-cta-btn">ボードゲーム会を全て見る →</a>
             </div>
@@ -78,27 +101,24 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <span class="testimonial-quote-icon">❝</span>
-                    <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">
-                        「初めて一人で参加しましたが、おひげさんがルールを丁寧に教えてくれて、すぐに打ち解けられました。また来ます！」
+                        「最初は正直、ボードゲームって子どもっぽいイメージがあって半信半疑で参加しました。でもカタンをやってみたら交渉や判断の連続で、気づいたら2時間があっという間でした。仕事でも使えそうな感覚があって、次の会も予約しています。」
                     </p>
-                    <div class="testimonial-author">— 30代・会社員・男性</div>
+                    <div class="testimonial-author">— 28歳・男性・メーカー勤務</div>
                 </div>
                 <div class="testimonial-card">
                     <span class="testimonial-quote-icon">❝</span>
-                    <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">
-                        「ボードゲームって難しそうと思っていましたが、こんなに楽しいとは思いませんでした。新しい趣味が見つかった感じです。」
+                        「一人で参加するのが不安でしたが、当日来てみたらほぼ全員が一人参加で安心しました。ゆるボドゲパパがルールを丁寧に説明してくれて、ゲームが終わったあとも自然に会話が弾みました。新しい繋がりができる場所を探していた私にはぴったりでした。」
                     </p>
-                    <div class="testimonial-author">— 20代・女性</div>
+                    <div class="testimonial-author">— 32歳・女性・IT企業勤務</div>
                 </div>
                 <div class="testimonial-card">
                     <span class="testimonial-quote-icon">❝</span>
-                    <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">
-                        「毎回違う会が開催されているので、何度来ても飽きません。友達もできて最高のサードプレイスです。」
+                        「キャッシュフローゲームに参加したのですが、お金の流れが視覚的に分かって、今まで難しいと思っていた投資の考え方が急に身近になりました。ゲームをしながらこんなに学べるとは思っていなかったです。」
                     </p>
-                    <div class="testimonial-author">— 30代・会社員・男性</div>
+                    <div class="testimonial-author">— 35歳・男性・営業職</div>
                 </div>
             </div>
         </div>
@@ -109,10 +129,14 @@
         <div class="slider-container">
             <p class="section-en">BLOG</p>
             <h2 class="section-ja">お役立ちコラム</h2>
-            
+
             <!-- Dynamic placeholder replaced by build.js -->
             <!-- BLOG_PREVIEW -->
             
+            <div class="scroll-guide-indicator">
+                <span>← 左右にスワイプできます →</span>
+            </div>
+
             <div class="slider-cta-wrapper">
                 <a href="/blog/" class="slider-cta-btn">コラムを全て読む →</a>
             </div>

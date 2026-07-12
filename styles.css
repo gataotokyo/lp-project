@@ -1263,7 +1263,8 @@ input:focus, select:focus, textarea:focus {
         display: block;
         position: fixed;
         top: 15px;
-        left: 20px;
+        left: auto;
+        right: 20px;
         z-index: 1001;
         background-color: var(--color-bg-white);
         box-shadow: var(--shadow-sm);
@@ -1805,25 +1806,13 @@ select option[disabled] {
 .header-brand {
     display: flex;
     align-items: center;
-    gap: 12px;
 }
 
-.header-brand .logo-emoji {
-    font-size: 1.8rem;
-}
-
-.header-brand .brand-name {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--color-text-main);
-    letter-spacing: -0.01em;
-}
-
-.header-brand .brand-sub {
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
+.header-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+    transition: var(--transition-smooth);
 }
 
 /* Header Nav Menu */
@@ -1977,17 +1966,13 @@ body.no-scroll {
 .footer-brand {
     display: flex;
     align-items: center;
-    gap: 12px;
 }
 
-.footer-brand .logo-emoji {
-    font-size: 2rem;
-}
-
-.footer-brand .brand-name {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 900;
+.footer-brand .footer-mono-logo {
+    height: 36px;
+    width: auto;
+    opacity: 0.8;
+    transition: var(--transition-smooth);
 }
 
 .footer-nav ul {
@@ -2575,13 +2560,112 @@ body.no-scroll {
         display: none;
     }
     .slider-card {
-        flex: 0 0 85%;
+        flex: 0 0 85% !important;
     }
     .beginner-section, .slider-section, .testimonials-section, .reserve-preview-section {
         padding: 60px 20px;
     }
     .point-card {
         padding: 12px 16px;
+    }
+    
+    /* スマホ時ヘッダーロゴ縮小 */
+    .header-logo {
+        height: 36px;
+    }
+    
+    /* スマホ表示時のヒーロー画像調整 */
+    .hero-fullscreen {
+        background-color: #243B53; /* 余白埋めブランドカラー */
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .hero-bg-picture {
+        position: static !important; /* 浮かせず縦並びフローに乗せる */
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .hero-fullscreen-img {
+        width: 100%;
+        height: auto !important;
+        aspect-ratio: 16 / 11; /* 人物の顔とボードゲーム面が両方収まる比率 */
+        object-fit: cover;
+        display: block;
+    }
+    .hero-fullscreen-content {
+        position: static !important; /* absoluteを確実に上書きして重ねない */
+        padding: 16px 20px;
+        box-sizing: border-box;
+        width: 100%;
+        z-index: 5;
+    }
+    .hero-fullscreen-content-inner {
+        padding: 16px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.08); /* 背景ネイビーに馴染む薄い白ガラス */
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: var(--radius-md);
+    }
+    .hero-fullscreen-content .main-title {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+        color: #FFFFFF;
+    }
+    .hero-fullscreen-content .catch-copy {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    .hero-fullscreen-content .hero-cta-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        width: 100%; /* スマホでボタンを押しやすく */
+        justify-content: center;
+    }
+    .hero-logo-container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 12px auto;
+        width: auto;
+        height: auto;
+    }
+    .hero-logo {
+        max-width: 120px; /* スマホ時は少し小さめに表示 */
+        height: auto;
+    }
+    .hero-fullscreen-content .sub-copy {
+        margin: 12px 0 8px 0; /* 適度な元の余白へ復元 */
+    }
+    
+    /* ボードゲーム詳細ページのスマホ時カード型表示 */
+    .activity-detail-card .act-quick-info {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+        border: none !important;
+    }
+    .activity-detail-card .info-item {
+        background-color: var(--color-bg-white) !important;
+        border: 1px solid rgba(62, 50, 42, 0.08) !important;
+        border-radius: var(--radius-md) !important;
+        padding: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        box-shadow: var(--shadow-sm) !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 16px !important;
+        text-align: left;
     }
 }
 
@@ -2628,6 +2712,140 @@ body.no-scroll {
 /* 追従型CTAが被らないようにページ下部に余白を追加（PC・スマホ共通） */
 .event-detail-container {
     padding-bottom: 90px;
+}
+
+/* ==========================================================================
+   新デザイン・UX向上用追加スタイル
+   ========================================================================== */
+
+/* ヒーローフェードインアニメーション */
+@keyframes heroFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-logo-container {
+    opacity: 0;
+    animation: heroFadeInUp 0.8s ease-out forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px auto;
+}
+
+.hero-logo {
+    width: 100%;
+    max-width: 180px; /* PC時は元の幅160〜240px程度に */
+    height: auto;
+    display: block;
+}
+
+.hero-fullscreen-content .sub-copy {
+    opacity: 0;
+    animation: heroFadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.hero-fullscreen-content .main-title {
+    opacity: 0;
+    animation: heroFadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.hero-fullscreen-content .catch-copy {
+    opacity: 0;
+    animation: heroFadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.hero-fullscreen-content .hero-cta-btn {
+    opacity: 0;
+    animation: heroFadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+/* 「詳しく見る」リンクのボタン化 */
+.slider-card-link {
+    display: inline-block;
+    background-color: #F59E42;
+    color: #FFFFFF !important;
+    padding: 8px 20px;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 10px rgba(245, 158, 66, 0.25);
+    text-align: center;
+}
+
+.slider-card-link:hover {
+    background-color: #E2892B;
+    box-shadow: 0 6px 14px rgba(245, 158, 66, 0.4);
+    transform: translateY(-1px);
+}
+
+/* 参加費用テキスト色をネイビーに変更 */
+.slider-card-price {
+    color: #243B53;
+}
+.slider-card-price span {
+    color: #243B53;
+}
+
+/* スライダー横スクロール改善 */
+.slider-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    gap: 16px;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.slider-card {
+    scroll-snap-align: start;
+}
+
+/* ガイドインジケーターの制御 */
+.scroll-guide-indicator {
+    display: none;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-top: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    animation: pulse-guide 2s infinite ease-in-out;
+}
+
+@keyframes pulse-guide {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .scroll-guide-indicator {
+        display: block;
+    }
+}
+
+/* 申込ボタン改行防止 */
+.act-actions .cta-button {
+    white-space: nowrap;
+}
+
+/* モバイル用改行コントロール */
+.sp-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sp-only {
+        display: block;
+    }
 }
 
 
