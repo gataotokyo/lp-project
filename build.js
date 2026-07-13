@@ -48,7 +48,7 @@ function renderTemplate(content, meta) {
     const title = meta.title || '東京ボードゲーム会 | 200種の知識で楽しむ社会人向けボードゲームコミュニティ';
     const description = meta.description || '日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ「東京ボードゲーム会」。ゆるボドゲパパが所有する200種類のボドゲ知識を活かして、初めての方でも優しくレクチャー。明日へのエネルギーになる温かい居場所を提供します。';
     const canonical = meta.canonical || domain + '/';
-    const ogImage = meta.ogImage || domain + '/images/tokyo_logo_color.png?v=2';
+    const ogImage = meta.ogImage || domain + '/images/hero_game.jpg';
     const ogUrl = meta.ogUrl || canonical;
     const pathDepth = meta.pathDepth || './';
     const jsonLd = meta.jsonLd ? `<script type="application/ld+json">\n${JSON.stringify(meta.jsonLd, null, 2)}\n</script>` : '';
@@ -222,12 +222,33 @@ targetEventKeys.forEach(key => {
 eventsHtml += '</div>';
 homeContent = homeContent.replace('<!-- EVENTS_PREVIEW -->', eventsHtml);
 
+// ブログサムネイル画像のテーマ判定ヘルパー関数
+function getBlogThumbnailBase(post) {
+    if (post.slug.includes('catan')) {
+        return 'カタン会';
+    }
+    if (post.slug.includes('communication') || post.slug.includes('friends') || post.slug.includes('haa') || post.slug.includes('katakanashi')) {
+        return 'ゲームで学ぶコミュニケーションワークショップ';
+    }
+    if (post.slug.includes('monopoly')) {
+        return 'モノポリー';
+    }
+    if (post.slug.includes('cashflow')) {
+        return 'キャッシュフロー会';
+    }
+    if (post.slug.includes('nisa')) {
+        return 'NISAが学べる投資ゲーム_無料';
+    }
+    return 'gallery_boardgame';
+}
+
 // BLOG プレビュー HTML 生成
 const latestPosts = BLOG_POSTS.slice(0, 3);
 let blogHtml = '<div class="slider-wrapper">';
 latestPosts.forEach(post => {
-    const imageUrl = post.imagePath ? '/' + post.imagePath : '/images/ogp-placeholder.png';
-    const webpUrl = post.imagePath ? '/' + post.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/ogp-placeholder.webp';
+    const thumbBase = getBlogThumbnailBase(post);
+    const imageUrl = `/images/${thumbBase}.png`;
+    const webpUrl = `/images/${thumbBase}.webp`;
 
     blogHtml += `
         <a href="/blog/${post.slug}/" class="slider-card" style="text-decoration: none; color: inherit;">
@@ -737,8 +758,13 @@ Object.keys(categories).forEach(catKey => {
     const cat = categories[catKey];
     let postsCardsHtml = '';
     cat.posts.forEach(post => {
+        const thumbBase = getBlogThumbnailBase(post);
         postsCardsHtml += `
             <article class="blog-card">
+                <picture>
+                    <source srcset="/images/${thumbBase}.webp" type="image/webp">
+                    <img src="/images/${thumbBase}.png" alt="${post.title}のイメージ" class="blog-card-thumbnail" loading="lazy">
+                </picture>
                 <span class="blog-date">${post.date}</span>
                 <h4><a href="${post.slug}/" class="blog-title-link">${post.title}</a></h4>
                 <p>${post.summary}</p>
@@ -871,7 +897,7 @@ BLOG_POSTS.forEach((post, index) => {
     const blogSeoMeta = {
         'catan-beginner-tips': {
             title: 'カタン初心者が最初に知るべき3つのコツ｜東京ボードゲーム会',
-            description: '「カタンってどうやって勝つの？」という初心者向けに、序盤の資源配置・交渉 of コツ・避けるべきミスを解説。東京のカタン会主催者が実体験をもとに紹介。'
+            description: '「カタンってどうやって勝つの？」という初心者向けに、序盤の資源配置・交渉のコツ・避けるべきミスを解説。東京のカタン会主催者が実体験をもとに紹介。'
         },
         'nisa-board-game': {
             title: 'NISAをボードゲームで学ぶ方法｜初心者でもわかる投資の入口',

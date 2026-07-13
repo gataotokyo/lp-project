@@ -966,6 +966,7 @@ img {
     display: flex;
     flex-direction: column;
     transition: var(--transition-smooth);
+    overflow: hidden;
 }
 
 .blog-card:hover {
@@ -2847,6 +2848,17 @@ body.no-scroll {
         display: block;
     }
 }
+
+/* コラムカードのサムネイル */
+.blog-card-thumbnail {
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    height: 200px;
+    object-fit: cover;
+}
+
 
 
 
