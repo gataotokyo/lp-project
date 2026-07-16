@@ -449,6 +449,12 @@ generatedPages.push('/events/');
 Object.keys(GAME_MEETING_TYPES).forEach(key => {
     const typeInfo = GAME_MEETING_TYPES[key];
 
+    const isCatan = key === 'catan';
+    const wrapperStyle = isCatan ? '' : ' style="aspect-ratio: auto; height: auto;"';
+    const imgStyle = isCatan 
+        ? 'width: 100%; height: 100%; object-fit: cover;' 
+        : 'width: 100%; height: auto; display: block;';
+
     // このイベントに紐づく近日日程 (過去日は除外)
     const now = new Date();
     const futureEvents = SCHEDULE_DATA.filter(event => {
@@ -512,10 +518,10 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             </div>
 
             <div class="activity-detail-card" style="box-shadow: var(--shadow-md); border-radius: var(--radius-lg); overflow: hidden; background-color: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.04);">
-                <div class="act-image-wrapper">
+                <div class="act-image-wrapper"${wrapperStyle}>
                     <picture>
                         <source srcset="${typeInfo.imagePath ? '/' + typeInfo.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/fv_bg.webp'}" type="image/webp">
-                        <img src="${typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png'}" alt="${typeInfo.name}" class="act-img" style="width: 100%; height: 100%; object-fit: cover;" loading="eager">
+                        <img src="${typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png'}" alt="${typeInfo.name}" class="act-img" style="${imgStyle}" loading="eager">
                     </picture>
                 </div>
                 <div class="act-detail-content">
