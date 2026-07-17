@@ -572,38 +572,38 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                     <div class="act-detail-stack" style="display: flex; flex-direction: column; gap: 35px;">
                         
                         <div class="act-recommend" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
-                            <h4 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">🎯 こんな方におすすめ</h4>
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">🎯 こんな方におすすめ</h2>
                             <ul class="recommend-list" style="margin: 0; padding-left: 20px;">
                                 ${recommendHtml}
                             </ul>
                         </div>
 
                         <div class="inner-detail-block" style="background: var(--color-bg-primary); padding: 30px; border-radius: var(--radius-md);">
-                            <h4 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📖 イベント詳細</h4>
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📖 イベント詳細</h2>
                             <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted);">${typeInfo.details || ''}</p>
                         </div>
 
                         <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
-                            <h4 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">⏰ 当日の流れ</h4>
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">⏰ 当日の流れ</h2>
                             <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted);">${typeInfo.flow || ''}</p>
                         </div>
 
                         <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
-                            <h4 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">⚠️ 注意事項</h4>
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">⚠️ 注意事項</h2>
                             <ul class="recommend-list notes-list" style="margin: 0; padding-left: 20px;">
                                 ${notesHtml}
                             </ul>
                         </div>
 
                         <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
-                            <h4 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">⭐ 参加者の声</h4>
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">⭐ 参加者の声</h2>
                             <div class="reviews-container">
                                 ${reviewsHtml}
                             </div>
                         </div>
 
                         <div class="card-schedules" id="schedules-section" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
-                            <h4 class="card-schedules-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">📅 近日開催予定</h4>
+                            <h2 class="card-schedules-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">📅 近日開催予定</h2>
                             <ul class="card-schedules-list" style="list-style: none; padding: 0; margin: 0; margin-bottom: 20px;">
                                 ${scheduleHtml}
                             </ul>
@@ -617,7 +617,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
 
                         ${typeInfo.relatedColumns && typeInfo.relatedColumns.length > 0 ? `
                         <div class="related-columns-area" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
-                            <h4 class="related-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">💡 関連コラム</h4>
+                            <h2 class="related-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">💡 関連コラム</h2>
                             <div class="related-links-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px;">
                                 ${relatedBlogsHtml}
                             </div>
