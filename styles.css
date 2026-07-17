@@ -393,8 +393,14 @@ img {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     flex-shrink: 0;
-    align-self: flex-start;
+    align-self: stretch;
     border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.act-image-wrapper picture {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .act-img {

@@ -503,11 +503,22 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                 spotsLabel = `<span class="spots-badge spots-normal">残り枠: ${event.spotsLeft}名</span>`;
             }
 
+            const dateParts = event.date.split(' ');
+            const dateOnly = dateParts[0];
+            const timeOnly = dateParts[1] || '';
+            const dateObjParts = dateOnly.split('/');
+            const year = parseInt(dateObjParts[0], 10);
+            const month = parseInt(dateObjParts[1], 10) - 1;
+            const day = parseInt(dateObjParts[2], 10);
+            const daysOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
+            const dayOfWeek = daysOfWeek[new Date(year, month, day).getDay()];
+            const formattedDate = `${dateOnly}(${dayOfWeek}) ${timeOnly}`;
+
             scheduleHtml += `
                 <li style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
                     ${typeLabel}
                     <span class="date-text" style="font-size:0.9rem; color:var(--color-text-muted); font-weight:600;">
-                        ${event.date} (${locLabel})
+                        ${formattedDate} (${locLabel})
                     </span>
                     ${spotsLabel}
                 </li>
