@@ -455,6 +455,28 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         ? 'width: 100%; height: 100%; object-fit: cover;' 
         : 'width: 100%; height: auto; display: block;';
 
+    // 関連ブログ記事リンクの生成 (SEO対策用)
+    const relatedBlogMapping = {
+        catan: 'catan-beginner-tips',
+        monopoly: 'monopoly-capitalism',
+        cashflow: 'cashflow-game',
+        nisa: 'nisa-board-game',
+        communication_skills: 'board-game-friends'
+    };
+    const relatedBlogSlug = relatedBlogMapping[key];
+    const relatedBlogPost = BLOG_POSTS.find(p => p.slug === relatedBlogSlug);
+    let relatedBlogHtml = '';
+    if (relatedBlogPost) {
+        relatedBlogHtml = `
+        <div class="related-blog">
+          <p>あわせて読みたい</p>
+          <a href="/blog/${relatedBlogPost.slug}/">
+            ${relatedBlogPost.title}
+          </a>
+        </div>
+        `;
+    }
+
     // このイベントに紐づく近日日程 (過去日は除外)
     const now = new Date();
     const futureEvents = SCHEDULE_DATA.filter(event => {
@@ -623,6 +645,8 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                             </div>
                         </div>
                         ` : ''}
+
+                        ${relatedBlogHtml}
                     </div>
 
                     <div style="border-top: 1px dashed rgba(62, 50, 42, 0.1); margin: 40px 0 30px 0;"></div>
@@ -704,24 +728,24 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     // 個別イベント用のタイトルとディスクリプションのマッピング (SEO最適化)
     const eventSeoMeta = {
         catan: {
-            title: 'カタンで交渉力を学ぶ会｜東京・初心者向けボードゲーム',
-            description: 'カタンは交渉・資源管理・駆け引きの連続。仕事に使える交渉力をゲームで体験。東京（新宿・北千住）開催・初心者大歓迎・一人参加多数・初回500円。'
+            title: 'カタンで交渉力を学ぶ会｜東京・初心者歓迎ボードゲーム会',
+            description: '「カタン」を東京でやってみたい初心者の方へ。交渉・資源管理・駆け引きをゲームで体験。新宿・北千住エリア開催・一人参加大多数・初回500円・ルール説明あり。'
         },
         communication_skills: {
-            title: 'コミュニケーション力をゲームで学ぶ会｜東京・社会人向け',
-            description: '話す力・聞く力・場の読み方をボードゲームで自然に鍛える。東京（新宿・北千住）開催の社会人向けコミュニケーションゲーム会。無料・初心者・一人参加歓迎。'
+            title: 'コミュニケーション力をゲームで学ぶ会｜東京・社会人向け無料',
+            description: '話す力・聴く力・場の読み方をボードゲームで楽しく鍛える。東京（新宿・北千住）開催の社会人向けコミュニケーションゲーム会。完全無料・初心者・一人参加歓迎。'
         },
         monopoly: {
-            title: 'モノポリーで投資と交渉を学ぶ会｜東京・初心者歓迎',
-            description: 'お金の流れ・不動産投資・交渉術をモノポリーで体験。ゲームを通じて投資判断力が磨かれる。東京（新宿・北千住）開催・無料・初心者大歓迎・一人参加が大多数。'
+            title: 'モノポリーで投資を学ぶ会｜東京・初心者歓迎ボードゲーム会',
+            description: '「モノポリー」を東京でやってみたい方へ。投資・交渉・お金の流れをゲームで体験。新宿・北千住エリア開催・無料・一人参加大多数・初心者ルール説明あり。'
         },
         cashflow: {
-            title: 'お金の流れをゲームで学ぶ会｜東京・投資初心者向け',
-            description: '投資・資産形成の考え方をボードゲームで体験。難しい金融知識がゲームを通じて自然に身につく。東京（新宿・北千住）開催・500円・筆記用具と電卓（スマホ可）持参。'
+            title: 'お金の流れをゲームで学ぶ会｜東京・投資初心者向けボードゲーム',
+            description: '投資・資産形成の考え方をボードゲームで体験。難しいお金の知識がゲームで自然に身につく。東京（新宿・北千住）開催・500円・初心者歓迎・筆記用具と電卓（スマホ可）持参。'
         },
         nisa: {
-            title: 'NISAをボードゲームで学ぶ会｜東京・投資初心者歓迎',
-            description: '難しそうなNISA・投資の仕組みをボードゲームで楽しく体験。遊びながら資産形成の考え方が身につく。東京（新宿・北千住）開催・無料・初心者・一人参加歓迎。'
+            title: 'NISAをボードゲームで学ぶ会｜東京・投資初心者歓迎・無料',
+            description: '難しそうなNISA・投資の仕組みをボードゲームで楽しく体験。遊びながら資産形成の考え方が身につく。東京（新宿・北千住）開催・完全無料・初心者・一人参加歓迎。'
         }
     };
 
