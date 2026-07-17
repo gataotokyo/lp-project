@@ -515,12 +515,12 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             const formattedDate = `${dateOnly}(${dayOfWeek}) ${timeOnly}`;
 
             scheduleHtml += `
-                <li style="display: flex; flex-direction: column; gap: 6px; padding: 12px 16px; background-color: var(--color-bg-primary); border: 1px solid rgba(62, 50, 42, 0.04); border-radius: var(--radius-sm); margin-bottom: 10px;">
-                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <li class="schedule-item">
+                    <div class="schedule-meta">
                         ${typeLabel}
                         ${spotsLabel}
                     </div>
-                    <span class="date-text" style="font-size:0.92rem; color:var(--color-text-main); font-weight:700; line-height: 1.4;">
+                    <span class="date-text">
                         ${formattedDate} (${locLabel})
                     </span>
                 </li>

@@ -2871,6 +2871,58 @@ body.no-scroll {
     object-fit: cover;
 }
 
+/* ==========================================================================
+   Detail Page Schedules responsive layout
+   ========================================================================== */
+/* デフォルト (PC / 大画面表示): 1行スッキリ並べる */
+.card-schedules-list .schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.card-schedules-list .schedule-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.card-schedules-list .date-text {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+/* スマホ表示 (768px 以下): 見やすいカードブロック型に積み上げる */
+@media (max-width: 768px) {
+    .card-schedules-list .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 16px;
+        background-color: var(--color-bg-primary);
+        border: 1px solid rgba(62, 50, 42, 0.04);
+        border-radius: var(--radius-sm);
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .card-schedules-list .date-text {
+        font-size: 0.92rem;
+        color: var(--color-text-main);
+        font-weight: 700;
+        line-height: 1.4;
+    }
+}
+
 
 
 
