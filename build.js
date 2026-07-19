@@ -449,11 +449,8 @@ generatedPages.push('/events/');
 Object.keys(GAME_MEETING_TYPES).forEach(key => {
     const typeInfo = GAME_MEETING_TYPES[key];
 
-    const isCatan = key === 'catan';
-    const wrapperStyle = isCatan ? '' : ' style="aspect-ratio: auto; height: auto;"';
-    const imgStyle = isCatan 
-        ? 'width: 100%; height: 100%; object-fit: cover;' 
-        : 'width: 100%; height: auto; display: block;';
+    const wrapperStyle = ' style="aspect-ratio: auto; height: auto;"';
+    const imgStyle = 'width: 100%; height: auto; display: block;';
 
     // 関連ブログ記事リンクの生成 (SEO対策用)
     const relatedBlogMapping = {

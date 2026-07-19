@@ -37,7 +37,7 @@ const GAME_MEETING_TYPES = {
             { age: "40代女性（事務業）", text: "リソースを効率よく管理することが勝利へのカギだと感じました。新しい友達もできて嬉しかったです。" }
         ],
         relatedColumns: ["post_3", "post_7", "post_9"],
-        imagePath: "images/catan_meeting.png"
+        imagePath: "images/event_catan.jpg"
     },
     monopoly: {
         id: "monopoly",
@@ -134,7 +134,7 @@ const GAME_MEETING_TYPES = {
             { age: "30代女性（事務職）", text: "人見知りで緊張していましたが、ゲームが始まると自然と笑顔になれました。自分の意図が相手に伝わった時のスッキリ感がたまりません。" }
         ],
         relatedColumns: ["post_1", "post_2"],
-        imagePath: "images/communication_workshop.png"
+        imagePath: "images/event_communication.jpg"
     },
     nisa: {
         id: "nisa",
