@@ -242,19 +242,30 @@ function getBlogThumbnailBase(post) {
     return 'gallery_boardgame';
 }
 
+function getBlogThumbnailUrls(post) {
+    if (post.imagePath) {
+        const webpUrl = '/' + post.imagePath.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+        const fallbackUrl = '/' + post.imagePath;
+        return { webpUrl, fallbackUrl };
+    }
+    const thumbBase = getBlogThumbnailBase(post);
+    return {
+        webpUrl: `/images/${thumbBase}.webp`,
+        fallbackUrl: `/images/${thumbBase}.png`
+    };
+}
+
 // BLOG プレビュー HTML 生成
 const latestPosts = BLOG_POSTS.slice(0, 3);
 let blogHtml = '<div class="slider-wrapper">';
 latestPosts.forEach(post => {
-    const thumbBase = getBlogThumbnailBase(post);
-    const imageUrl = `/images/${thumbBase}.png`;
-    const webpUrl = `/images/${thumbBase}.webp`;
+    const { webpUrl, fallbackUrl } = getBlogThumbnailUrls(post);
 
     blogHtml += `
         <a href="/blog/${post.slug}/" class="slider-card" style="text-decoration: none; color: inherit;">
             <picture>
                 <source srcset="${webpUrl}" type="image/webp">
-                <img src="${imageUrl}" alt="${post.title}" class="slider-card-img" loading="lazy">
+                <img src="${fallbackUrl}" alt="${post.title}" class="slider-card-img" loading="lazy">
             </picture>
             <div class="slider-card-body">
                 <span class="slider-card-badge" style="color: var(--color-text-light); font-weight: 500;">${post.date}</span>
@@ -798,12 +809,12 @@ Object.keys(categories).forEach(catKey => {
     const cat = categories[catKey];
     let postsCardsHtml = '';
     cat.posts.forEach(post => {
-        const thumbBase = getBlogThumbnailBase(post);
+        const { webpUrl, fallbackUrl } = getBlogThumbnailUrls(post);
         postsCardsHtml += `
             <article class="blog-card">
                 <picture>
-                    <source srcset="/images/${thumbBase}.webp" type="image/webp">
-                    <img src="/images/${thumbBase}.png" alt="${post.title}のイメージ" class="blog-card-thumbnail" loading="lazy">
+                    <source srcset="${webpUrl}" type="image/webp">
+                    <img src="${fallbackUrl}" alt="${post.title}のイメージ" class="blog-card-thumbnail" loading="lazy">
                 </picture>
                 <span class="blog-date">${post.date}</span>
                 <h4><a href="${post.slug}/" class="blog-title-link">${post.title}</a></h4>
@@ -862,6 +873,8 @@ BLOG_POSTS.forEach((post, index) => {
     const prevPost = index > 0 ? BLOG_POSTS[index - 1] : null;
     const nextPost = index < BLOG_POSTS.length - 1 ? BLOG_POSTS[index + 1] : null;
 
+    const { webpUrl, fallbackUrl } = getBlogThumbnailUrls(post);
+
     let prevNextHtml = '';
     if (prevPost || nextPost) {
         prevNextHtml = `
@@ -885,7 +898,13 @@ BLOG_POSTS.forEach((post, index) => {
                         <span class="blog-date" style="font-size: 0.85rem; color: var(--color-text-light); font-weight: 700;">${post.date}</span>
                         <span style="font-size: 0.78rem; font-weight: 800; padding: 3px 10px; background-color: var(--color-primary-light); color: var(--color-primary-hover); border-radius: 50px;">${post.categoryName}</span>
                     </div>
-                    <h1 style="font-size: 2rem; font-weight: 900; color: var(--color-text-main); line-height: 1.35; margin-bottom: 0;">${post.title}</h1>
+                    <h1 style="font-size: 1.8rem; font-weight: 900; color: var(--color-text-main); line-height: 1.35; margin-bottom: 20px;">${post.title}</h1>
+                    <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 25px; border: 1px solid rgba(62, 50, 42, 0.05);">
+                        <picture>
+                            <source srcset="${webpUrl}" type="image/webp">
+                            <img src="${fallbackUrl}" alt="${post.title}" style="width: 100%; height: auto; display: block; max-height: 450px; object-fit: cover;" loading="eager">
+                        </picture>
+                    </div>
                 </div>
 
                 <div class="blog-detail-body" style="font-size: 1.02rem; line-height: 1.8; color: var(--color-text-muted); display: flex; flex-direction: column; gap: 20px;">
