@@ -172,7 +172,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_1",
         typeKey: "communication_skills",
-        date: "2026/07/19 20:00-21:00",
+        date: "2026/08/02 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -183,7 +183,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_2",
         typeKey: "communication_skills",
-        date: "2026/07/21 20:00-21:00",
+        date: "2026/08/04 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -194,7 +194,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_3",
         typeKey: "communication_skills",
-        date: "2026/07/22 20:00-21:00",
+        date: "2026/08/06 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -205,7 +205,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_4",
         typeKey: "communication_skills",
-        date: "2026/07/24 20:00-21:00",
+        date: "2026/08/08 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -216,7 +216,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_1_june_5",
         typeKey: "communication_skills",
-        date: "2026/07/26 20:00-21:00",
+        date: "2026/08/09 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -227,7 +227,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_2_june_1",
         typeKey: "catan",
-        date: "2026/07/19 13:00-16:00",
+        date: "2026/08/02 13:00-16:00",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -238,7 +238,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_2_june_2",
         typeKey: "catan",
-        date: "2026/07/22 13:00-16:00",
+        date: "2026/08/05 13:00-16:00",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -249,7 +249,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_2_june_3",
         typeKey: "catan",
-        date: "2026/07/24 13:00-16:00",
+        date: "2026/08/08 13:00-16:00",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -260,7 +260,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_1",
         typeKey: "monopoly",
-        date: "2026/07/19 19:30-21:30",
+        date: "2026/08/02 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
@@ -271,7 +271,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_2",
         typeKey: "monopoly",
-        date: "2026/07/22 19:30-21:30",
+        date: "2026/08/05 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
@@ -282,7 +282,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_3",
         typeKey: "monopoly",
-        date: "2026/07/24 19:30-21:30",
+        date: "2026/08/08 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -293,7 +293,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_4",
         typeKey: "monopoly",
-        date: "2026/07/26 19:30-21:30",
+        date: "2026/08/09 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
@@ -304,7 +304,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_1",
         typeKey: "cashflow",
-        date: "2026/07/19 19:00-21:00",
+        date: "2026/08/02 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -315,7 +315,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_2",
         typeKey: "cashflow",
-        date: "2026/07/22 19:00-21:00",
+        date: "2026/08/05 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -326,7 +326,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_3",
         typeKey: "cashflow",
-        date: "2026/07/24 19:00-21:00",
+        date: "2026/08/08 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -337,7 +337,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_4",
         typeKey: "cashflow",
-        date: "2026/07/29 19:00-21:00",
+        date: "2026/08/12 19:00-21:00",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -348,7 +348,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_1",
         typeKey: "nisa",
-        date: "2026/07/18 19:30-21:30",
+        date: "2026/08/01 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -359,7 +359,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_2",
         typeKey: "nisa",
-        date: "2026/07/23 19:30-21:30",
+        date: "2026/08/06 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
@@ -370,7 +370,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_3",
         typeKey: "nisa",
-        date: "2026/07/24 19:30-21:30",
+        date: "2026/08/08 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -381,7 +381,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_4",
         typeKey: "nisa",
-        date: "2026/07/29 19:30-21:30",
+        date: "2026/08/12 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
@@ -392,7 +392,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_5_june_5",
         typeKey: "nisa",
-        date: "2026/07/30 19:30-21:30",
+        date: "2026/08/15 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
@@ -583,6 +583,44 @@ const BLOG_POSTS = [
             <p>ボードゲームがビジネススクールとして極めて優れている最大の理由は、『どれだけ判断ミスをして大失敗をしても、現実のお金や信頼は一切失われない（ノーリスク）』ということです。安全なゲーム盤の上で、リスクをとって限界まで頭脳を使い、人間関係を調整するシミュレーションを重ねることで、あなたの状況判断力や対話力は日常の仕事にフィードバックできるほど洗練されていきます。遊びながら知性を磨く最高の自己投資を、ぜひ一緒に体験してみませんか？</p>
             <p>※関連するイベント詳細はこちら：<a href="/events/catan">初心者向け!カタンを楽しむ会</a></p>
             <p>※関連記事はこちら：<a href="/blog/monopoly-capitalism">『モノポリー』で遊んで学ぶ資本主義のリアルな戦術</a></p>
+        `
+    },
+    {
+        id: "post_11",
+        slug: "board-game-suspicious",
+        category: "community",
+        categoryName: "友達・コミュニティ",
+        date: "2026.07.24",
+        title: "【疑問解消】ボードゲーム会は怪しい？宗教やマルチ勧誘、ナンパ等の実態と対策",
+        summary: "「ボードゲーム会って怪しい？」「何かの勧誘をされるのでは？」という疑問や不安に対し、実態を詳しく解説。当東京ボードゲーム会が取り組んでいる安全・安心への徹底的な排除ルールについても正直にお話しします。",
+        imagePath: "images/teaching_scene.jpg",
+        content: `
+            <p>「ボードゲーム会」とインターネットで検索すると、予測キーワードに「怪しい」「宗教」「マルチ」「勧誘」といったネガティブな言葉が並んでいるのを目にすることがあります。「楽しそうだから参加してみたいけれど、本当に安全なのかな……？」と不安になってしまうのは当然のことです。</p>
+            <p>本コラムでは、なぜボードゲーム会が「怪しい」と言われてしまうのか、その実態と、私たち「東京ボードゲーム会」が初心者の方に安心して参加いただくために徹底している具体的な対策について、主催者のゆるボドゲパパが正直にお話しします。</p>
+
+            <h2>1. なぜ「ボードゲーム会は怪しい」と言われるのか？</h2>
+            <p>残念ながら、世の中にある一部のボードゲームコミュニティやイベントが、本来の目的である「ゲームを楽しむこと」ではなく、以下のような別の目的の手段として使われているケースがあるためです。</p>
+            <ul>
+                <li><strong>マルチ商法・ネットワークビジネスの勧誘:</strong> ボードゲーム（特に『キャッシュフローゲーム』など）を通じてマネーリテラシー向上を謳い、仲良くなった後に高額なセミナーや特定の商品・ビジネスへ誘導するケース。</li>
+                <li><strong>宗教団体への勧誘:</strong> フランクなサークル活動を装い、信頼関係を築いたあとに宗教の勉強会などに連れていくケース。</li>
+                <li><strong>過度なナンパ・出会い目的:</strong> ゲームの親密さを利用して、相手の嫌がるようなしつこいアプローチや連絡先交換を迫るケース。</li>
+            </ul>
+            <p>こうした一部の悪質な活動がネット上の悪い口コミとなり、「ボードゲーム会＝怪しい」というイメージに繋がってしまっているのが実情です。</p>
+
+            <h2>2. 東京ボードゲーム会が徹底している「安心安全」への取り組み</h2>
+            <p>私たちは、会社や家以外の「温かいサードプレイス（第3の居場所）」を作ることをコンセプトにしています。そのため、参加者の皆様が不安を一切感じず、純粋にゲームを楽しめる環境を維持するために、以下のルールを厳格に適用しています。</p>
+            <ul>
+                <li><strong>勧誘行為・営業活動の完全禁止:</strong> マルチ商法、ネットワークビジネス、宗教、政治活動、他イベントへの引き抜きなど、一切の営業・勧誘行為を禁止しています。万が一これらが発覚した場合、理由の如何を問わず、その場で即退場処分とし、以後の参加を一切お断り（出禁）としています。</li>
+                <li><strong>マウンティング・初心者いびりの禁止:</strong> 「なんでそんな下手なプレイをするんだ」「ルールも知らないのか」といった、相手を不快にさせるマウンティングやガチプレイの押し付けを禁止しています。当会は、主催者のおひげさんがルールを優しくレクチャーするため、初心者や人生ゲームしかやったことがない方でも安心して楽しめます。</li>
+                <li><strong>連絡先交換の強要禁止:</strong> 初対面でしつこく連絡先を聞く行為や、個人情報を強要する行為は禁止です。当会では、参加者が安心してプライベートな距離感を保てるように配慮しています。</li>
+            </ul>
+
+            <h2>3. 初心者や一人参加でも大丈夫？</h2>
+            <p>当会に参加される方の約9割はお一人でのご参加です。また、半分以上が「普段ほとんどボードゲームをやったことがない」という初心者の方です。</p>
+            <p>主催者の私自身も、葛飾区で3人の子どもを育てる普通のパパであり、会社員です。怪しい業者やビジネスの裏は一切ありません。皆さんがリラックスして、フラットに会話ができるアットホームな空気感を何よりも大切にしています。</p>
+            <p>もし少しでも気になる点や不安なことがあれば、いつでも予約フォームのメッセージやメールでお気軽にお問い合わせください。皆さまと卓を囲んで、笑顔でボードゲームを楽しめる日を心よりお待ちしております！</p>
+            <p>※関連するイベント詳細はこちら：<a href="/reservation/">日程・予約ページはこちら</a></p>
+            <p>※関連記事はこちら：<a href="/blog/beginner-guide-tokyo">初めてでも怖くない！失敗しない東京ボードゲーム会の選び方</a></p>
         `
     }
 ];
