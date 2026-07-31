@@ -126,6 +126,16 @@ const organizationJsonLd = {
     "sameAs": []
 };
 
+// トップページ専用 Organization 構造化データ
+const homeOrganizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://tokyo-boardgame-club.netlify.app/#organization",
+    "name": "東京ボードゲーム会",
+    "url": "https://tokyo-boardgame-club.netlify.app/",
+    "description": "東京エリアで初心者や社会人向けにボードゲーム会を运营するコミュニティ"
+};
+
 // FAQ 構造化データ
 const faqJsonLd = {
     "@context": "https://schema.org",
@@ -285,7 +295,7 @@ const homeHtml = renderTemplate(homeContent, {
     description: '交渉力・投資・判断力がゲームで自然に身につく。東京（新宿・北千住）開催の社会人向けボードゲーム会。20〜30代・一人参加大多数・初心者歓迎・参加費500円〜。',
     canonical: domain + '/',
     pathDepth: './',
-    jsonLd: [organizationJsonLd, faqJsonLd]
+    jsonLd: [homeOrganizationJsonLd]
 });
 fs.writeFileSync(path.join(distDir, 'index.html'), homeHtml);
 generatedPages.push('/');
@@ -466,6 +476,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     // 関連ブログ記事リンクの生成 (SEO対策用)
     const relatedBlogMapping = {
         catan: 'catan-beginner-tips',
+        "catan-women": 'catan-beginner-tips',
         monopoly: 'monopoly-capitalism',
         cashflow: 'cashflow-game',
         nisa: 'nisa-board-game',
