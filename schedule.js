@@ -457,6 +457,62 @@ const SCHEDULE_DATA = [
 
 const BLOG_POSTS = [
     {
+        id: "post_21",
+        slug: "ranking-beginners",
+        category: "column",
+        categoryName: "お役立ちコラム",
+        date: "2026.08.06",
+        title: "【200種から厳選】大人もハマる初心者向けボードゲーム人気ランキングTOP5",
+        summary: "「ボードゲーム 人気」で検索して迷っている方へ。200種類以上遊んだ東京ボードゲーム会主催者が、初対面の大人同士でも絶対に盛り上がる初心者向けおすすめランキングを紹介します。",
+        imagePath: "images/hero_game.jpg",
+        content: `
+            <p>「ボードゲーム 人気」「ボードゲーム ランキング」とネットで検索すると、星の数ほどゲームが出てきて、「結局、初心者の自分はどれを買えば（遊べば）いいの？」と迷ってしまいませんか？</p>
+            <p>ご覧いただきありがとうございます！東京ボードゲーム会を主催している「ゆるボドゲパパ」です。<br>私はこれまで200種類以上のボードゲームを遊び尽くしてきました。普段はIT企業でプロジェクトマネージャー（PM）として働いているため、「どうすれば初対面の人やチームが打ち解けられるか」を常に考えています。また、家では16歳の長女、13歳の長男、6歳の末っ子という年齢の離れた子どもたちと一緒に遊ぶことも多く、「誰でもすぐにルールが理解できて、ハンデなしで熱中できるゲーム」を見極める目には自信があります。</p>
+            <p>今回は、数ある人気ゲームの中から「初心者の大人が、初対面同士で遊んでも絶対に盛り上がる」という基準で厳選した、おすすめランキングTOP5をご紹介します！</p>
+            
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第1位：カタン（CATAN）</h3>
+            <p><strong>【おすすめポイント：最強のコミュニケーションツール】</strong><br>
+            世界で数千万個以上売れている、言わずと知れた大人気ボードゲームです。無人島を開拓していくゲームですが、最大の特徴は「プレイヤー同士の交渉」があること。<br>
+            「鉄をあげるから、麦をくれない？」という会話が必然的に生まれるため、初対面でも一瞬で心の距離が縮まります。<br>
+            <a href="/blog/catan-rules/" style="font-weight: 700; color: var(--color-primary-hover);">👉 カタンの詳しいルールと魅力についての解説記事はこちら</a></p>
+            
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第2位：モノポリー（Monopoly）</h3>
+            <p><strong>【おすすめポイント：遊びながら「お金と投資」が学べる】</strong><br>
+            サイコロを振ってマスを進み、不動産を売買してお金持ちを目指す世界的な名作です。ただのすごろくではなく、「資産を買う」「交渉する」というビジネスセンスが自然と身につきます。大人が本気で一喜一憂できる奥深さが魅力です。<br>
+            <a href="/blog/monopoly-rules/" style="font-weight: 700; color: var(--color-primary-hover);">👉 モノポリーで学ぶ投資の本質！詳しい解説記事はこちら</a></p>
+            
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第3位：はぁっていうゲーム</h3>
+            <p><strong>【おすすめポイント：ルール説明10秒！爆笑必至のアイスブレイク】</strong><br>
+            配られたお題（例えば「怒りの『はぁ』」や「失恋の『はぁ』」など）を、声と表情だけで演じ分けるパーティーゲームです。演技力のなさに爆笑が起き、非言語コミュニケーションの良いトレーニングにもなります。</p>
+            
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第4位：キャッシュフローゲーム</h3>
+            <p><strong>【おすすめポイント：より本格的にお金の教養を身につける】</strong><br>
+            大ベストセラー『金持ち父さん 貧乏父さん』の著者が考案した、本格的な投資シミュレーションゲームです。自分の財務諸表を鉛筆で書き込みながら進めるため、「給料以外でお金を生み出す（ラットレースを抜け出す）」感覚をリアルに体験できます。<br>
+            <a href="/blog/cashflow-game/" style="font-weight: 700; color: var(--color-primary-hover);">👉 キャッシュフローゲーム体験会の詳細・見極め方はこちら</a></p>
+            
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第5位：イト（ito）</h3>
+            <p><strong>【おすすめポイント：価値観のズレを楽しむ協力ゲーム】</strong><br>
+            「1〜100の数字」が書かれたカードを各自が引き、お題（例：人気の旅行先）に合わせて「自分の数字の大きさ」を言葉で表現し、全員で小さい順に出していく協力ゲームです。「え、ハワイって数字で言うと80くらいじゃない？」など、人それぞれの価値観の違いが見えて大盛り上がりします。</p>
+            
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆ランキングのゲームはすべて「東京ボードゲーム会」で遊べます！</h3>
+            <p>いかがでしたでしょうか？「面白そうだけど、自分で買ってルールを覚えるのは大変そう…」という方は、ぜひ東京ボードゲーム会のイベントへ遊びに来てください！<br>
+            北千住や新宿、東京駅周辺の会場で定期的に開催しており、私がイチからルールを優しくレクチャーします。お一人での参加や、完全な初心者の方がほとんどですので、手ぶらでお気軽にどうぞ！</p>
+            
+            <!-- リンクボタン -->
+            <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px; align-items: center;">
+                <a href="/events/" class="cta-button primary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-sm);">
+                    <span>🎲 各種イベント（体験会）一覧はこちら</span><span class="arrow">→</span>
+                </a>
+                <a href="/reservation/" class="cta-button secondary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(62, 50, 42, 0.1);">
+                    <span>📅 日程の確認・参加申し込みはこちら</span><span class="arrow">→</span>
+                </a>
+                <a href="/" class="cta-button secondary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(62, 50, 42, 0.1);">
+                    <span>🏠 東京ボードゲーム会 トップページへ</span><span class="arrow">→</span>
+                </a>
+            </div>
+        `
+    },
+    {
         id: "post_17",
         slug: "monopoly-rules",
         category: "investment",
