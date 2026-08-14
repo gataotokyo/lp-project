@@ -903,7 +903,7 @@ BLOG_POSTS.forEach((post, index) => {
                 <a href="/blog/" class="cta-button secondary" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.9rem; border-radius: var(--radius-sm); border: 1px solid rgba(62, 50, 42, 0.1);"><span class="arrow">←</span> コラム一覧へ戻る</a>
             </div>
 
-            <div class="blog-detail-wrapper" style="background-color: var(--color-bg-white); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-md); border: 1px solid rgba(62, 50, 42, 0.04);">
+            <div class="blog-detail-wrapper" style="background-color: var(--color-bg-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid rgba(62, 50, 42, 0.04);">
                 <div class="blog-detail-header" style="margin-bottom: 30px;">
                     <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
                         <span class="blog-date" style="font-size: 0.85rem; color: var(--color-text-light); font-weight: 700;">${post.date}</span>
@@ -965,24 +965,24 @@ BLOG_POSTS.forEach((post, index) => {
 
     const blogSeoMeta = {
         'ranking-beginners': {
-            title: '【200種から厳選】大人もハマる初心者向けボードゲーム人気ランキングTOP5 | 東京ボードゲーム会',
+            title: '【200種から厳選】大人もハマる初心者向けボードゲーム人気ランキングTOP5',
             description: '「ボードゲーム 人気」で検索して迷っている方へ。200種類以上遊んだ東京ボードゲーム会主催者が、初対面の大人同士でも絶対に盛り上がる初心者向けおすすめランキングを紹介します。'
         },
         'monopoly-rules': {
-            title: 'モノポリーとは？名著『モノポリーで学ぶお金持ちの法則』に学ぶ基本ルールと投資の本質 | 東京ボードゲーム会',
-            description: '世界中で愛されるボードゲーム「モノポリー」とは？基本ルールから、書籍に学ぶお金・不動産投資の考え方が自然と身につく魅力を初心者向けにわかりやすく解説します。'
+            title: 'モノポリーとは？名著『モノポリーで学ぶお金持ちの法則』に学ぶ基本ルールと投資の本質',
+            description: '世界中で愛されるボードゲーム「モノポリー」の基本ルールと、書籍に学ぶ投資の本質を解説。ただの貯金がなぜ破産を招くのか、現実世界のインフレ対策や投資の必要性を絡めてわかりやすく紹介します。'
         },
         'catan-rules': {
-            title: '【初心者向け】ボードゲーム「カタン」のルールと遊び方を世界一わかりやすく解説 | 東京ボードゲーム会',
-            description: '世界中で大ヒットしているボードゲーム「カタン」の基本ルールを、初心者向けにどこよりもわかりやすく解説します。'
+            title: '【初心者向け】ボードゲーム「カタン」のルールと攻略・遊び方を世界一わかりやすく解説',
+            description: '世界中で大ヒットしているボードゲーム「カタン」の基本ルールと、初心者がすぐに実践できる簡単な攻略のコツを、初心者向けにどこよりもわかりやすく解説します。'
         },
         'cashflow-game': {
-            title: '【東京】キャッシュフローゲーム体験前に読みたい！遊びながらお金の教養を学ぶ',
-            description: '東京（北千住・新宿・東京駅など）でキャッシュフローゲームを体験したい初心者向けコラム。無理な勧誘や営業行為のないオープンな環境の見分け方や学べることを解説します。'
+            title: '【東京】キャッシュフローゲーム体験イベント｜無理な勧誘なしでお金の教養を学ぶ',
+            description: '東京（北千住・新宿・東京駅など）でキャッシュフローゲームを体験したい初心者向けコラム。無理な勧誘や営業行為のないオープンな体験イベントの見分け方や学べることを解説します。'
         },
         'communication-skills': {
             title: 'コミュニケーション能力を高めるには？「低い」と悩む大人にボードゲームが最適な理由',
-            description: 'コミュニケーション能力を上げる方法に悩む社会人へ。自己PRや仕事にも活きる、ボードゲームを通じた自然なコミュ力向上の秘訣をお伝えします。'
+            description: 'コミュ力不足に悩む大人の社会人へ。IT企業のPMが、実体験から感じる「コミュ力の壁」を解説。ボードゲームを通じた非言語対話や交渉術が、現実の仕事や交渉力にどう活きるかの秘訣をお伝えします。'
         },
         'cashflow-assets': {
             title: 'ボードゲームでお金の流れを学ぶ方法｜社会人向け入門ガイド',
