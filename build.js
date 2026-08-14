@@ -15,7 +15,7 @@ const { GAME_MEETING_TYPES, SCHEDULE_DATA, BLOG_POSTS } = require(tempFile);
 fs.unlinkSync(tempFile);
 
 // 本番ドメイン
-const domain = 'https://tokyo-boardgame-club.netlify.app';
+const domain = 'https://tokyo-boardgame-club.com';
 
 // 記録用の生成されたパス一覧
 const generatedPages = [];
@@ -130,9 +130,9 @@ const organizationJsonLd = {
 const homeOrganizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://tokyo-boardgame-club.netlify.app/#organization",
+    "@id": "https://tokyo-boardgame-club.com/#organization",
     "name": "東京ボードゲーム会",
-    "url": "https://tokyo-boardgame-club.netlify.app/",
+    "url": "https://tokyo-boardgame-club.com/",
     "description": "東京エリアで初心者や社会人向けにボードゲーム会を运营するコミュニティ"
 };
 
