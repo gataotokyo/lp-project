@@ -311,6 +311,17 @@ const SCHEDULE_DATA = [
         spotsLeft: 5
     },
     {
+        id: "event_2_september_1",
+        typeKey: "catan",
+        date: "2026/09/01 19:30-21:30",
+        location: "北千住",
+        locationAddress: "北千住駅前貸し会議室（東京都足立区千住旭町41-5）",
+        mapUrl: "https://maps.app.goo.gl/WbZPbFHm91MM8onMA",
+        locationUrl: "",
+        capacity: 8,
+        spotsLeft: 8
+    },
+    {
         id: "event_3_june_1",
         typeKey: "monopoly",
         date: "2026/08/02 19:30-21:30",
