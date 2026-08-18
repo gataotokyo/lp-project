@@ -205,110 +205,112 @@ const SCHEDULE_DATA = [
     {
         id: "event_catan_women_1",
         typeKey: "catan-women",
-        date: "2026/08/16 13:00-16:00",
+        date: "2026/08/26 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://maps.google.com/?q=新宿駅",
-        capacity: 8,
-        spotsLeft: 4
+        locationUrl: "undefined",
+        capacity: 4,
+        spotsLeft: 2
     },
     {
         id: "event_catan_women_2",
         typeKey: "catan-women",
-        date: "2026/08/23 13:00-16:00",
+        date: "2026/09/13 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
-        capacity: 8,
-        spotsLeft: 6
+        locationUrl: "undefined",
+        capacity: 4,
+        spotsLeft: 3
     },
     {
         id: "event_1_june_1",
         typeKey: "communication_skills",
-        date: "2026/08/02 20:00-21:00",
+        date: "2026/08/27 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
-        capacity: 10,
-        spotsLeft: 0 // 満席テスト用
+        capacity: 4,
+        spotsLeft: 0
     },
     {
         id: "event_1_june_2",
         typeKey: "communication_skills",
-        date: "2026/08/04 20:00-21:00",
+        date: "2026/09/03 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
-        capacity: 10,
-        spotsLeft: 2 // 残り2名（オレンジ）
+        capacity: 4,
+        spotsLeft: 1
     },
     {
         id: "event_1_june_3",
         typeKey: "communication_skills",
-        date: "2026/08/06 20:00-21:00",
+        date: "2026/09/10 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
-        capacity: 10,
-        spotsLeft: 1 // 残り1名（赤）
+        capacity: 4,
+        spotsLeft: 1
     },
     {
         id: "event_1_june_4",
         typeKey: "communication_skills",
-        date: "2026/08/08 20:00-21:00",
+        date: "2026/09/17 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
-        capacity: 10,
-        spotsLeft: 6 // 3名以上（通常・緑）
+        capacity: 4,
+        spotsLeft: 2
     },
     {
         id: "event_1_june_5",
         typeKey: "communication_skills",
-        date: "2026/08/09 20:00-21:00",
+        date: "2026/09/24 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
-        capacity: 10,
+        capacity: 4,
         spotsLeft: 0
     },
     {
         id: "event_2_june_1",
         typeKey: "catan",
-        date: "2026/08/02 13:00-16:00",
+        date: "2026/08/29 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
-        capacity: 8,
-        spotsLeft: 3
+        capacity: 4,
+        spotsLeft: 2
     },
     {
         id: "event_2_june_2",
         typeKey: "catan",
-        date: "2026/08/05 13:00-16:00",
+        date: "2026/09/05 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
-        capacity: 8,
+        capacity: 4,
         spotsLeft: 1
     },
     {
         id: "event_2_june_3",
         typeKey: "catan",
-        date: "2026/08/08 13:00-16:00",
+        date: "2026/09/12 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
-        capacity: 8,
-        spotsLeft: 5
+        capacity: 4,
+        spotsLeft: 3
     },
     {
         id: "event_2_september_1",
@@ -318,151 +320,151 @@ const SCHEDULE_DATA = [
         locationAddress: "北千住駅前貸し会議室（東京都足立区千住旭町41-5）",
         mapUrl: "https://maps.app.goo.gl/WbZPbFHm91MM8onMA",
         locationUrl: "",
-        capacity: 8,
-        spotsLeft: 8
+        capacity: 4,
+        spotsLeft: 2
     },
     {
         id: "event_3_june_1",
         typeKey: "monopoly",
-        date: "2026/08/02 19:30-21:30",
+        date: "2026/08/30 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
         locationUrl: "",
-        capacity: 6,
+        capacity: 4,
         spotsLeft: 0
     },
     {
         id: "event_3_june_2",
         typeKey: "monopoly",
-        date: "2026/08/05 19:30-21:30",
+        date: "2026/09/07 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
-        capacity: 6,
-        spotsLeft: 2
+        capacity: 4,
+        spotsLeft: 1
     },
     {
         id: "event_3_june_3",
         typeKey: "monopoly",
-        date: "2026/08/08 19:30-21:30",
+        date: "2026/09/14 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
-        capacity: 6,
-        spotsLeft: 4
+        capacity: 4,
+        spotsLeft: 3
     },
     {
         id: "event_3_june_4",
         typeKey: "monopoly",
-        date: "2026/08/09 19:30-21:30",
+        date: "2026/09/21 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
         locationUrl: "",
-        capacity: 6,
+        capacity: 4,
         spotsLeft: 1
     },
     {
         id: "event_4_june_1",
         typeKey: "cashflow",
-        date: "2026/08/02 19:00-21:00",
+        date: "2026/08/28 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
-        capacity: 8,
+        capacity: 4,
         spotsLeft: 0
     },
     {
         id: "event_4_june_2",
         typeKey: "cashflow",
-        date: "2026/08/05 19:00-21:00",
+        date: "2026/09/04 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
-        capacity: 8,
-        spotsLeft: 2
+        capacity: 4,
+        spotsLeft: 1
     },
     {
         id: "event_4_june_3",
         typeKey: "cashflow",
-        date: "2026/08/08 19:00-21:00",
+        date: "2026/09/11 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
-        capacity: 8,
-        spotsLeft: 5
+        capacity: 4,
+        spotsLeft: 3
     },
     {
         id: "event_4_june_4",
         typeKey: "cashflow",
-        date: "2026/08/12 19:00-21:00",
+        date: "2026/09/18 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
-        capacity: 8,
-        spotsLeft: 7
+        capacity: 4,
+        spotsLeft: 4
     },
     {
         id: "event_5_june_1",
         typeKey: "nisa",
-        date: "2026/08/01 19:30-21:30",
+        date: "2026/09/02 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
-        capacity: 6,
+        capacity: 4,
         spotsLeft: 1
     },
     {
         id: "event_5_june_2",
         typeKey: "nisa",
-        date: "2026/08/06 19:30-21:30",
+        date: "2026/09/09 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
-        capacity: 6,
+        capacity: 4,
         spotsLeft: 0
     },
     {
         id: "event_5_june_3",
         typeKey: "nisa",
-        date: "2026/08/08 19:30-21:30",
+        date: "2026/09/16 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
-        capacity: 6,
-        spotsLeft: 3
+        capacity: 4,
+        spotsLeft: 2
     },
     {
         id: "event_5_june_4",
         typeKey: "nisa",
-        date: "2026/08/12 19:30-21:30",
+        date: "2026/09/23 19:30-21:30",
         location: "北千住",
         locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
-        capacity: 6,
-        spotsLeft: 2
+        capacity: 4,
+        spotsLeft: 1
     },
     {
         id: "event_5_june_5",
         typeKey: "nisa",
-        date: "2026/08/15 19:30-21:30",
+        date: "2026/09/30 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
-        capacity: 6,
-        spotsLeft: 5
+        capacity: 4,
+        spotsLeft: 3
     }
 ];
 
