@@ -203,17 +203,6 @@ const GAME_MEETING_TYPES = {
 
 const SCHEDULE_DATA = [
     {
-        id: "event_catan_women_1",
-        typeKey: "catan-women",
-        date: "2026/08/26 19:30-21:30",
-        location: "新宿",
-        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
-        mapUrl: "https://maps.google.com/?q=新宿駅",
-        locationUrl: "undefined",
-        capacity: 4,
-        spotsLeft: 2
-    },
-    {
         id: "event_catan_women_2",
         typeKey: "catan-women",
         date: "2026/09/13 19:30-21:30",
@@ -280,39 +269,6 @@ const SCHEDULE_DATA = [
         spotsLeft: 0
     },
     {
-        id: "event_2_june_1",
-        typeKey: "catan",
-        date: "2026/08/29 19:30-21:30",
-        location: "新宿",
-        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
-        mapUrl: "https://x.gd/NEcsM",
-        locationUrl: "",
-        capacity: 4,
-        spotsLeft: 2
-    },
-    {
-        id: "event_2_june_2",
-        typeKey: "catan",
-        date: "2026/09/05 19:30-21:30",
-        location: "新宿",
-        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
-        mapUrl: "https://x.gd/NEcsM",
-        locationUrl: "",
-        capacity: 4,
-        spotsLeft: 1
-    },
-    {
-        id: "event_2_june_3",
-        typeKey: "catan",
-        date: "2026/09/12 19:30-21:30",
-        location: "新宿",
-        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
-        mapUrl: "https://x.gd/NEcsM",
-        locationUrl: "",
-        capacity: 4,
-        spotsLeft: 3
-    },
-    {
         id: "event_2_september_1",
         typeKey: "catan",
         date: "2026/09/01 19:30-21:30",
@@ -324,9 +280,42 @@ const SCHEDULE_DATA = [
         spotsLeft: 2
     },
     {
+        id: "event_2_june_1",
+        typeKey: "catan",
+        date: "2026/09/08 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
+        mapUrl: "https://x.gd/NEcsM",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 2
+    },
+    {
+        id: "event_2_june_2",
+        typeKey: "catan",
+        date: "2026/09/15 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
+        mapUrl: "https://x.gd/NEcsM",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 1
+    },
+    {
+        id: "event_2_june_3",
+        typeKey: "catan",
+        date: "2026/09/29 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
+        mapUrl: "https://x.gd/NEcsM",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 3
+    },
+    {
         id: "event_3_june_1",
         typeKey: "monopoly",
-        date: "2026/08/30 19:30-21:30",
+        date: "2026/08/31 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
@@ -348,7 +337,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_3",
         typeKey: "monopoly",
-        date: "2026/09/14 19:30-21:30",
+        date: "2026/09/20 19:30-21:30",
         location: "新宿",
         locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
         mapUrl: "https://x.gd/NEcsM",
@@ -359,7 +348,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_3_june_4",
         typeKey: "monopoly",
-        date: "2026/09/21 19:30-21:30",
+        date: "2026/09/28 19:30-21:30",
         location: "東京駅付近",
         locationAddress: "東京都中央区八重洲レンタルスペース（東京駅徒歩3分）",
         mapUrl: "https://maps.google.com/?q=東京駅八重洲口",
@@ -403,7 +392,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_4_june_4",
         typeKey: "cashflow",
-        date: "2026/09/18 19:30-21:30",
+        date: "2026/09/27 19:30-21:30",
         location: "渋谷",
         locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
         mapUrl: "https://maps.google.com/?q=渋谷駅",
