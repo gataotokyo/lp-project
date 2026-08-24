@@ -380,13 +380,67 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     const typeInfo = GAME_MEETING_TYPES[key];
     const webpImagePath = typeInfo.imagePath ? '/' + typeInfo.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/fv_bg.webp';
     const fallbackImagePath = typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png';
+
+    // 直近の開催予定日を抽出（最大3件）
+    const now = new Date();
+    const futureEvents = SCHEDULE_DATA.filter(event => {
+        const dateStr = event.date.split(' ')[0];
+        const eventDate = new Date(dateStr + ' 23:59:59');
+        return event.typeKey === key && eventDate >= now;
+    });
+
+    let scheduleListHtml = '';
+    if (futureEvents.length > 0) {
+        futureEvents.slice(0, 3).forEach(event => {
+            const dateParts = event.date.split(' ');
+            const dateOnly = dateParts[0]; // "2026/09/01"
+            const timeOnly = dateParts[1] || ''; // "19:30-21:30"
+            const dateObjParts = dateOnly.split('/');
+            const year = parseInt(dateObjParts[0], 10);
+            const month = parseInt(dateObjParts[1], 10) - 1;
+            const day = parseInt(dateObjParts[2], 10);
+            const daysOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
+            const dayOfWeek = daysOfWeek[new Date(year, month, day).getDay()];
+            const formattedDate = `${month + 1}/${day}(${dayOfWeek}) ${timeOnly}`;
+            
+            const isOnline = event.location === 'オンライン';
+            const locLabel = isOnline ? 'Zoom' : event.location;
+            
+            let spotsText = '';
+            if (event.spotsLeft === 0) {
+                spotsText = '<span class="spots-status spots-full">[満席]</span>';
+            } else if (event.spotsLeft <= 2) {
+                spotsText = `<span class="spots-status spots-urgent">[残り${event.spotsLeft}枠]</span>`;
+            } else {
+                spotsText = `<span class="spots-status spots-normal">[残り${event.spotsLeft}枠]</span>`;
+            }
+
+            scheduleListHtml += `
+                <li class="upcoming-item">
+                    <span class="upcoming-date">📅 ${formattedDate} (${locLabel})</span>
+                    ${spotsText}
+                </li>
+            `;
+        });
+    } else {
+        scheduleListHtml = `<li class="upcoming-no-schedule">現在調整中。確定次第公開します！</li>`;
+    }
+
     eventCardsHtml += `
         <article class="activity-card animate-on-scroll fade-up visible">
-            <div class="act-image-wrapper">
-                <picture>
-                    <source srcset="${webpImagePath}" type="image/webp">
-                    <img src="${fallbackImagePath}" alt="${typeInfo.name}" class="act-img" loading="lazy">
-                </picture>
+            <div class="act-left-column">
+                <div class="act-image-wrapper-nested">
+                    <picture>
+                        <source srcset="${webpImagePath}" type="image/webp">
+                        <img src="${fallbackImagePath}" alt="${typeInfo.name}" class="act-img" loading="lazy">
+                    </picture>
+                </div>
+                <div class="act-upcoming-box">
+                    <h4 class="upcoming-title">📅 直近の開催予定</h4>
+                    <ul class="upcoming-list">
+                        ${scheduleListHtml}
+                    </ul>
+                </div>
             </div>
             <div class="act-content">
                 <div class="act-meta" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
@@ -635,6 +689,15 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         <div class="inner-detail-block" style="background: var(--color-bg-primary); padding: 30px; border-radius: var(--radius-md);">
                             <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📖 イベント詳細</h2>
                             <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted);">${typeInfo.details || ''}</p>
+                        </div>
+
+                        <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📍 会場案内・開催場所</h2>
+                            <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted); margin: 0;">
+                                ${typeInfo.badgeClass === 'online' ? 
+                                    'オンライン開催（Zoomを使用します。お申し込み後に接続用のURLを個別にお送りいたします。）' : 
+                                    '新宿駅、北千住駅、東京駅などの周辺にある、アクセスが良く清潔な駅前レンタルスペースを利用しています。<br><br><span style="color: var(--color-primary-hover); font-weight: 700;">※参加者の方のプライバシーと安全を考慮し、詳細な会場住所や部屋番号は、お申し込みいただいた方にのみ個別にご案内しております。</span>'}
+                            </p>
                         </div>
 
                         <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
