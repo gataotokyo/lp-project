@@ -688,7 +688,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
 
                         <div class="inner-detail-block" style="background: var(--color-bg-primary); padding: 30px; border-radius: var(--radius-md);">
                             <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📖 イベント詳細</h2>
-                            <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted);">${typeInfo.details || ''}</p>
+                            <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted); white-space: pre-line;">${typeInfo.details || ''}</p>
                         </div>
 
                         <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
