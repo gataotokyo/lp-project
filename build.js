@@ -465,7 +465,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         <span class="info-icon">📍</span>
                         <div class="info-text-wrapper">
                             <span class="info-label">開催場所</span>
-                            <span class="info-val" style="font-size:0.78rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン' : '新宿・北千住エリア（申込後に詳細をご案内）'}</span>
+                            <span class="info-val" style="font-size:0.78rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン' : '新宿駅・北千住駅周辺の駅前レンタルスペース'}</span>
                         </div>
                     </div>
                     <div class="info-item">
@@ -655,7 +655,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                             <span class="info-icon">📍</span>
                             <div class="info-text-wrapper">
                                 <span class="info-label">開催場所</span>
-                                <span class="info-val" style="font-size:0.92rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン(Zoom)' : '新宿・北千住エリア（申込後に詳細をご案内）'}</span>
+                                <span class="info-val" style="font-size:0.92rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン(Zoom)' : '新宿駅・北千住駅・東京駅周辺のアクセス良好な駅前レンタルスペース ※お申込み後に詳細な会場をメールでご案内します'}</span>
                             </div>
                         </div>
                         <div class="info-item">
@@ -824,7 +824,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     // 個別イベント用のタイトルとディスクリプションのマッピング (SEO最適化)
     const eventSeoMeta = {
         catan: {
-            title: 'カタンで交渉力を学ぶ会｜東京・初心者歓迎ボードゲーム会',
+            title: 'カタン会（東京）初心者向け｜交渉力が身につくボードゲーム会',
             description: '「カタン」を東京でやってみたい初心者の方へ。交渉・資源管理・駆け引きをゲームで体験。新宿・北千住エリア開催・一人参加大多数・初回500円・ルール説明あり。'
         },
         communication_skills: {

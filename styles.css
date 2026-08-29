@@ -3303,6 +3303,115 @@ body.no-scroll {
     }
 }
 
+/* [2.2] Why Choose Us Section (ボードゲームカフェとの違い) */
+.why-section {
+    padding: 100px 40px;
+    background: linear-gradient(180deg, var(--color-bg-white) 0%, var(--color-bg-primary) 100%);
+}
+
+.why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-container .section-en {
+    text-align: center;
+    color: rgba(0, 180, 216, 0.08);
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 0 0 -20px 0;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.why-container .section-ja {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--color-text-main);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.why-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.why-card {
+    flex: 1;
+    background-color: var(--color-bg-white);
+    padding: 40px 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 180, 216, 0.05);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0, 180, 216, 0.15);
+}
+
+.why-card-icon {
+    font-size: 2.5rem;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-hover);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.why-card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.why-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* レスポンシブ対応 (モバイル表示) */
+@media (max-width: 768px) {
+    .why-section {
+        padding: 60px 20px;
+    }
+    
+    .why-container .section-en {
+        font-size: 3rem;
+        margin-bottom: -15px;
+    }
+    
+    .why-container .section-ja {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+    }
+    
+    .why-grid {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .why-card {
+        padding: 30px 20px;
+    }
+}
+
 
 
 
