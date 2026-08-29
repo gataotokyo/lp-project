@@ -105,11 +105,12 @@ if (fs.existsSync(distDir)) {
 }
 fs.mkdirSync(distDir);
 
-// 1. 静的リソース (images, styles.css, schedule.js, script.js) のコピー
+// 1. 静的リソース (images, styles.css, schedule.js, script.js, _redirects) のコピー
 fs.copyFileSync(path.join(lpProjectDir, 'styles.css'), path.join(distDir, 'styles.css'));
 fs.copyFileSync(path.join(lpProjectDir, 'schedule.js'), path.join(distDir, 'schedule.js'));
 fs.copyFileSync(path.join(lpProjectDir, 'script.js'), path.join(distDir, 'script.js'));
 fs.copyFileSync(path.join(lpProjectDir, 'google7532574a4c3445c9.html'), path.join(distDir, 'google7532574a4c3445c9.html'));
+fs.copyFileSync(path.join(lpProjectDir, '_redirects'), path.join(distDir, '_redirects'));
 copyDir(path.join(lpProjectDir, 'images'), path.join(distDir, 'images'));
 
 // 全ページ共通 Organization 構造化データ
