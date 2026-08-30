@@ -3412,6 +3412,33 @@ body.no-scroll {
     }
 }
 
+/* 予約フォーム注意事項のスタイル */
+.reservation-notice {
+  background-color: #FFF8E1;
+  border: 1px solid #FFD54F;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.reservation-notice-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #E65100;
+}
+
+.reservation-notice ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.reservation-notice li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
 
 
 
