@@ -460,6 +460,14 @@ img {
     background-color: #faf8f6;
 }
 
+.act-upcoming-pc {
+    display: flex;
+}
+
+.act-upcoming-sp {
+    display: none;
+}
+
 .upcoming-title {
     font-size: 0.85rem;
     font-weight: 800;
@@ -1502,8 +1510,18 @@ input:focus, select:focus, textarea:focus {
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
     
-    .act-upcoming-box {
-        padding: 15px 20px;
+    .act-upcoming-pc {
+        display: none;
+    }
+    
+    .act-upcoming-sp {
+        display: flex;
+        padding: 14px 16px;
+        margin-top: 2px;
+        margin-bottom: 18px;
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(62, 50, 42, 0.08);
+        background-color: #faf8f6;
     }
     
     .act-content {

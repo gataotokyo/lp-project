@@ -436,7 +436,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         <img src="${fallbackImagePath}" alt="${typeInfo.name}" class="act-img" loading="lazy">
                     </picture>
                 </div>
-                <div class="act-upcoming-box">
+                <div class="act-upcoming-box act-upcoming-pc">
                     <h4 class="upcoming-title">📅 直近の開催予定</h4>
                     <ul class="upcoming-list">
                         ${scheduleListHtml}
@@ -450,6 +450,14 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                 </div>
                 <h3 class="act-card-title"><a href="${key}/">${typeInfo.name}</a></h3>
                 <p class="act-subtitle" style="font-size:0.9rem; color:var(--color-primary-hover); font-weight:700; margin-top:-8px; margin-bottom:12px;">${typeInfo.subtitle || ''}</p>
+                
+                <div class="act-upcoming-box act-upcoming-sp">
+                    <h4 class="upcoming-title">📅 直近の開催予定</h4>
+                    <ul class="upcoming-list">
+                        ${scheduleListHtml}
+                    </ul>
+                </div>
+
                 <p class="act-desc">${typeInfo.desc}</p>
                 
                 <!-- Quick Info Grid -->
