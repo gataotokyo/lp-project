@@ -622,6 +622,13 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         </div>
     `).join('\n');
     
+    const faqHtml = typeInfo.faq ? typeInfo.faq.map(item => `
+        <div class="faq-item" style="margin-bottom: 20px; padding: 20px; background: var(--color-bg-primary); border-radius: var(--radius-sm); border-left: 4px solid var(--color-primary);">
+            <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 10px;">Q. ${item.q}</h3>
+            <p style="font-size: 0.98rem; line-height: 1.7; color: var(--color-text-muted); margin: 0;">A. ${item.a}</p>
+        </div>
+    `).join('\n') : '';
+
     const relatedBlogsHtml = (typeInfo.relatedColumns || []).map(postId => {
         const post = BLOG_POSTS.find(p => p.id === postId);
         return post ? `<a href="/blog/${post.slug}/" class="related-blog-link" style="display: block; padding: 10px; background-color: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; color: var(--color-primary-hover); transition: var(--transition-smooth);">📖 コラム：${post.title}</a>` : '';
@@ -751,6 +758,13 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         ` : ''}
 
                         ${relatedBlogHtml}
+
+                        ${faqHtml ? `
+                        <section class="faq-section" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">❓ よくある質問</h2>
+                            ${faqHtml}
+                        </section>
+                        ` : ''}
                     </div>
 
                     <div style="border-top: 1px dashed rgba(62, 50, 42, 0.1); margin: 40px 0 30px 0;"></div>
@@ -835,17 +849,21 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             title: 'カタン会（東京）初心者向け｜交渉力が身につくボードゲーム会',
             description: '「カタン」を東京でやってみたい初心者の方へ。交渉・資源管理・駆け引きをゲームで体験。新宿・北千住エリア開催・一人参加大多数・初回500円・ルール説明あり。'
         },
+        "catan-women": {
+            title: '【女性限定】東京カタン会｜初心者大歓迎・和気あいあいボードゲーム',
+            description: '東京（新宿・北千住）で女性限定のカタン会を開催。女性同士で気兼ねなくボードゲームを楽しめます。初心者大歓迎・ルール説明あり・一人参加OK・参加費初回500円。'
+        },
         communication_skills: {
-            title: 'コミュニケーション力をゲームで学ぶ会｜東京・社会人向け無料',
-            description: '話す力・聴く力・場の読み方をボードゲームで楽しく鍛える。東京（新宿・北千住）開催の社会人向けコミュニケーションゲーム会。完全無料・初心者・一人参加歓迎。'
+            title: '【東京】ゲームでコミュニケーション力を楽しく鍛えるワークショップ',
+            description: '話す力・聴く力・場の読み方をボードゲームで楽しく鍛える。はぁっていうゲーム・カタカナーシを使った実践型ワークショップ。東京（新宿・北千住）開催・完全無料・初心者・一人参加歓迎。'
         },
         monopoly: {
             title: 'モノポリーで投資を学ぶ会｜東京・初心者歓迎ボードゲーム会',
             description: '「モノポリー」を東京でやってみたい方へ。投資・交渉・お金の流れをゲームで体験。新宿・北千住エリア開催・無料・一人参加大多数・初心者ルール説明あり。'
         },
         cashflow: {
-            title: 'お金の流れをゲームで学ぶ会｜東京・投資初心者向けボードゲーム',
-            description: '投資・資産形成の考え方をボードゲームで体験。難しいお金の知識がゲームで自然に身につく。東京（新宿・北千住）開催・500円・初心者歓迎・筆記用具と電卓（スマホ可）持参。'
+            title: 'キャッシュフローゲーム会 東京｜初心者向け・お金が学べるボードゲーム',
+            description: '東京（新宿・北千住・渋谷）でキャッシュフローゲーム会を開催。お金の流れ・投資・資産形成の考え方をゲームで体験。初心者・一人参加歓迎・参加費500円・筆記用具と電卓（スマホ可）持参。'
         },
         nisa: {
             title: 'NISAをボードゲームで学ぶ会｜東京・投資初心者歓迎・無料',
