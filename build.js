@@ -28,7 +28,7 @@ function copyDir(src, dest) {
     const entries = fs.readdirSync(src, { withFileTypes: true });
     for (let entry of entries) {
         if (entry.name === '.git' || entry.name === 'dist' || entry.name === 'node_modules') continue;
-        
+
         const srcPath = path.join(src, entry.name);
         const destPath = path.join(dest, entry.name);
         if (entry.isDirectory()) {
@@ -43,7 +43,7 @@ function copyDir(src, dest) {
 // 共通テンプレート置換処理
 function renderTemplate(content, meta) {
     const layout = fs.readFileSync(path.join(templatesDir, 'layout.html'), 'utf8');
-    
+
     // メタ情報の設定
     const title = meta.title || '東京ボードゲーム会 | 200種の知識で楽しむ社会人向けボードゲームコミュニティ';
     const description = meta.description || '日々の繰り返しや仕事にもやもやを抱える社会人のためのボードゲームコミュニティ「東京ボードゲーム会」。ゆるボドゲパパが所有する200種類のボドゲ知識を活かして、初めての方でも優しくレクチャー。明日へのエネルギーになる温かい居場所を提供します。';
@@ -72,23 +72,23 @@ function renderTemplate(content, meta) {
     html = html.replace(/src="images\//g, 'src="/images/');
     html = html.replace(/srcset="images\//g, 'srcset="/images/');
     html = html.replace(/href="images\//g, 'href="/images/');
-    
+
     html = html.replace(/src="about\//g, 'src="/about/');
     html = html.replace(/srcset="about\//g, 'srcset="/about/');
     html = html.replace(/href="about\//g, 'href="/about/');
-    
+
     html = html.replace(/src="gallery\//g, 'src="/gallery/');
     html = html.replace(/srcset="gallery\//g, 'srcset="/gallery/');
     html = html.replace(/href="gallery\//g, 'href="/gallery/');
-    
+
     html = html.replace(/src="blog\//g, 'src="/blog/');
     html = html.replace(/srcset="blog\//g, 'srcset="/blog/');
     html = html.replace(/href="blog\//g, 'href="/blog/');
-    
+
     html = html.replace(/src="events\//g, 'src="/events/');
     html = html.replace(/srcset="events\//g, 'srcset="/events/');
     html = html.replace(/href="events\//g, 'href="/events/');
-    
+
     html = html.replace(/src="reservation\//g, 'src="/reservation/');
     html = html.replace(/srcset="reservation\//g, 'srcset="/reservation/');
     html = html.replace(/href="reservation\//g, 'href="/reservation/');
@@ -198,7 +198,7 @@ let eventsHtml = '<div class="slider-wrapper">';
 targetEventKeys.forEach(key => {
     const event = GAME_MEETING_TYPES[key];
     if (!event) return;
-    
+
     let imageUrl = '/images/fv_bg.png';
     let webpUrl = '/images/fv_bg.webp';
     if (key === 'catan') {
@@ -292,7 +292,7 @@ blogHtml += '</div>';
 homeContent = homeContent.replace('<!-- BLOG_PREVIEW -->', blogHtml);
 
 const homeHtml = renderTemplate(homeContent, {
-    title: '【初心者歓迎】東京のボードゲーム会（北千住・新宿で開催）｜カタンやモノポリーを楽しく学ぶ',
+    title: '東京ボードゲーム会｜初心者歓迎・北千住/新宿でカタン・モノポリーを楽しく学ぶ',
     description: '交渉力・投資・判断力がゲームで自然に身につく。東京（新宿・北千住）開催の社会人向けボードゲーム会。20〜30代・一人参加大多数・初心者歓迎・参加費500円〜。',
     canonical: domain + '/',
     pathDepth: './',
@@ -403,10 +403,10 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             const daysOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
             const dayOfWeek = daysOfWeek[new Date(year, month, day).getDay()];
             const formattedDate = `${month + 1}/${day}(${dayOfWeek}) ${timeOnly}`;
-            
+
             const isOnline = event.location === 'オンライン';
             const locLabel = isOnline ? 'Zoom' : event.location;
-            
+
             let spotsText = '';
             if (event.spotsLeft === 0) {
                 spotsText = '<span class="spots-status spots-full">[満席]</span>';
@@ -621,7 +621,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             <span class="review-author" style="display: block; text-align: right; font-size: 0.8rem; color: var(--color-text-light); font-weight: 700; margin-top: 5px;">— ${rev.age}</span>
         </div>
     `).join('\n');
-    
+
     const faqHtml = typeInfo.faq ? typeInfo.faq.map(item => `
         <div class="faq-item" style="margin-bottom: 20px; padding: 20px; background: var(--color-bg-primary); border-radius: var(--radius-sm); border-left: 4px solid var(--color-primary);">
             <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 10px;">Q. ${item.q}</h3>
@@ -710,9 +710,9 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
                             <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📍 会場案内・開催場所</h2>
                             <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted); margin: 0;">
-                                ${typeInfo.badgeClass === 'online' ? 
-                                    'オンライン開催（Zoomを使用します。お申し込み後に接続用のURLを個別にお送りいたします。）' : 
-                                    '新宿駅、北千住駅、東京駅などの周辺にある、アクセスが良く清潔な駅前レンタルスペースを利用しています。<br><br><span style="color: var(--color-primary-hover); font-weight: 700;">※参加者の方のプライバシーと安全を考慮し、詳細な会場住所や部屋番号は、お申し込みいただいた方にのみ個別にご案内しております。</span>'}
+                                ${typeInfo.badgeClass === 'online' ?
+            'オンライン開催（Zoomを使用します。お申し込み後に接続用のURLを個別にお送りいたします。）' :
+            '新宿駅、北千住駅、東京駅などの周辺にある、アクセスが良く清潔な駅前レンタルスペースを利用しています。<br><br><span style="color: var(--color-primary-hover); font-weight: 700;">※参加者の方のプライバシーと安全を考慮し、詳細な会場住所や部屋番号は、お申し込みいただいた方にのみ個別にご案内しております。</span>'}
                             </p>
                         </div>
 
@@ -792,7 +792,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     const representativeEvent = futureEvents[0] || { date: "2026/07/05 13:00-16:00", location: "新宿" };
     let parsedStartDate = "2026-07-05T13:00:00+09:00";
     let parsedEndDate = "2026-07-05T16:00:00+09:00";
-    
+
     const dateMatch = representativeEvent.date.match(/^(\d{4})\/(\d{2})\/(\d{2})\s+(\d{2}):(\d{2})-(\d{2}):(\d{2})$/);
     if (dateMatch) {
         parsedStartDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}T${dateMatch[4]}:${dateMatch[5]}:00+09:00`;
