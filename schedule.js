@@ -279,7 +279,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_02",
@@ -290,7 +290,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_03",
@@ -301,7 +301,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_04",
@@ -312,7 +312,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_05",
@@ -323,7 +323,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_06",
@@ -334,7 +334,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_07",
@@ -345,7 +345,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_08",
@@ -356,7 +356,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_09",
@@ -378,7 +378,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_11",
@@ -389,7 +389,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_12",
@@ -400,7 +400,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_13",
@@ -411,7 +411,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_14",
@@ -422,7 +422,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_15",
@@ -433,7 +433,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_16",
@@ -444,7 +444,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_17",
@@ -466,7 +466,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_19",
@@ -488,7 +488,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_21",
@@ -499,7 +499,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     }
 ];
 
