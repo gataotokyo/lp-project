@@ -1,1 +1,7 @@
 https://tokyo-boardgame-club.netlify.app/* https://tokyo-boardgame-club.com/:splat 301!
+
+/about /about/ 301
+/events /events/ 301
+/gallery /gallery/ 301
+/blog /blog/ 301
+/reservation /reservation/ 301
