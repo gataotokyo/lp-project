@@ -1,0 +1,240 @@
+diff --git a/src/index.html b/src/index.html
+index b20cabf..442b710 100644
+--- a/src/index.html
++++ b/src/index.html
+@@ -109,6 +109,106 @@
+         </div>
+     </div>
+ 
++    <!-- [3] EVENTS Section (Dynamic Preview) -->
++    <div class="slider-section">
++        <div class="slider-container">
++            <p class="section-en">EVENTS</p>
++            <h2 class="section-ja">ボードゲーム会紹介</h2>
++
++            <!-- Dynamic placeholder replaced by build.js -->
++            <!-- EVENTS_PREVIEW -->
++            
++            <div class="scroll-guide-indicator">
++                <span>← 左右にスワイプできます →</span>
++            </div>
++
++            <div class="slider-cta-wrapper">
++                <a href="/events/" class="slider-cta-btn">ボードゲーム会を全て見る →</a>
++            </div>
++        </div>
++    </div>
++
++    <!-- [6] RESERVE Section -->
++    <div class="reserve-preview-section">
++        <div class="reserve-preview-container">
++            <p class="section-en" style="color: rgba(0, 180, 216, 0.08);">RESERVE</p>
++            <h2 class="section-ja" style="margin-bottom: 24px; display: inline-block;">日程・予約</h2>
++            <p>直近の開催日程をチェックして、そのままお申し込みいただけます。</p>
++            <a href="/reservation/" class="reserve-cta-btn">日程を確認・予約する →</a>
++            <div class="reserve-meta">
++                初回参加費: 500円〜 ／ 当日払い可 ／ 基本手ぶらでOK<br>
++                ※キャッシュフローゲームのみ筆記用具と電卓（スマホ可）が必要
++            </div>
++        </div>
++    </div>
++
++    <!-- [2.7] Flow Section -->
++    <div class="flow-section" style="background-color: var(--color-bg-white); padding: 80px 0;">
++        <div class="flow-container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
++            <p class="section-en" style="text-align: center; color: rgba(0, 180, 216, 0.08); font-size: 4rem; font-weight: 900; margin: 0 0 -20px 0; font-family: 'Outfit', sans-serif;">FLOW</p>
++            <h2 class="section-ja" style="text-align: center; margin-bottom: 8px;">当日の流れ</h2>
++            <p class="section-subtitle" style="text-align: center; color: var(--color-text-muted); margin-bottom: 50px;">当日の大まかな流れです。初めての方でも安心して参加できるよう、ゆるボドゲパパが優しくナビゲートします。</p>
++            <div class="flow-steps">
++                <div class="flow-step-card">
++                    <div class="step-num">01</div>
++                    <h3>ご予約・ご案内</h3>
++                    <p>予約フォームから簡単にお申し込みいただけます。前日に詳細なアクセス情報などをメールでご案内します。</p>
++                </div>
++                <div class="flow-step-card">
++                    <div class="step-num">02</div>
++                    <h3>受付・自己紹介</h3>
++                    <p>会場に集合後、まずは簡単な挨拶と自己紹介。アイスブレイク用のゲームなどで緊張をほぐします。</p>
++                </div>
++                <div class="flow-step-card">
++                    <div class="step-num">03</div>
++                    <h3>ルール説明 (レクチャー)</h3>
++                    <p>主催者が分かりやすくルールを説明します。事前にルールを覚えてくる必要はありません！</p>
++                </div>
++                <div class="flow-step-card">
++                    <div class="step-num">04</div>
++                    <h3>ゲームプレイ</h3>
++                    <p>実際にゲームをプレイ！初心者も経験者も、笑顔でワイワイ盛り上がります。</p>
++                </div>
++                <div class="flow-step-card">
++                    <div class="step-num">05</div>
++                    <h3>振り返り・解散</h3>
++                    <p>ゲームの面白かったポイントや気づきを軽くシェアし、すっきりリフレッシュして解散となります。</p>
++                </div>
++            </div>
++        </div>
++    </div>
++
++    <!-- [4] Testimonials Section -->
++    <div class="testimonials-section">
++        <div class="testimonials-container">
++            <p class="section-en">VOICES</p>
++            <h2 class="section-ja">参加者の声</h2>
++            <div class="testimonials-grid">
++                <div class="testimonial-card">
++                    <span class="testimonial-quote-icon">❝</span>
++                    <p class="testimonial-text">
++                        「最初は正直、ボードゲームって子どもっぽいイメージがあって半信半疑で参加しました。でもカタンをやってみたら交渉や判断の連続で、気づいたら2時間があっという間でした。仕事でも使えそうな感覚があって、次の会も予約しています。」
++                    </p>
++                    <div class="testimonial-author">— 28歳・男性・メーカー勤務</div>
++                </div>
++                <div class="testimonial-card">
++                    <span class="testimonial-quote-icon">❝</span>
++                    <p class="testimonial-text">
++                        「一人で参加するのが不安でしたが、当日来てみたらほぼ全員が一人参加で安心しました。ゆるボドゲパパがルールを丁寧に説明してくれて、ゲームが終わったあとも自然に会話が弾みました。新しい繋がりができる場所を探していた私にはぴったりでした。」
++                    </p>
++                    <div class="testimonial-author">— 32歳・女性・IT企業勤務</div>
++                </div>
++                <div class="testimonial-card">
++                    <span class="testimonial-quote-icon">❝</span>
++                    <p class="testimonial-text">
++                        「キャッシュフローゲームに参加したのですが、お金の流れが視覚的に分かって、今まで難しいと思っていた投資の考え方が急に身近になりました。ゲームをしながらこんなに学べるとは思っていなかったです。」
++                    </p>
++                    <div class="testimonial-author">— 35歳・男性・営業職</div>
++                </div>
++            </div>
++        </div>
++    </div>
++
+     <!-- [2.5] Fee System Block -->
+     <div class="fee-block">
+         <div class="fee-container">
+@@ -143,7 +243,7 @@
+                     <ul class="fee-features">
+                         <li>参加費は一切かかりません</li>
+                         <li>スマホやPCから簡単に参加可能</li>
+-                        <li>オンライン専用ボードゲームのレクチャー付き</li>
++                        <li>オンライン専用ボードゲーム of レクチャー付き</li>
+                     </ul>
+                 </div>
+             </div>
+@@ -153,42 +253,6 @@
+         </div>
+     </div>
+ 
+-    <!-- [2.7] Flow Section -->
+-    <div class="flow-section" style="background-color: var(--color-bg-white); padding: 80px 0;">
+-        <div class="flow-container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+-            <p class="section-en" style="text-align: center; color: rgba(0, 180, 216, 0.08); font-size: 4rem; font-weight: 900; margin: 0 0 -20px 0; font-family: 'Outfit', sans-serif;">FLOW</p>
+-            <h2 class="section-ja" style="text-align: center; margin-bottom: 8px;">当日の流れ</h2>
+-            <p class="section-subtitle" style="text-align: center; color: var(--color-text-muted); margin-bottom: 50px;">当日の大まかな流れです。初めての方でも安心して参加できるよう、おひげさんが優しくナビゲートします。</p>
+-            <div class="flow-steps">
+-                <div class="flow-step-card">
+-                    <div class="step-num">01</div>
+-                    <h3>ご予約・ご案内</h3>
+-                    <p>予約フォームから簡単にお申し込みいただけます。前日に詳細なアクセス情報などをメールでご案内します。</p>
+-                </div>
+-                <div class="flow-step-card">
+-                    <div class="step-num">02</div>
+-                    <h3>受付・自己紹介</h3>
+-                    <p>会場に集合後、まずは簡単な挨拶と自己紹介。アイスブレイク用のゲームなどで緊張をほぐします。</p>
+-                </div>
+-                <div class="flow-step-card">
+-                    <div class="step-num">03</div>
+-                    <h3>ルール説明 (レクチャー)</h3>
+-                    <p>遊ぶゲームが決まったら、主催者が分かりやすくルールを説明します。事前にルールを覚えてくる必要はありません！</p>
+-                </div>
+-                <div class="flow-step-card">
+-                    <div class="step-num">04</div>
+-                    <h3>ゲームプレイ</h3>
+-                    <p>実際にゲームをプレイ！初心者も経験者も、笑顔でワイワイ盛り上がります。</p>
+-                </div>
+-                <div class="flow-step-card">
+-                    <div class="step-num">05</div>
+-                    <h3>振り返り・解散</h3>
+-                    <p>ゲームの面白かったポイントや気づきを軽くシェアし、すっきりリフレッシュして解散となります。</p>
+-                </div>
+-            </div>
+-        </div>
+-    </div>
+-
+     <!-- [2.9] Safety Policy Section -->
+     <div class="safety-section" style="padding: 80px 0; background: linear-gradient(135deg, rgba(0, 180, 216, 0.03) 0%, rgba(114, 9, 183, 0.03) 100%);">
+         <div class="safety-container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+@@ -221,56 +285,6 @@
+         </div>
+     </div>
+ 
+-    <!-- [3] EVENTS Section (Dynamic Preview) -->
+-    <div class="slider-section">
+-        <div class="slider-container">
+-            <p class="section-en">EVENTS</p>
+-            <h2 class="section-ja">ボードゲーム会紹介</h2>
+-
+-            <!-- Dynamic placeholder replaced by build.js -->
+-            <!-- EVENTS_PREVIEW -->
+-            
+-            <div class="scroll-guide-indicator">
+-                <span>← 左右にスワイプできます →</span>
+-            </div>
+-
+-            <div class="slider-cta-wrapper">
+-                <a href="/events/" class="slider-cta-btn">ボードゲーム会を全て見る →</a>
+-            </div>
+-        </div>
+-    </div>
+-
+-    <!-- [4] Testimonials Section -->
+-    <div class="testimonials-section">
+-        <div class="testimonials-container">
+-            <p class="section-en">VOICES</p>
+-            <h2 class="section-ja">参加者の声</h2>
+-            <div class="testimonials-grid">
+-                <div class="testimonial-card">
+-                    <span class="testimonial-quote-icon">❝</span>
+-                    <p class="testimonial-text">
+-                        「最初は正直、ボードゲームって子どもっぽいイメージがあって半信半疑で参加しました。でもカタンをやってみたら交渉や判断の連続で、気づいたら2時間があっという間でした。仕事でも使えそうな感覚があって、次の会も予約しています。」
+-                    </p>
+-                    <div class="testimonial-author">— 28歳・男性・メーカー勤務</div>
+-                </div>
+-                <div class="testimonial-card">
+-                    <span class="testimonial-quote-icon">❝</span>
+-                    <p class="testimonial-text">
+-                        「一人で参加するのが不安でしたが、当日来てみたらほぼ全員が一人参加で安心しました。ゆるボドゲパパがルールを丁寧に説明してくれて、ゲームが終わったあとも自然に会話が弾みました。新しい繋がりができる場所を探していた私にはぴったりでした。」
+-                    </p>
+-                    <div class="testimonial-author">— 32歳・女性・IT企業勤務</div>
+-                </div>
+-                <div class="testimonial-card">
+-                    <span class="testimonial-quote-icon">❝</span>
+-                    <p class="testimonial-text">
+-                        「キャッシュフローゲームに参加したのですが、お金の流れが視覚的に分かって、今まで難しいと思っていた投資の考え方が急に身近になりました。ゲームをしながらこんなに学べるとは思っていなかったです。」
+-                    </p>
+-                    <div class="testimonial-author">— 35歳・男性・営業職</div>
+-                </div>
+-            </div>
+-        </div>
+-    </div>
+-
+     <!-- [5] BLOG Section (Dynamic Preview) -->
+     <div class="slider-section" style="background-color: var(--color-bg-white);">
+         <div class="slider-container">
+@@ -290,18 +304,4 @@
+         </div>
+     </div>
+ 
+-    <!-- [6] RESERVE Section -->
+-    <div class="reserve-preview-section">
+-        <div class="reserve-preview-container">
+-            <p class="section-en" style="color: rgba(0, 180, 216, 0.08);">RESERVE</p>
+-            <h2 class="section-ja" style="margin-bottom: 24px; display: inline-block;">日程・予約</h2>
+-            <p>直近の開催日程をチェックして、そのままお申し込みいただけます。</p>
+-            <a href="/reservation/" class="reserve-cta-btn">日程を確認・予約する →</a>
+-            <div class="reserve-meta">
+-                初回参加費: 500円〜 ／ 当日払い可 ／ 基本手ぶらでOK<br>
+-                ※キャッシュフローゲームのみ筆記用具と電卓（スマホ可）が必要
+-            </div>
+-        </div>
+-    </div>
+-
+ </section>
+\ No newline at end of file

@@ -612,283 +612,175 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         scheduleHtml = `<li><span class="no-schedule">現在調整中。確定次第公開します！</span></li>`;
     }
 
-    // ヒーロー用スケジュール（新クラス）
-    let heroScheduleHtml = '';
-    if (futureEvents.length > 0) {
-        futureEvents.slice(0, 4).forEach(event => {
-            const isOnline2 = event.location === 'オンライン';
-            const offLabel = isOnline2 ? 'オンライン' : 'オフライン';
-            let spotsHtml = '';
-            if (event.spotsLeft === 0) {
-                spotsHtml = `<span class="nw-spot su">満席</span>`;
-            } else if (event.spotsLeft === 1) {
-                spotsHtml = `<span class="nw-spot su">残り枠: ${event.spotsLeft}名</span>`;
-            } else if (event.spotsLeft === 2) {
-                spotsHtml = `<span class="nw-spot sw">残り枠: ${event.spotsLeft}名</span>`;
-            } else {
-                spotsHtml = `<span class="nw-spot sn">残り枠: ${event.spotsLeft}名</span>`;
-            }
-            const dp2 = event.date.split(' ');
-            const do2 = dp2[0]; const to2 = dp2[1] || '';
-            const dop2 = do2.split('/');
-            const dow2 = ['日','月','火','水','木','金','土'][new Date(parseInt(dop2[0]),parseInt(dop2[1])-1,parseInt(dop2[2])).getDay()];
-            const fd2 = `${do2}(${dow2}) ${to2}`;
-            const lc2 = isOnline2 ? 'Zoom' : event.location;
-            heroScheduleHtml += `<li><span class="nw-off">${offLabel}</span>${spotsHtml}<span class="dt">${fd2}　${lc2}</span></li>`;
-        });
-    } else {
-        heroScheduleHtml = `<li style="color:var(--color-text-muted);font-size:1rem;">現在調整中。確定次第公開します！</li>`;
-    }
-
     // おすすめ、注意事項、声、コラム
     const recommendHtml = (typeInfo.recommend || []).map(rec => `<li>${rec}</li>`).join('\n');
     const notesHtml = (typeInfo.notes || []).map(note => `<li>${note}</li>`).join('\n');
     const reviewsHtml = (typeInfo.reviews || []).map(rev => `
-        <div class="nw-rev">
-            <p>「${rev.text}」</p>
-            <span>— ${rev.age}</span>
+        <div class="review-bubble" style="margin-bottom: 15px; background: var(--color-primary-light); padding: 15px; border-radius: var(--radius-sm);">
+            <p class="review-text" style="font-style: italic; color: var(--color-text-main); font-weight: 500;">「${rev.text}」</p>
+            <span class="review-author" style="display: block; text-align: right; font-size: 0.8rem; color: var(--color-text-light); font-weight: 700; margin-top: 5px;">— ${rev.age}</span>
         </div>
     `).join('\n');
 
     const faqHtml = typeInfo.faq ? typeInfo.faq.map(item => `
-        <details class="nw-faq-item">
-            <summary>${item.q}</summary>
-            <div class="nw-faq-ans"><p>${item.a}</p></div>
-        </details>
+        <div class="faq-item" style="margin-bottom: 20px; padding: 20px; background: var(--color-bg-primary); border-radius: var(--radius-sm); border-left: 4px solid var(--color-primary);">
+            <h3 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 10px;">Q. ${item.q}</h3>
+            <p style="font-size: 0.98rem; line-height: 1.7; color: var(--color-text-muted); margin: 0;">A. ${item.a}</p>
+        </div>
     `).join('\n') : '';
 
     const relatedBlogsHtml = (typeInfo.relatedColumns || []).map(postId => {
         const post = BLOG_POSTS.find(p => p.id === postId);
-        return post ? `<a href="/blog/${post.slug}/" class="nw-rel-link">📖 ${post.title}</a>` : '';
+        return post ? `<a href="/blog/${post.slug}/" class="related-blog-link" style="display: block; padding: 10px; background-color: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; color: var(--color-primary-hover); transition: var(--transition-smooth);">📖 コラム：${post.title}</a>` : '';
     }).join('\n');
 
     const detailContent = `
-    <style>
-        html,body,.app-container{overflow-x:hidden}
-        .nw-ev-outer{width:100%;padding:0 2% 80px;box-sizing:border-box;overflow-x:hidden}
-        @media(max-width:640px){.nw-ev-outer{padding:0 14px 60px}}
-        .nw-ev-inner{width:100%}
-        .nw-bread{display:flex;align-items:center;gap:6px;font-size:1.15rem;color:var(--color-text-muted);margin:20px 0 28px;flex-wrap:wrap}
-        .nw-bread a{color:var(--color-primary-hover);text-decoration:none;font-weight:600}
-        .nw-bread a:hover{text-decoration:underline}
-        @media(max-width:640px){.nw-bread{font-size:.9rem}}
-        .nw-hero{display:grid;grid-template-columns:45% 1fr;gap:40px;align-items:start;margin-bottom:36px}
-        @media(max-width:768px){.nw-hero{grid-template-columns:1fr;gap:20px;margin-bottom:24px}}
-        .nw-img{width:100%;height:auto;display:block;border-radius:12px;box-shadow:var(--shadow-md)}
-        .nw-cat{font-size:1.1rem;font-weight:800;color:var(--color-primary);letter-spacing:.05em;margin:0 0 10px}
-        .nw-badge{display:inline-block;font-size:1rem;font-weight:800;padding:4px 14px;border-radius:50px;background:var(--color-primary-light);color:var(--color-primary-hover);margin-left:10px}
-        @media(max-width:640px){.nw-cat{font-size:.9rem}.nw-badge{font-size:.85rem}}
-        .nw-h1{font-size:2.3rem;font-weight:900;line-height:1.3;margin:10px 0 16px;color:var(--color-text-main)}
-        @media(max-width:768px){.nw-h1{font-size:1.9rem}}
-        @media(max-width:640px){.nw-h1{font-size:1.55rem}}
-        .nw-sub{font-size:1.35rem;font-weight:700;color:var(--color-primary-hover);margin-bottom:18px;line-height:1.7}
-        @media(max-width:640px){.nw-sub{font-size:1.1rem}}
-        .nw-desc{font-size:1.2rem;line-height:1.75;color:var(--color-text-muted);margin-bottom:18px}
-        @media(max-width:640px){.nw-desc{font-size:1rem}}
-        .nw-hero-sched{margin-top:18px}
-        .nw-hero-sched-title{font-size:1.25rem;font-weight:800;color:var(--color-text-main);margin-bottom:12px;display:flex;align-items:center;gap:8px;border-left:4px solid var(--color-primary,#8B6F5E);padding-left:10px}
-        @media(max-width:640px){.nw-hero-sched-title{font-size:1.05rem}}
-        .nw-sched{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
-        .nw-sched li{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--color-bg-primary,#faf8f6);border-radius:8px;border:1px solid rgba(62,50,42,.08);font-size:1.3rem;flex-wrap:wrap;min-width:0}
-        .nw-sched .dt{font-weight:700;color:var(--color-text-main);flex:1;min-width:0;word-break:break-word}
-        .nw-spot{font-size:1rem;font-weight:800;padding:3px 12px;border-radius:50px;white-space:nowrap}
-        .su{background:#fde8e8;color:#c0392b}.sw{background:#fef3e2;color:#d68910}.sn{background:#e8f5e9;color:#2e7d32}
-        .nw-off{background:var(--color-primary-light,#f0e8e3);color:var(--color-primary-hover,#6b4f3f);font-size:.95rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap}
-        @media(max-width:640px){.nw-sched li{font-size:1rem;padding:10px 12px;gap:8px}.nw-spot{font-size:.85rem}.nw-off{font-size:.8rem}}
-        .nw-sched-cta{display:flex;margin-top:4px}
-        .nw-sched-cta a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;font-size:1.2rem;font-weight:800;border-radius:8px;text-decoration:none;background:var(--color-primary,#8B6F5E);color:#fff;transition:opacity .2s;box-shadow:var(--shadow-sm)}
-        .nw-sched-cta a:hover{opacity:.85}
-        @media(max-width:640px){.nw-sched-cta a{font-size:1rem;padding:10px 18px;width:100%;justify-content:center}}
-        .nw-sec{margin-bottom:36px}
-        .nw-ttl{font-size:1.5rem;font-weight:800;color:var(--color-text-main);margin-bottom:16px;display:flex;align-items:center;gap:8px;border-left:5px solid var(--color-primary,#8B6F5E);padding-left:14px}
-        @media(max-width:640px){.nw-ttl{font-size:1.2rem}}
-        .nw-div{border:none;border-top:1px dashed rgba(62,50,42,.15);margin:28px 0}
-        .nw-table{width:100%;border-collapse:collapse;font-size:1.3rem}
-        .nw-table th,.nw-table td{padding:13px 18px;border-bottom:1px solid rgba(62,50,42,.12);vertical-align:top;line-height:1.7}
-        .nw-table th{width:20%;font-weight:800;color:var(--color-text-main);background:var(--color-bg-primary,#faf8f6);white-space:nowrap}
-        .nw-table td{color:var(--color-text-muted);font-weight:500}
-        .nw-table tr:last-child th,.nw-table tr:last-child td{border-bottom:none}
-        @media(max-width:640px){.nw-table{font-size:1rem}.nw-table th{width:30%;white-space:normal}.nw-table th,.nw-table td{padding:9px 10px}}
-        .nw-list{margin:0;padding-left:22px;font-size:1.3rem;line-height:2;color:var(--color-text-muted)}
-        @media(max-width:640px){.nw-list{font-size:1.05rem}}
-        .nw-faq{display:flex;flex-direction:column;gap:8px}
-        .nw-faq-item{background:var(--color-bg-primary,#faf8f6);border-radius:8px;border:1px solid rgba(62,50,42,.1);overflow:hidden}
-        .nw-faq-item summary{padding:16px 20px;font-size:1.3rem;font-weight:700;color:var(--color-text-main);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none}
-        .nw-faq-item summary::-webkit-details-marker{display:none}
-        .nw-faq-item summary::after{content:"＋";font-size:1.2rem;font-weight:900;color:var(--color-primary,#8B6F5E);flex-shrink:0}
-        .nw-faq-item[open] summary::after{content:"－"}
-        .nw-faq-ans{padding:6px 20px 18px;font-size:1.25rem;line-height:1.8;color:var(--color-text-muted);border-top:1px solid rgba(62,50,42,.08)}
-        .nw-faq-ans p{margin:12px 0 0}
-        @media(max-width:640px){.nw-faq-item summary{font-size:1.05rem;padding:13px 14px}.nw-faq-ans{font-size:1rem;padding:5px 14px 14px}}
-        .nw-rev{background:var(--color-primary-light,#f5ede8);border-radius:8px;padding:16px 20px;margin-bottom:12px}
-        .nw-rev p{font-size:1.25rem;font-style:italic;color:var(--color-text-main);font-weight:500;line-height:1.75;margin:0 0 8px}
-        .nw-rev span{display:block;text-align:right;font-size:1.05rem;color:var(--color-text-light);font-weight:700}
-        @media(max-width:640px){.nw-rev p{font-size:1rem}.nw-rev span{font-size:.9rem}}
-        .nw-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
-        .nw-rel-link{display:block;padding:14px 16px;background:var(--color-bg-primary,#faf8f6);border:1px solid rgba(62,50,42,.1);border-radius:8px;font-size:1.15rem;font-weight:700;color:var(--color-primary-hover,#6b4f3f);text-decoration:none;line-height:1.55;transition:background .2s}
-        .nw-rel-link:hover{background:var(--color-primary-light,#f0e8e3)}
-        @media(max-width:640px){.nw-rel-grid{grid-template-columns:1fr}.nw-rel-link{font-size:1rem}}
-        .nw-notes-list{list-style:none;padding:0;margin:0}
-        .nw-notes-list li{font-size:1.25rem;color:var(--color-text-muted);padding:9px 0 9px 26px;position:relative;line-height:1.7;border-bottom:1px solid rgba(62,50,42,.08)}
-        .nw-notes-list li:last-child{border-bottom:none}
-        .nw-notes-list li::before{content:"⚠️";position:absolute;left:0}
-        @media(max-width:640px){.nw-notes-list li{font-size:1rem}}
-        .nw-flow-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:1.25rem;font-weight:600;color:var(--color-text-muted)}
-        .nw-fs{background:var(--color-bg-primary,#faf8f6);border:1px solid rgba(62,50,42,.12);border-radius:6px;padding:7px 16px}
-        .nw-fa{color:var(--color-primary,#8B6F5E);font-weight:900}
-        @media(max-width:640px){.nw-flow-wrap{font-size:1rem}.nw-fs{padding:5px 10px}}
-        .nw-detail-text{font-size:1.25rem;line-height:1.8;color:var(--color-text-muted);white-space:pre-line}
-        @media(max-width:640px){.nw-detail-text{font-size:1rem}}
-        .nw-cta-bot{display:flex;justify-content:center;margin-top:40px}
-        .nw-cta-bot a{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 44px;font-size:1.4rem;font-weight:800;border-radius:8px;text-decoration:none;box-shadow:var(--shadow-md);background:var(--color-primary,#8B6F5E);color:#fff;width:100%;max-width:520px;text-align:center;transition:opacity .2s}
-        .nw-cta-bot a:hover{opacity:.85}
-        @media(max-width:640px){.nw-cta-bot a{font-size:1.05rem;padding:14px 20px}}
-        .nw-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;background:var(--color-bg-primary,#faf8f6);padding:24px;border-radius:12px;border:1px solid rgba(62,50,42,.08);margin-bottom:24px}
-        @media(max-width:640px){.nw-info-grid{grid-template-columns:1fr;gap:12px;padding:16px}}
-        .nw-info-item .info-icon{font-size:1.5rem}
-        .nw-info-item .info-label{display:block;font-size:1rem;color:var(--color-text-light);font-weight:700;margin-bottom:2px}
-        .nw-info-item .info-val{display:block;font-size:1.2rem;font-weight:700;color:var(--color-text-main)}
-        .nw-info-item .font-highlight{color:var(--color-primary-hover);font-size:1.35rem;font-weight:800}
-        @media(max-width:640px){.nw-info-item .info-val{font-size:1rem}.nw-info-item .font-highlight{font-size:1.15rem}}
-    </style>
-    <div class="nw-ev-outer">
-        <div class="nw-ev-inner">
-            <!-- パンくず -->
-            <nav class="nw-bread" aria-label="パンくずリスト">
-                <a href="/">ホーム</a><span>›</span>
-                <a href="/events/">ボードゲーム会紹介</a><span>›</span>
-                <span>${typeInfo.name}</span>
-            </nav>
+    <section class="page-section active animate-fade-in" style="max-width: 900px; margin: 0 auto;">
+        <div class="container-inner event-detail-container">
+            <div style="margin-bottom: 12px;">
+                <a href="/events/" class="cta-button secondary" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.9rem; border-radius: var(--radius-sm); border: 1px solid rgba(62, 50, 42, 0.1);"><span class="arrow">←</span> ボードゲーム会紹介一覧へ戻る</a>
+            </div>
 
-            <!-- ヒーロー -->
-            <div class="nw-hero">
-                <div>
+            <div class="activity-detail-card" style="box-shadow: var(--shadow-md); border-radius: var(--radius-lg); overflow: hidden; background-color: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.04);">
+                <div class="act-image-wrapper"${wrapperStyle}>
                     <picture>
                         <source srcset="${typeInfo.imagePath ? '/' + typeInfo.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/fv_bg.webp'}" type="image/webp">
-                        <img src="${typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png'}"
-                             alt="${typeInfo.name}" class="nw-img" loading="eager">
+                        <img src="${typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png'}" alt="${typeInfo.name}" class="act-img" style="${imgStyle}" loading="eager">
                     </picture>
                 </div>
-                <div>
-                    <p class="nw-cat">${typeInfo.emoji || '🎲'} ${typeInfo.badge}<span class="nw-badge">${typeInfo.badgeClass === 'online' ? 'オンライン開催' : 'リアル開催'}</span></p>
-                    <h1 class="nw-h1">${typeInfo.name}</h1>
-                    <p class="nw-sub">${typeInfo.subtitle || ''}</p>
-                    <p class="nw-desc">${typeInfo.desc}</p>
-
-                    <!-- スケジュール（ヒーロー内） -->
-                    <div class="nw-hero-sched" id="schedules-section">
-                        <p class="nw-hero-sched-title">📅 近日開催予定</p>
-                        <ul class="nw-sched">${heroScheduleHtml}</ul>
-                        <div class="nw-sched-cta">
-                            <a href="/reservation/?event=${key}">日程を選んで申し込む <span>→</span></a>
+                <div class="act-detail-content">
+                    <div class="act-meta" style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <span class="act-category" style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase;">${typeInfo.emoji || '🎲'} ${typeInfo.badge}</span>
+                        <span class="act-badge-text ${typeInfo.badgeClass || 'offline'}" style="font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 50px; background-color: var(--color-primary-light); color: var(--color-primary-hover);">${typeInfo.badgeClass === 'online' ? 'オンライン開催' : 'リアル開催'}</span>
+                    </div>
+                    <h1 class="act-card-title" style="font-size: 2rem; font-weight: 900; margin-bottom: 12px; line-height: 1.3;">${typeInfo.name}</h1>
+                    <p class="act-subtitle" style="font-size: 1.1rem; color: var(--color-primary-hover); font-weight: 800; margin-top: -4px; margin-bottom: 20px;">${typeInfo.subtitle || ''}</p>
+                    <p class="act-desc" style="font-size: 1.02rem; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 30px;">${typeInfo.desc}</p>
+                    
+                    <!-- Quick Info Grid -->
+                    <div class="act-quick-info" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; margin-bottom: 30px; background-color: var(--color-bg-primary); padding: 24px; border-radius: var(--radius-md); border: 1px solid rgba(62, 50, 42, 0.03);">
+                        <div class="info-item">
+                            <span class="info-icon">💴</span>
+                            <div class="info-text-wrapper">
+                                <span class="info-label">参加費</span>
+                                <span class="info-val font-highlight">${typeInfo.fee || ''}</span>
+                            </div>
                         </div>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div class="info-text-wrapper">
+                                <span class="info-label">開催場所</span>
+                                <span class="info-val" style="font-size:0.92rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン(Zoom)' : '新宿駅・北千住駅・東京駅周辺のアクセス良好な駅前レンタルスペース ※お申込み後に詳細な会場をメールでご案内します'}</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">💼</span>
+                            <div class="info-text-wrapper">
+                                <span class="info-label">持ち物</span>
+                                <span class="info-val">${typeInfo.items || 'なし'}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 上部CTAジャンプボタン -->
+                    <div class="act-jump-action" style="margin-top: -10px; margin-bottom: 30px; display: flex; justify-content: flex-start;">
+                        <a href="#schedules-section" class="cta-button primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-size: 0.95rem; border-radius: var(--radius-sm); font-weight: 800; text-decoration: none; width: auto; box-shadow: var(--shadow-sm);">
+                            <span>📅 開催スケジュールを確認する</span>
+                            <span class="arrow" style="font-weight: 900;">↓</span>
+                        </a>
+                    </div>
+                    
+                    <div style="border-top: 1px dashed rgba(62, 50, 42, 0.1); margin: 30px 0;"></div>
+
+                    <!-- 1-Column Content Stack (Vertical, Widescreen Optimized) -->
+                    <div class="act-detail-stack" style="display: flex; flex-direction: column; gap: 35px;">
+                        
+                        <div class="act-recommend" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">🎯 こんな方におすすめ</h2>
+                            <ul class="recommend-list" style="margin: 0; padding-left: 20px;">
+                                ${recommendHtml}
+                            </ul>
+                        </div>
+
+                        <div class="inner-detail-block" style="background: var(--color-bg-primary); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📖 イベント詳細</h2>
+                            <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted); white-space: pre-line;">${typeInfo.details || ''}</p>
+                        </div>
+
+                        <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">📍 会場案内・開催場所</h2>
+                            <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted); margin: 0;">
+                                ${typeInfo.badgeClass === 'online' ?
+            'オンライン開催（Zoomを使用します。お申し込み後に接続用のURLを個別にお送りいたします。）' :
+            '新宿駅、北千住駅、東京駅などの周辺にある、アクセスが良く清潔な駅前レンタルスペースを利用しています。<br><br><span style="color: var(--color-primary-hover); font-weight: 700;">※参加者の方のプライバシーと安全を考慮し、詳細な会場住所や部屋番号は、お申し込みいただいた方にのみ個別にご案内しております。</span>'}
+                            </p>
+                        </div>
+
+                        <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">⏰ 当日の流れ</h2>
+                            <p class="inner-detail-text" style="font-size: 0.98rem; line-height: 1.75; color: var(--color-text-muted);">${typeInfo.flow || ''}</p>
+                        </div>
+
+                        <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">⚠️ 注意事項</h2>
+                            <ul class="recommend-list notes-list" style="margin: 0; padding-left: 20px;">
+                                ${notesHtml}
+                            </ul>
+                        </div>
+
+                        <div class="inner-detail-block" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">⭐ 参加者の声</h2>
+                            <div class="reviews-container">
+                                ${reviewsHtml}
+                            </div>
+                        </div>
+
+                        <div class="card-schedules" id="schedules-section" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="card-schedules-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">📅 近日開催予定</h2>
+                            <ul class="card-schedules-list" style="list-style: none; padding: 0; margin: 0; margin-bottom: 20px;">
+                                ${scheduleHtml}
+                            </ul>
+                            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                                <a href="/reservation/?event=${key}" class="cta-button primary" style="padding: 12px 24px; font-size: 1rem; font-weight: 800; border-radius: var(--radius-sm); text-align: center; width: 100%; max-width: 320px; box-shadow: var(--shadow-sm); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                                    <span>日程を選んで<br class="sp-only">参加を申し込む</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        ${typeInfo.relatedColumns && typeInfo.relatedColumns.length > 0 ? `
+                        <div class="related-columns-area" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="related-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">💡 関連コラム</h2>
+                            <div class="related-links-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px;">
+                                ${relatedBlogsHtml}
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        ${relatedBlogHtml}
+
+                        ${faqHtml ? `
+                        <section class="faq-section" style="background: var(--color-bg-white); border: 1px solid rgba(62, 50, 42, 0.05); padding: 30px; border-radius: var(--radius-md);">
+                            <h2 class="act-sub-heading" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">❓ よくある質問</h2>
+                            ${faqHtml}
+                        </section>
+                        ` : ''}
+                    </div>
+
+                    <div style="border-top: 1px dashed rgba(62, 50, 42, 0.1); margin: 40px 0 30px 0;"></div>
+                    
+                    <div class="act-actions" style="display: flex; justify-content: center;">
+                        <a href="/reservation/?event=${key}" class="cta-button primary" style="padding: 18px 40px; font-size: 1.1rem; font-weight: 800; border-radius: var(--radius-sm); text-align: center; width: 100%; max-width: 500px; box-shadow: var(--shadow-md); transition: var(--transition-smooth); text-decoration: none;">
+                            <span>日程を選んで<br class="sp-only">参加を申し込む</span>
+                            <span class="arrow">→</span>
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <hr class="nw-div">
-
-            <!-- 開催概要 -->
-            <div class="nw-sec">
-                <h2 class="nw-ttl">📋 開催概要</h2>
-                <table class="nw-table">
-                    <tbody>
-                        <tr>
-                            <th>開催日時</th>
-                            <td>平日夜・不定期開催（各回の日程・時間は上記スケジュールをご確認ください）</td>
-                        </tr>
-                        <tr>
-                            <th>開催場所</th>
-                            <td>${typeInfo.badgeClass === 'online' ? 'オンライン（Zoom）開催。お申し込み後に接続URLを個別にご案内します。' : '新宿駅・北千住駅・東京駅周辺の駅前レンタルスペース<br><span style="color:var(--color-primary-hover);font-weight:700;">※参加者のプライバシーと安全のため、詳細な会場住所・部屋番号はお申し込み後に個別にメールでご案内します</span>'}</td>
-                        </tr>
-                        <tr>
-                            <th>参加費</th>
-                            <td><strong style="color:var(--color-primary-hover);font-size:1.3rem;">${typeInfo.fee || ''}</strong></td>
-                        </tr>
-                        <tr>
-                            <th>定員</th>
-                            <td>4〜8名（少人数制・アットホームな雰囲気）</td>
-                        </tr>
-                        <tr>
-                            <th>持ち物</th>
-                            <td>${typeInfo.items || '手ぶらでOK'}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <hr class="nw-div">
-
-            <!-- こんな方におすすめ -->
-            ${recommendHtml ? `
-            <div class="nw-sec">
-                <h2 class="nw-ttl">🎯 こんな方におすすめ</h2>
-                <ul class="nw-list">${recommendHtml}</ul>
-            </div>
-            <hr class="nw-div">
-            ` : ''}
-
-            <!-- イベント詳細 -->
-            ${typeInfo.details ? `
-            <div class="nw-sec">
-                <h2 class="nw-ttl">📖 イベント詳細</h2>
-                <p class="nw-detail-text">${typeInfo.details}</p>
-            </div>
-            <hr class="nw-div">
-            ` : ''}
-
-            <!-- 当日の流れ -->
-            ${typeInfo.flow ? `
-            <div class="nw-sec">
-                <h2 class="nw-ttl">⏰ 当日の流れ</h2>
-                <p class="nw-detail-text">${typeInfo.flow}</p>
-            </div>
-            <hr class="nw-div">
-            ` : ''}
-
-            <!-- FAQ -->
-            ${faqHtml ? `
-            <div class="nw-sec">
-                <h2 class="nw-ttl">❓ よくある質問</h2>
-                <div class="nw-faq">${faqHtml}</div>
-            </div>
-            <hr class="nw-div">
-            ` : ''}
-
-            <!-- 参加者の声 -->
-            ${reviewsHtml ? `
-            <div class="nw-sec">
-                <h2 class="nw-ttl">⭐ 参加者の声</h2>
-                ${reviewsHtml}
-            </div>
-            <hr class="nw-div">
-            ` : ''}
-
-            <!-- 関連コラム -->
-            ${relatedBlogsHtml ? `
-            <div class="nw-sec">
-                <h2 class="nw-ttl">💡 関連コラム</h2>
-                <div class="nw-rel-grid">${relatedBlogsHtml}</div>
-            </div>
-            <hr class="nw-div">
-            ` : ''}
-
-            <!-- 注意事項 -->
-            ${notesHtml ? `
-            <div class="nw-sec">
-                <h2 class="nw-ttl">⚠️ 注意事項</h2>
-                <ul class="nw-notes-list">${notesHtml}</ul>
-            </div>
-            ` : ''}
-
-            <!-- 底部CTA -->
-            <div class="nw-cta-bot">
-                <a href="/reservation/?event=${key}">日程を選んで参加を申し込む <span>→</span></a>
-            </div>
         </div>
-    </div>
-
-    <!-- 下部固定CTA -->
+    </section>
+    
+    <!-- 全デバイス共通下部固定（Sticky）CTA -->
     <div class="sticky-cta-wrapper">
         <a href="#schedules-section" class="sticky-cta-btn">
             <span>📅 開催日程・空席状況を見る</span>

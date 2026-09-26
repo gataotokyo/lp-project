@@ -1,0 +1,160 @@
+diff --git a/schedule.js b/schedule.js
+index 9967806..b87ae96 100644
+--- a/schedule.js
++++ b/schedule.js
+@@ -467,41 +467,78 @@ const BLOG_POSTS = [
+         imagePath: "images/hero_game.jpg",
+         content: `
+             <p>「ボードゲーム 人気」「ボードゲーム ランキング」とネットで検索すると、星の数ほどゲームが出てきて、「結局、初心者の自分はどれを買えば（遊べば）いいの？」と迷ってしまいませんか？</p>
+-            <p>ご覧いただきありがとうございます！東京ボードゲーム会を主催している「ゆるボドゲパパ」です。<br>私はこれまで200種類以上のボードゲームを遊び尽くしてきました。普段はIT企業でプロジェクトマネージャー（PM）として働いているため、「どうすれば初対面の人やチームが打ち解けられるか」を常に考えています。また、家では16歳の長女、13歳の長男、6歳の末っ子という年齢の離れた子どもたちと一緒に遊ぶことも多く、「誰でもすぐにルールが理解できて、ハンデなしで熱中できるゲーム」を見極める目には自信があります。</p>
++            <p>ご覧いただきありがとうございます！東京ボードゲーム会を主催している「ゆるボドゲパパ」です。<br>私はこれまで200種類以上のボードゲームを遊び尽くしてきました。普段はIT企業でプロジェクトマネージャー（PM）として働いているため、「どうすれば初対面の人やチームが打ち解けられるか」を常に考えています。また、家では16歳の長女、13歳の長男、6歳の末っ子という年齢的にも離れた子どもたちと一緒に遊ぶことも多く、「誰でもすぐにルールが理解できて、ハンデなしで熱中できるゲーム」を見極める目には自信があります。</p>
+             <p>今回は、数ある人気ゲームの中から「初心者の大人が、初対面同士で遊んでも絶対に盛り上がる」という基準で厳選した、おすすめランキングTOP5をご紹介します！</p>
+             
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第1位：カタン（CATAN）</h3>
+             <p><strong>【おすすめポイント：最強のコミュニケーションツール】</strong><br>
+             世界で数千万個以上売れている、言わずと知れた大人気ボードゲームです。無人島を開拓していくゲームですが、最大の特徴は「プレイヤー同士の交渉」があること。<br>
+             「鉄をあげるから、麦をくれない？」という会話が必然的に生まれるため、初対面でも一瞬で心の距離が縮まります。<br>
++            <strong>【なぜ初心者が失敗しないのか？】</strong><br>
++            カタンはダイスの運要素と実力のバランスが絶妙で、初心者が上級者を相手に勝つこともよくあります。また、自分のターンだけでなく他人のターンでもダイス目で資源がもらえるため、ゲーム中に「退屈な時間」が一切ありません。<br>
++            <strong>【一番盛り上がる瞬間】</strong><br>
++            なんといっても交渉フェーズです！「次のターンで都市を建てたいから、どうしても木が欲しい！代わりに次のターンにレンガをあげる！」と、必死に交渉を持ちかけ、交渉が成立して逆転で勝利を掴んだときの達成感は脳汁が出ます。<br>
+             <a href="/blog/catan-rules/" style="font-weight: 700; color: var(--color-primary-hover);">👉 カタンの詳しいルールと魅力についての解説記事はこちら</a></p>
+             
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第2位：モノポリー（Monopoly）</h3>
+             <p><strong>【おすすめポイント：遊びながら「お金と投資」が学べる】</strong><br>
+             サイコロを振ってマスを進み、不動産を売買してお金持ちを目指す世界的な名作です。ただのすごろくではなく、「資産を買う」「交渉する」というビジネスセンスが自然と身につきます。大人が本気で一喜一憂できる奥深さが魅力です。<br>
++            <strong>【なぜ初心者が失敗しないのか？】</strong><br>
++            「止まったマスの土地を買うか買わないか」の決断を繰り返すだけなので、操作自体は極めてシンプル。ルールはものの数分で理解できます。<br>
++            <strong>【一番盛り上がる瞬間】</strong><br>
++            同じ色の土地を独占（モノポリー）したプレイヤーが家を建て始め、他のプレイヤーがその土地に止まり高額なレンタル料を支払わされる瞬間です！「うわー！そこに止まっちゃった！破産だ！」と、敵も味方も大爆笑と絶叫の渦に巻き込まれます。<br>
+             <a href="/blog/monopoly-rules/" style="font-weight: 700; color: var(--color-primary-hover);">👉 モノポリーで学ぶ投資の本質！詳しい解説記事はこちら</a></p>
+             
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第3位：はぁっていうゲーム</h3>
+             <p><strong>【おすすめポイント：ルール説明10秒！爆笑必至のアイスブレイク】</strong><br>
+-            配られたお題（例えば「怒りの『はぁ』」や「失恋の『はぁ』」など）を、声と表情だけで演じ分けるパーティーゲームです。演技力のなさに爆笑が起き、非言語コミュニケーションの良いトレーニングにもなります。</p>
++            配られたお題（例えば「怒りの『はぁ』」や「失恋の『はぁ』」など）を、声と表情だけで演じ分けるパーティーゲームです。演技力のなさに爆笑が起き、非言語コミュニケーションの良いトレーニングにもなります。<br>
++            <strong>【なぜ初心者が失敗しないのか？】</strong><br>
++            戦術も戦略も一切不要！カードを引いて、指定された「はぁ」を言うだけなので、誰でも1秒でゲームの輪に入ることができます。<br>
++            <strong>【一番盛り上がる瞬間】</strong><br>
++            「え、今の『はぁ』は、怒ってるやつじゃないの？」「いや、ただ寝ぼけてるだけだよ！」と、各自の演技力のズレを検証し合う答え合わせの瞬間です。お互いの人柄がにじみ出て、一気に場が温まります。</p>
+             
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第4位：キャッシュフローゲーム</h3>
+             <p><strong>【おすすめポイント：より本格的にお金の教養を身につける】</strong><br>
+             大ベストセラー『金持ち父さん 貧乏父さん』の著者が考案した、本格的な投資シミュレーションゲームです。自分の財務諸表を鉛筆で書き込みながら進めるため、「給料以外でお金を生み出す（ラットレースを抜け出す）」感覚をリアルに体験できます。<br>
+-            <a href="/blog/cashflow-game/" style="font-weight: 700; color: var(--color-primary-hover);">👉 キャッシュフローゲーム体験会の詳細・見極め方はこちら</a></p>
++            <strong>【なぜ初心者が失敗しないのか？】</strong><br>
++            難しそうな「貸借対照表（BS）」や「損益計算書（PL）」ですが、ゲームの指示に従って数値を書き換えるだけなので、専門知識がなくてもゲーム感覚で会計知識が身につきます。<br>
++            <strong>【一番盛り上がる瞬間】</strong><br>
++            「不労所得」が自分の「毎月の生活費」を上回り、ついに最初のすごろく（ラットレース）を�    {
++        id: "post_20",
++        slug: "communication-skills",
++        category: "communication",
++        categoryName: "コミュニケーション",
++        date: "2026.08.02",
++        title: "コミュニケーション能力を高めるには？「低い」と悩む大人にボードゲームが最適な理由",
++        summary: "コミュニケーション能力を上げる方法に悩む社会人へ。自己PRや仕事にも活きる、ボードゲームを通じた自然なコミュ力向上の秘訣をお伝えします。",
++        imagePath: "images/event_communication.jpg",
++        content: `
++            <p>「初対面の人と何を話していいかわからない」<br>「職場でのコミュニケーション能力が低いと悩んでいる」<br>社会人になってから、このような悩みを抱える方は非常に多いです。</p>
++            <p>普段、私はIT系の企業でPM（プロジェクトマネージャー）として、開発チームやクライアントなど多様なメンバーをまとめる仕事をしています。仕事柄、日々「コミュニケーションの壁」に直面しています。例えば、「会議でメンバー同士の意見が噛み合わない」「遠慮して言いたいことが引き出せない」「些細な言葉のニュアンスの違いで誤解が生じる」などです。これらを本やセミナーで勉強しても、実際の現場でいきなり活かすのは難しいですよね。</p>
++            <p>そこでおすすめしたいのが、休日の「ボードゲーム」です。<br>実はボードゲームは、仕事にも活きる最強のコミュ力向上・トレーニングツールなんです。その3つの理由をお伝えします。</p>
+             
+-            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆第5位：イト（ito）</h3>
+-            <p><strong>【おすすめポイント：価値観のズレを楽しむ協力ゲーム】</strong><br>
+-            「1〜100の数字」が書かれたカードを各自が引き、お題（例：人気の旅行先）に合わせて「自分の数字の大きさ」を言葉で表現し、全員で小さい順に出していく協力ゲームです。「え、ハワイって数字で言うと80くらいじゃない？」など、人それぞれの価値観の違いが見えて大盛り上がりします。</p>
++            <ol style="margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
++                <li><strong>「共通の目的」があるから、無理に話題を探さなくていい</strong><br>飲み会や異業種交流会が嫌なのは「ゼロから話題を作らなければならない」からです。人見知りな方にとっては本当に辛い時間ですよね。しかしボードゲームなら、目の前の盤面という共通の話題があります。「次、どう動かしますか？」「そこをつなぐと強いですね！」と、ゲームの進行自体が自然な会話を引き出してくれるため、無駄に緊張することなく初対面の人と打ち解けることができます。</li>
++                <li><strong>非言語表現（表情やトーン）で伝えるトレーニングになる</strong><br>ITの現場でも、チャットツールでの文言だけでは感情が伝わらず衝突が起きることが多々あります。コミュニケーションにおいて非言語（表情、声のトーン、しぐさ）は非常に重要です。例えば『はぁっていうゲーム』のように、声と表情だけで意図を伝えるゲームを遊ぶと、「自分が思っている以上に、相手には感情が伝わっていないこと」に気づけます。遊びながら表現力を鍛えることで、日常生活やプレゼンの場でも伝わりやすい話し方が身につきます。</li>
++                <li><strong>ビジネスに直結する「Win-Winの交渉力」が育つ</strong><br>『カタン』や『モノポリー』では、他者との交渉が勝負を分けます。自分の要求だけを押し通そうとすると、交渉は決裂し、互いにジリ貧になります。「相手が何を出せば嬉しくて、自分もどう妥協できるか」を考えるトレーニングは、そのまま仕事における「要件定義」や「利害関係の調整」のシーンで絶大な威力を発揮します。</li>
++            </ol>
+             
+-            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆ランキングのゲームはすべて「東京ボードゲーム会」で遊べます！</h3>
+-            <p>いかがでしたでしょうか？「面白そうだけど、自分で買ってルールを覚えるのは大変そう…」という方は、ぜひ東京ボードゲーム会のイベントへ遊びに来てください！<br>
+-            北千住や新宿、東京駅周辺の会場で定期的に開催しており、私がイチからルールを優しくレクチャーします。お一人での参加や、完全な初心者の方がほとんどですので、手ぶらでお気軽にどうぞ！</p>
++            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆まずは「楽しむこと」から始めましょう！</h3>
++            <p>「コミュ力を上げなきゃ……」と気負う必要は全くありません。<br>東京ボードゲーム会には、毎週末、色々な職業や年代の方が集まります。普段仕事で抱えている緊張や肩書をいったん忘れ、「ちょっと気分転換に遊んでみようかな」くらいの軽い気持ちで遊びに来てください。ゲームが終わる頃には、自然と笑顔で会話できている自分に驚くはずですよ！</p>
+             
+-            <!-- リンクボタン -->
+             <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px; align-items: center;">
+-                <a href="/events/" class="cta-button primary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-sm);">
+-                    <span>🎲 各種イベント（体験会）一覧はこちら</span><span class="arrow">→</span>
++                <a href="/events/catan/" class="cta-button primary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-sm);">
++                    <span>⛵ カタン会の詳細・日程はこちら</span><span class="arrow">→</span>
++                </a>
++                <a href="/events/communication_skills/" class="cta-button secondary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(62, 50, 42, 0.1);">
++                    <span>🗣️ コミュニケーション能力向上ワークショップの詳細</span><span class="arrow">→</span>
++                </a>
++                <a href="/" class="cta-button secondary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(62, 50, 42, 0.1);">
++                    <span>🏠 東京ボードゲーム会 トップページへ</span><span class="arrow">→</span>
++                </a>
++            </div>
++        `
++    },��イベント（体験会）一覧はこちら</span><span class="arrow">→</span>
+                 </a>
+                 <a href="/reservation/" class="cta-button secondary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(62, 50, 42, 0.1);">
+                     <span>📅 日程の確認・参加申し込みはこちら</span><span class="arrow">→</span>
+@@ -535,8 +572,15 @@ const BLOG_POSTS = [
+             </ol>
+             
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆給料だけでは勝てない？ゲームから学ぶ「お金の本質」</h3>
+-            <p>『モノポリーで学ぶお金持ちの法則』の中でも触れられていますが、モノポリーでは盤面を1周するたびに銀行から定額の「給料」がもらえます。<br>しかし、この給料（定期収入）を貯金しているだけでは、絶対に勝てません。他人の土地に止まった時の支払いであっという間にお金が尽きてしまうからです。</p>
+-            <p>勝つためには、手元の現金をリスクにさらし、積極的に「土地（資産）」を買う必要があります。これがまさに、現実世界の「投資」の考え方そのものなのです。</p>
++            <p>『モノポリーで学ぶお金持ちの法則』の中でも触れられていますが、モノポリーでは盤面を1周するたびに銀行から定額の「給料（サラリー）」がもらえます。<br>しかし、この給料（定期収入）をただ貯金しているだけでは、絶対に勝てません。他人の土地に止まった時の支払いであっという間にお金が尽きてしまうからです。</p>
++            <p><strong>これは現実世界の「インフレ（物価上昇）」と投資の必要性に非常によく似ています。</strong><br>
++            銀行にお金を眠らせているだけでは、インフレによって現金の価値は相対的に目減りしていきます。モノポリーの世界でも、周りのプレイヤーが土地を購入して家を建てる（資産価値が高まり物価が上昇する）のに対し、自分だけが現金を持っていると、他人の資産マスの通行料（インフレによる出費）に耐えられなくなって破産します。<br>
++            勝つためには、手元の現金をリスクにさらし、積極的に「土地（資産）」を買い、さらにそこに家を建てる（再投資する）必要があるのです。これがまさに、現実世界の「資産運用」の考え方そのものなのです。</p>
++            
++            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆ゲーム終盤の白熱展開！「ホテル建設」による大逆転劇</h3>
++            <p>モノポリーの醍醐味は、土地を独占した中盤から終盤にかけて一気に加速します。<br>
++            最初は数百円だったレンタル料が、同じグループの土地を3枚揃えて家を3軒、4軒と建てていくうちに跳ね上がり、最終的に「ホテル」に改築すると一撃で数千円〜数万円という莫大な通行料になります。<br>
++            「サイコロの目が5ならセーフ、6なら相手のホテル街に直撃で破産！」という局面でのダイスロールは、プレイヤー全員が身を乗り出して白熱します！交渉で土地を交換し合い、互いの戦略が盤上に現れたときのやり取りは、大人が本気で絶叫し、笑い合える最高のエンターテインメントです。</p>
+             
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆さらに本格的にお金の教養を学びたい方へ</h3>
+             <p>モノポリーは投資の基本を楽しく学ぶのに最高のゲームですが、「もう少し現実世界に近い形で、本格的にお金の勉強をしてみたい」という方には、『キャッシュフローゲーム』という別のボードゲームも非常におすすめです。<br>大ベストセラー本『金持ち父さん 貧乏父さん』の著者が考案したゲームで、自分の財務諸表（貸借対照表や損益計算書）を実際に鉛筆で書き込みながら進めるため、より実践的なお金の教養が身につきます。</p>
+@@ -591,25 +635,41 @@ const BLOG_POSTS = [
+         category: "investment",
+         categoryName: "投資とお金",
+         date: "2026.08.02",
+-        title: "【東京】キャッシュフローゲーム初心者体験会｜遊びながらお金の教養を学ぶ",
++        title: "【東京】キャッシュフローゲーム体験イベント｜無理な勧誘なしでお金の教養を学ぶ",
+         summary: "東京（北千住・新宿・東京駅など）でキャッシュフローゲームを体験したい初心者向けコラム。無理な勧誘や営業行為のないオープンな環境の見分け方や学べることを解説します。",
+         imagePath: "images/cashflow_game.png",
+         content: `
+             <p>「キャッシュフローゲームをやってみたいけど、ネットで検索すると『怪しい』って出てきて不安……」<br>そんな風に感じていませんか？</p>
+-            <p>実際、このゲームは投資やビジネスの基本、財務諸表の読み方を学ぶのに非常に優れたツールであるため、世の中には様々な目的で開催されている会が存在します。<br>だからこそ当会は、「純粋にゲームの面白さを体験したい」「まずはフラットにお金の勉強の第一歩を踏み出したい」という方が、安心して楽しめるオープンな場を作ることを目的に立ち上げました。</p>
++            <p>実際、このゲームは投資やビジネスの基本、財務諸表の読み方を学ぶのに非常に優れたツールであるため、世の中には様々な目的で開催されているイベントが存在します。<br>だからこそ当会は、「純粋にゲームの面白さを体験したい」「怪しい勧誘なしでフラットにお金の勉強の第一歩を踏み出したい」という方が、安心して楽しめるオープンな場を作ることを目的に立ち上げました。</p>
+             
++            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆実際にどんな人が参加しているの？</h3>
++            <p>「自分だけ未経験で、周りがバリバリの投資家だったらどうしよう…」と心配されるかもしれませんが、全くそんなことはありません！<br>
++            当会で開催するキャッシュフローゲーム体験イベントには、以下のような方々が集まっています。</p>
++            <ul style="margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
++                <li><strong>お一人での参加が約9割！</strong>（初めての場所で緊張されている方がほとんどです）</li>
++                <li><strong>20代〜30代の普通の会社員</strong>（IT、メーカー、教育、事務職など様々）</li>
++                <li><strong>ボードゲーム自体を人生ゲームくらいしかやったことがない方</strong></li>
++                <li><strong>「資産運用やNISAを始めたいけれど、何からしていいかわからない」という初心者の方</strong></li>
++            </ul>
++            <p>ルールの説明はもちろん、ゲーム中のサポートも私がしっかり行いますので、予備知識は一切不要です。</p>
++
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆当会が大切にしている「お約束」</h3>
+             <p>私自身、普段はIT企業でプロジェクトマネージャー（PM）やQAリードとして働く会社員です。<br>参加者の皆様にリラックスして楽しんでいただくため、当会ではゲーム会という場を利用した「強引な勧誘」や「相手が望まない営業行為」を固くお断りしています。<br>会社でも家庭でもない、心地よい「サードプレイス（第3の居場所）」としてのボードゲーム会を第一に目指しています。</p>
+             
+-            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆どんなことが学べるの？</h3>
++            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆ゲーム中の具体的な学びと、アハ体験のシーン</h3>
++            <p>キャッシュフローゲームの最大の特徴は、各自に配られる「財務諸表（バランスシート）」に、鉛筆で収入・支出・資産・負債を実際に手書きしながら進める点です。<br>
++            ゲームの序盤、ただ給料をもらうためにすごろくを回している間は「お金が全く増えない…」という焦りを感じます。しかし、カードを引いて小さな不動産（資産）を購入し、そこから得られる不労所得をシートに書き加えた瞬間に、「あ！これが『お金にお金を働かせる』ということか！」と、視覚的に構造が腑に落ちる瞬間（アハ体験）が訪れます。<br>
++            この「毎月のお金の流れ（キャッシュフロー）」が頭の中で整理されると、普段の自分の生活のお金の使い方に対する見え方がガラリと変わるはずです。</p>
++
++            <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆どんなことが学べるの？（まとめ）</h3>
+             <ul style="margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
+                 <li>毎月の「給料」と「支出」のバランスの取り方</li>
+-                <li>「資産（ポケットにお金を入れてくれるもの）」と「負債」の違い</li>
++                <li>「資産（ポケットにお金を入れてくれるもの）」と「負債（ポケットからお金を奪うもの）」の違い</li>
+                 <li>不労所得が生活費を上回る「ラットレースを抜け出す」感覚</li>
+             </ul>
+             
+             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆開催場所について</h3>
+-            <p>主に北千住や新宿、東京駅周辺の貸会議室で定期的に体験会を開催しています。<br>当会に参加される方の約9割はお一人での参加で、半分以上がボードゲーム初心者の方です。ルールの説明から、ゲーム中の専門用語の解説まで、私が丁寧にサポートします。「まずは楽しく体験してみたい」という方、ぜひ構えずに遊びに来てくださいね！</p>
++            <p>主に北千住や新宿、東京駅周辺の貸会議室で定期的に体験イベントを開催しています。<br>「怪しい勧誘なしで、お金の流れをゲームで体験してみたい」という方、ぜひ構えずに遊びに来てくださいね！</p>
+             
+             <div style="margin-top: 40px; display: flex; justify-content: center;">
+                 <a href="/events/cashflow/" class="cta-button primary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-sm);">
