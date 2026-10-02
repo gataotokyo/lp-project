@@ -451,17 +451,6 @@ const SCHEDULE_DATA = [
         spotsLeft: 1
     },
     {
-        id: "event_new_16",
-        typeKey: "cashflow",
-        date: "2026/10/06 19:30-21:30",
-        location: "渋谷",
-        locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
-        mapUrl: "https://maps.google.com/?q=渋谷駅",
-        locationUrl: "",
-        capacity: 4,
-        spotsLeft: 2
-    },
-    {
         id: "event_new_17",
         typeKey: "nisa",
         date: "2026/10/07 19:30-21:30",
