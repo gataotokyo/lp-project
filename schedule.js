@@ -515,6 +515,28 @@ const SCHEDULE_DATA = [
         locationUrl: "",
         capacity: 4,
         spotsLeft: 1
+    },
+    {
+        id: "event_new_22",
+        typeKey: "cashflow",
+        date: "2026/10/13 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区新宿駅前レンタルスペース（新宿駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=新宿駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 3
+    },
+    {
+        id: "event_new_23",
+        typeKey: "cashflow",
+        date: "2026/10/20 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区新宿駅前レンタルスペース（新宿駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=新宿駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 2
     }
 ];
 
