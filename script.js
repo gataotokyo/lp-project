@@ -381,22 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showSuccessScreen() {
-        if (confirmButtonsArea) confirmButtonsArea.style.display = 'none';
-
-        const successMessage = document.getElementById('form-success-message');
-        if (successMessage) {
-            successMessage.style.display = 'block';
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        if (reservationForm) {
-            reservationForm.reset();
-        }
-
-        if (studyGroupDateSelect) {
-            studyGroupDateSelect.innerHTML = '<option value="" disabled selected>まずボードゲーム会を選択してください</option>';
-        }
-
-        tempFormData = {};
+        // 送信成功 → サンクスページへリダイレクト
+        window.location.href = '/reservation/thanks/';
     }
 });

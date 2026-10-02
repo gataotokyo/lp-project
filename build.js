@@ -371,6 +371,19 @@ fs.mkdirSync(path.join(distDir, 'reservation'), { recursive: true });
 fs.writeFileSync(path.join(distDir, 'reservation', 'index.html'), reservationHtml);
 generatedPages.push('/reservation/');
 
+// 4.5. 予約完了サンクスページ (/reservation/thanks/)
+const thanksContent = fs.readFileSync(path.join(srcDir, 'thanks.html'), 'utf8');
+const thanksHtml = renderTemplate(thanksContent, {
+    title: '予約完了｜東京ボードゲーム会',
+    description: '参加予約が確定しました。当日の案内メールをお送りします。東京ボードゲーム会への参加、ありがとうございます。',
+    canonical: domain + '/reservation/thanks/',
+    pathDepth: '../../',
+    jsonLd: [organizationJsonLd]
+});
+fs.mkdirSync(path.join(distDir, 'reservation', 'thanks'), { recursive: true });
+fs.writeFileSync(path.join(distDir, 'reservation', 'thanks', 'index.html'), thanksHtml);
+generatedPages.push('/reservation/thanks/');
+
 // --------------------------------------------------------------------------
 // B. ボードゲーム会（イベント）紹介ページの書き出し
 // --------------------------------------------------------------------------
