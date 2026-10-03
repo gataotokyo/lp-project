@@ -526,6 +526,105 @@ const SCHEDULE_DATA = [
         locationUrl: "",
         capacity: 4,
         spotsLeft: 2
+    },
+    {
+        id: "event_new_24",
+        typeKey: "catan",
+        date: "2026/10/13 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
+        mapUrl: "https://x.gd/NEcsM",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_25",
+        typeKey: "catan",
+        date: "2026/10/20 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
+        mapUrl: "https://x.gd/NEcsM",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_26",
+        typeKey: "catan",
+        date: "2026/10/27 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区西新宿貸会議室（新宿駅徒歩5分）",
+        mapUrl: "https://x.gd/NEcsM",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_27",
+        typeKey: "catan-women",
+        date: "2026/10/14 19:30-21:30",
+        location: "北千住",
+        locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=北千住駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_28",
+        typeKey: "catan-women",
+        date: "2026/10/21 19:30-21:30",
+        location: "北千住",
+        locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=北千住駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_29",
+        typeKey: "catan-women",
+        date: "2026/10/28 19:30-21:30",
+        location: "北千住",
+        locationAddress: "東京都足立区千住カフェスペース（北千住駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=北千住駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_30",
+        typeKey: "communication_skills",
+        date: "2026/10/14 20:00-21:00",
+        location: "オンライン",
+        locationAddress: "",
+        mapUrl: "",
+        locationUrl: "https://meet.google.com/aht-ebnt-abi",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_31",
+        typeKey: "communication_skills",
+        date: "2026/10/21 20:00-21:00",
+        location: "オンライン",
+        locationAddress: "",
+        mapUrl: "",
+        locationUrl: "https://meet.google.com/aht-ebnt-abi",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_32",
+        typeKey: "communication_skills",
+        date: "2026/10/28 20:00-21:00",
+        location: "オンライン",
+        locationAddress: "",
+        mapUrl: "",
+        locationUrl: "https://meet.google.com/aht-ebnt-abi",
+        capacity: 4,
+        spotsLeft: 4
     }
 ];
 
