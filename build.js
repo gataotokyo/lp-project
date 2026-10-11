@@ -653,6 +653,19 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         heroScheduleHtml = `<li style="color:var(--color-text-muted);font-size:1rem;">現在調整中。確定次第公開します！</li>`;
     }
 
+    // 当日の流れ（タイムライン・ステップバッジ生成）
+    const flowSteps = (typeInfo.flow || '').split(/\s*→\s*/).filter(Boolean);
+    const flowHtml = flowSteps.length > 0 ? `
+        <div class="nw-flow-timeline">
+            ${flowSteps.map((step, idx) => `
+                <div class="nw-flow-step">
+                    <span class="nw-flow-num">${idx + 1}</span>
+                    <span class="nw-flow-text">${step}</span>
+                </div>
+            `).join('\n')}
+        </div>
+    ` : `<p class="nw-detail-text">${typeInfo.flow || ''}</p>`;
+
     // おすすめ、注意事項、声、コラム
     const recommendHtml = (typeInfo.recommend || []).map(rec => `<li>${rec}</li>`).join('\n');
     const notesHtml = (typeInfo.notes || []).map(note => `<li>${note}</li>`).join('\n');
@@ -714,14 +727,20 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         @media(max-width:640px){.nw-sched-cta a{font-size:1rem;padding:10px 18px;width:100%;justify-content:center}}
         .nw-sec{margin-bottom:36px}
         .nw-ttl{font-size:1.5rem;font-weight:800;color:var(--color-text-main);margin-bottom:16px;display:flex;align-items:center;gap:8px;border-left:5px solid var(--color-primary,#8B6F5E);padding-left:14px}
-        @media(max-width:640px){.nw-ttl{font-size:1.2rem}}
         .nw-div{border:none;border-top:1px dashed rgba(62,50,42,.15);margin:28px 0}
         .nw-table{width:100%;border-collapse:collapse;font-size:1.3rem}
         .nw-table th,.nw-table td{padding:13px 18px;border-bottom:1px solid rgba(62,50,42,.12);vertical-align:top;line-height:1.7}
         .nw-table th{width:20%;font-weight:800;color:var(--color-text-main);background:var(--color-bg-primary,#faf8f6);white-space:nowrap}
         .nw-table td{color:var(--color-text-muted);font-weight:500}
         .nw-table tr:last-child th,.nw-table tr:last-child td{border-bottom:none}
-        @media(max-width:640px){.nw-table{font-size:1rem}.nw-table th{width:30%;white-space:normal}.nw-table th,.nw-table td{padding:9px 10px}}
+        @media(max-width:640px){
+            .nw-sec{margin-bottom:24px}
+            .nw-ttl{font-size:1.2rem;margin-bottom:12px}
+            .nw-div{margin:20px 0}
+            .nw-table{font-size:1rem}
+            .nw-table th{width:30%;white-space:normal}
+            .nw-table th,.nw-table td{padding:9px 10px}
+        }
         .nw-list{margin:0;padding-left:22px;font-size:1.3rem;line-height:2;color:var(--color-text-muted)}
         @media(max-width:640px){.nw-list{font-size:1.05rem}}
         .nw-faq{display:flex;flex-direction:column;gap:8px}
@@ -733,10 +752,16 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         .nw-faq-ans{padding:6px 20px 18px;font-size:1.25rem;line-height:1.8;color:var(--color-text-muted);border-top:1px solid rgba(62,50,42,.08)}
         .nw-faq-ans p{margin:12px 0 0}
         @media(max-width:640px){.nw-faq-item summary{font-size:1.05rem;padding:13px 14px}.nw-faq-ans{font-size:1rem;padding:5px 14px 14px}}
-        .nw-rev{background:var(--color-primary-light,#f5ede8);border-radius:8px;padding:16px 20px;margin-bottom:12px}
-        .nw-rev p{font-size:1.25rem;font-style:italic;color:var(--color-text-main);font-weight:500;line-height:1.75;margin:0 0 8px}
-        .nw-rev span{display:block;text-align:right;font-size:1.05rem;color:var(--color-text-light);font-weight:700}
-        @media(max-width:640px){.nw-rev p{font-size:1rem}.nw-rev span{font-size:.9rem}}
+        .nw-rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+        .nw-rev{background:var(--color-primary-light,#f5ede8);border-radius:8px;padding:18px 22px;border-left:4px solid var(--color-primary,#8B6F5E);display:flex;flex-direction:column;justify-content:space-between}
+        .nw-rev p{font-size:1.15rem;font-style:italic;color:var(--color-text-main);font-weight:500;line-height:1.75;margin:0 0 10px}
+        .nw-rev span{display:block;text-align:right;font-size:1rem;color:var(--color-text-light);font-weight:700}
+        @media(max-width:640px){
+            .nw-rev-grid{grid-template-columns:1fr;gap:12px}
+            .nw-rev{padding:14px 16px}
+            .nw-rev p{font-size:1rem;margin-bottom:8px}
+            .nw-rev span{font-size:.9rem}
+        }
         .nw-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
         .nw-rel-link{display:block;padding:14px 16px;background:var(--color-bg-primary,#faf8f6);border:1px solid rgba(62,50,42,.1);border-radius:8px;font-size:1.15rem;font-weight:700;color:var(--color-primary-hover,#6b4f3f);text-decoration:none;line-height:1.55;transition:background .2s}
         .nw-rel-link:hover{background:var(--color-primary-light,#f0e8e3)}
@@ -746,23 +771,21 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         .nw-notes-list li:last-child{border-bottom:none}
         .nw-notes-list li::before{content:"⚠️";position:absolute;left:0}
         @media(max-width:640px){.nw-notes-list li{font-size:1rem}}
-        .nw-flow-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:1.25rem;font-weight:600;color:var(--color-text-muted)}
-        .nw-fs{background:var(--color-bg-primary,#faf8f6);border:1px solid rgba(62,50,42,.12);border-radius:6px;padding:7px 16px}
-        .nw-fa{color:var(--color-primary,#8B6F5E);font-weight:900}
-        @media(max-width:640px){.nw-flow-wrap{font-size:1rem}.nw-fs{padding:5px 10px}}
+        .nw-flow-timeline{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:8px 0}
+        .nw-flow-step{display:inline-flex;align-items:center;gap:10px;background:var(--color-bg-primary,#faf8f6);border:1px solid rgba(62,50,42,.12);border-radius:50px;padding:9px 20px;font-size:1.15rem;font-weight:700;color:var(--color-text-main);box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+        .nw-flow-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--color-primary,#8B6F5E);color:#fff;font-size:.85rem;font-weight:900;border-radius:50%;flex-shrink:0}
+        .nw-flow-text{line-height:1.4}
+        @media(max-width:640px){
+            .nw-flow-timeline{gap:8px}
+            .nw-flow-step{font-size:.95rem;padding:7px 14px;gap:8px}
+            .nw-flow-num{width:20px;height:20px;font-size:.75rem}
+        }
         .nw-detail-text{font-size:1.25rem;line-height:1.8;color:var(--color-text-muted);white-space:pre-line}
-        @media(max-width:640px){.nw-detail-text{font-size:1rem}}
+        @media(max-width:640px){.nw-detail-text{font-size:1rem;line-height:1.7}}
         .nw-cta-bot{display:flex;justify-content:center;margin-top:40px}
         .nw-cta-bot a{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 44px;font-size:1.4rem;font-weight:800;border-radius:8px;text-decoration:none;box-shadow:var(--shadow-md);background:var(--color-primary,#8B6F5E);color:#fff;width:100%;max-width:520px;text-align:center;transition:opacity .2s}
         .nw-cta-bot a:hover{opacity:.85}
         @media(max-width:640px){.nw-cta-bot a{font-size:1.05rem;padding:14px 20px}}
-        .nw-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;background:var(--color-bg-primary,#faf8f6);padding:24px;border-radius:12px;border:1px solid rgba(62,50,42,.08);margin-bottom:24px}
-        @media(max-width:640px){.nw-info-grid{grid-template-columns:1fr;gap:12px;padding:16px}}
-        .nw-info-item .info-icon{font-size:1.5rem}
-        .nw-info-item .info-label{display:block;font-size:1rem;color:var(--color-text-light);font-weight:700;margin-bottom:2px}
-        .nw-info-item .info-val{display:block;font-size:1.2rem;font-weight:700;color:var(--color-text-main)}
-        .nw-info-item .font-highlight{color:var(--color-primary-hover);font-size:1.35rem;font-weight:800}
-        @media(max-width:640px){.nw-info-item .info-val{font-size:1rem}.nw-info-item .font-highlight{font-size:1.15rem}}
     </style>
     <div class="nw-ev-outer">
         <div class="nw-ev-inner">
@@ -854,7 +877,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             ${typeInfo.flow ? `
             <div class="nw-sec">
                 <h2 class="nw-ttl">⏰ 当日の流れ</h2>
-                <p class="nw-detail-text">${typeInfo.flow}</p>
+                ${flowHtml}
             </div>
             <hr class="nw-div">
             ` : ''}
@@ -872,7 +895,9 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             ${reviewsHtml ? `
             <div class="nw-sec">
                 <h2 class="nw-ttl">⭐ 参加者の声</h2>
-                ${reviewsHtml}
+                <div class="nw-rev-grid">
+                    ${reviewsHtml}
+                </div>
             </div>
             <hr class="nw-div">
             ` : ''}
@@ -1250,6 +1275,10 @@ BLOG_POSTS.forEach((post, index) => {
         'board-game-event-trouble': {
             title: 'ボードゲーム会 トラブル・出禁になる行為と安心参加のコツ',
             description: 'ボードゲーム会でよくあるトラブルや出禁になる行為を解説。参加前に知っておきたいマナー・ルールと、安心して参加できる会の選び方を東京開催の主催者が紹介。'
+        },
+        'catan-play-time': {
+            title: 'カタン 所要時間はどれくらい？人数別の目安と時短のコツ',
+            description: 'カタンの所要時間を人数別に解説。初心者同士だと2〜3時間、慣れると90分以内も可能。プレイ時間を短縮するコツと、東京で実際にカタンを楽しめる会も紹介。'
         }
     };
 
