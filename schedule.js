@@ -625,6 +625,72 @@ const SCHEDULE_DATA = [
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
         spotsLeft: 4
+    },
+    {
+        id: "event_new_33",
+        typeKey: "cashflow",
+        date: "2026/10/23 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区新宿駅前レンタルスペース（新宿駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=新宿駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_34",
+        typeKey: "cashflow",
+        date: "2026/10/27 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区新宿駅前レンタルスペース（新宿駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=新宿駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_35",
+        typeKey: "cashflow",
+        date: "2026/10/30 19:30-21:30",
+        location: "新宿",
+        locationAddress: "東京都新宿区新宿駅前レンタルスペース（新宿駅徒歩3分）",
+        mapUrl: "https://maps.google.com/?q=新宿駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_36",
+        typeKey: "nisa",
+        date: "2026/10/21 19:30-21:30",
+        location: "渋谷",
+        locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
+        mapUrl: "https://maps.google.com/?q=渋谷駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_37",
+        typeKey: "nisa",
+        date: "2026/10/23 19:30-21:30",
+        location: "渋谷",
+        locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
+        mapUrl: "https://maps.google.com/?q=渋谷駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
+    },
+    {
+        id: "event_new_38",
+        typeKey: "nisa",
+        date: "2026/10/30 19:30-21:30",
+        location: "渋谷",
+        locationAddress: "東京都渋谷区道玄坂貸会議室（渋谷駅徒歩4分）",
+        mapUrl: "https://maps.google.com/?q=渋谷駅",
+        locationUrl: "",
+        capacity: 4,
+        spotsLeft: 4
     }
 ];
 
