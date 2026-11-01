@@ -165,10 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date();
         studyGroupDateSelect.innerHTML = ''; // クリア
 
-        // 選択されたゲーム会に紐付く未来日程を取得
+        // 選択されたゲーム会に紐付く未来日程を取得（当日から31日後まで）
+        const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
+        maxDate.setHours(23, 59, 59, 999);
         const matchedSchedules = SCHEDULE_DATA.filter(event => {
             const eventDate = new Date(event.date);
-            return eventDate >= now && event.typeKey === typeKey;
+            return eventDate >= now && eventDate <= maxDate && event.typeKey === typeKey;
         });
 
         if (matchedSchedules.length > 0) {
@@ -230,11 +232,13 @@ document.addEventListener('DOMContentLoaded', () => {
             studyGroupTypeSelect.value = eventParam;
             updateDateDropdown(eventParam);
 
-            // 未来の有効な日程を自動選択
+            // 未来の有効な日程を自動選択（当日から31日後まで）
             const now = new Date();
+            const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
+            maxDate.setHours(23, 59, 59, 999);
             const matchedEvent = SCHEDULE_DATA.find(event => {
                 const eventDate = new Date(event.date);
-                return eventDate >= now && event.typeKey === eventParam && event.spotsLeft > 0;
+                return eventDate >= now && eventDate <= maxDate && event.typeKey === eventParam && event.spotsLeft > 0;
             });
 
             if (matchedEvent) {

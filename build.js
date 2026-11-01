@@ -395,17 +395,19 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     const webpImagePath = typeInfo.imagePath ? '/' + typeInfo.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/fv_bg.webp';
     const fallbackImagePath = typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png';
 
-    // 直近の開催予定日を抽出（最大3件）
+    // 直近の開催予定日を抽出（当日から数えて31日後まで、最大8件）
     const now = new Date();
+    const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
+    maxDate.setHours(23, 59, 59, 999);
     const futureEvents = SCHEDULE_DATA.filter(event => {
         const dateStr = event.date.split(' ')[0];
         const eventDate = new Date(dateStr + ' 23:59:59');
-        return event.typeKey === key && eventDate >= now;
+        return event.typeKey === key && eventDate >= now && eventDate <= maxDate;
     });
 
     let scheduleListHtml = '';
     if (futureEvents.length > 0) {
-        futureEvents.slice(0, 3).forEach(event => {
+        futureEvents.slice(0, 8).forEach(event => {
             const dateParts = event.date.split(' ');
             const dateOnly = dateParts[0]; // "2026/09/01"
             const timeOnly = dateParts[1] || ''; // "19:30-21:30"
@@ -572,17 +574,19 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         `;
     }
 
-    // このイベントに紐づく近日日程 (過去日は除外)
+    // このイベントに紐づく近日日程 (過去日は除外、当日から数えて31日後まで、最大8件)
     const now = new Date();
+    const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
+    maxDate.setHours(23, 59, 59, 999);
     const futureEvents = SCHEDULE_DATA.filter(event => {
         const dateStr = event.date.split(' ')[0]; // "2026/07/19"
         const eventDate = new Date(dateStr + ' 23:59:59'); // その日の終わりまで有効とする
-        return event.typeKey === key && eventDate >= now;
+        return event.typeKey === key && eventDate >= now && eventDate <= maxDate;
     });
 
     let scheduleHtml = '';
     if (futureEvents.length > 0) {
-        futureEvents.slice(0, 4).forEach(event => {
+        futureEvents.slice(0, 8).forEach(event => {
             const isOnline = event.location === 'オンライン';
             const typeLabel = isOnline ? '<span class="type-badge online">オンライン</span>' : '<span class="type-badge offline">オフライン</span>';
             const locLabel = isOnline ? 'Zoom配信' : `会場: ${event.location}`;
@@ -628,7 +632,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     // ヒーロー用スケジュール（新クラス）
     let heroScheduleHtml = '';
     if (futureEvents.length > 0) {
-        futureEvents.slice(0, 4).forEach(event => {
+        futureEvents.slice(0, 8).forEach(event => {
             const isOnline2 = event.location === 'オンライン';
             const offLabel = isOnline2 ? 'オンライン' : 'オフライン';
             let spotsHtml = '';
