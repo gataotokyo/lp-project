@@ -739,7 +739,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_43",
         typeKey: "communication_skills",
-        date: "2026/11/04 19:30-21:30",
+        date: "2026/11/04 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -838,7 +838,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_52",
         typeKey: "communication_skills",
-        date: "2026/11/10 19:30-21:30",
+        date: "2026/11/10 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -860,7 +860,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_54",
         typeKey: "communication_skills",
-        date: "2026/11/11 19:30-21:30",
+        date: "2026/11/11 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -937,7 +937,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_61",
         typeKey: "communication_skills",
-        date: "2026/11/18 19:30-21:30",
+        date: "2026/11/18 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1047,7 +1047,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_71",
         typeKey: "communication_skills",
-        date: "2026/11/24 19:30-21:30",
+        date: "2026/11/24 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1069,7 +1069,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_73",
         typeKey: "communication_skills",
-        date: "2026/11/25 19:30-21:30",
+        date: "2026/11/25 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1157,7 +1157,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_81",
         typeKey: "communication_skills",
-        date: "2026/12/02 19:30-21:30",
+        date: "2026/12/02 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1256,7 +1256,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_90",
         typeKey: "communication_skills",
-        date: "2026/12/08 19:30-21:30",
+        date: "2026/12/08 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1278,7 +1278,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_92",
         typeKey: "communication_skills",
-        date: "2026/12/09 19:30-21:30",
+        date: "2026/12/09 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1355,7 +1355,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_99",
         typeKey: "communication_skills",
-        date: "2026/12/16 19:30-21:30",
+        date: "2026/12/16 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1465,7 +1465,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_109",
         typeKey: "communication_skills",
-        date: "2026/12/22 19:30-21:30",
+        date: "2026/12/22 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1487,7 +1487,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_111",
         typeKey: "communication_skills",
-        date: "2026/12/23 19:30-21:30",
+        date: "2026/12/23 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1553,7 +1553,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_117",
         typeKey: "communication_skills",
-        date: "2026/12/30 19:30-21:30",
+        date: "2026/12/30 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1630,7 +1630,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_124",
         typeKey: "communication_skills",
-        date: "2027/01/06 19:30-21:30",
+        date: "2027/01/06 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1740,7 +1740,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_134",
         typeKey: "communication_skills",
-        date: "2027/01/12 19:30-21:30",
+        date: "2027/01/12 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1762,7 +1762,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_136",
         typeKey: "communication_skills",
-        date: "2027/01/13 19:30-21:30",
+        date: "2027/01/13 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1828,7 +1828,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_142",
         typeKey: "communication_skills",
-        date: "2027/01/20 19:30-21:30",
+        date: "2027/01/20 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1949,7 +1949,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_153",
         typeKey: "communication_skills",
-        date: "2027/01/26 19:30-21:30",
+        date: "2027/01/26 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -1971,7 +1971,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_155",
         typeKey: "communication_skills",
-        date: "2027/01/27 19:30-21:30",
+        date: "2027/01/27 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2048,7 +2048,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_162",
         typeKey: "communication_skills",
-        date: "2027/02/03 19:30-21:30",
+        date: "2027/02/03 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2147,7 +2147,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_171",
         typeKey: "communication_skills",
-        date: "2027/02/09 19:30-21:30",
+        date: "2027/02/09 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2169,7 +2169,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_173",
         typeKey: "communication_skills",
-        date: "2027/02/10 19:30-21:30",
+        date: "2027/02/10 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2246,7 +2246,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_180",
         typeKey: "communication_skills",
-        date: "2027/02/17 19:30-21:30",
+        date: "2027/02/17 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2356,7 +2356,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_190",
         typeKey: "communication_skills",
-        date: "2027/02/23 19:30-21:30",
+        date: "2027/02/23 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2378,7 +2378,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_192",
         typeKey: "communication_skills",
-        date: "2027/02/24 19:30-21:30",
+        date: "2027/02/24 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2466,7 +2466,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_200",
         typeKey: "communication_skills",
-        date: "2027/03/03 19:30-21:30",
+        date: "2027/03/03 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2565,7 +2565,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_209",
         typeKey: "communication_skills",
-        date: "2027/03/09 19:30-21:30",
+        date: "2027/03/09 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2587,7 +2587,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_211",
         typeKey: "communication_skills",
-        date: "2027/03/10 19:30-21:30",
+        date: "2027/03/10 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2664,7 +2664,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_218",
         typeKey: "communication_skills",
-        date: "2027/03/17 19:30-21:30",
+        date: "2027/03/17 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2774,7 +2774,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_228",
         typeKey: "communication_skills",
-        date: "2027/03/23 19:30-21:30",
+        date: "2027/03/23 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2796,7 +2796,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_230",
         typeKey: "communication_skills",
-        date: "2027/03/24 19:30-21:30",
+        date: "2027/03/24 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
@@ -2862,7 +2862,7 @@ const SCHEDULE_DATA = [
     {
         id: "event_new_236",
         typeKey: "communication_skills",
-        date: "2027/03/31 19:30-21:30",
+        date: "2027/03/31 20:00-21:00",
         location: "オンライン",
         locationAddress: "",
         mapUrl: "",
