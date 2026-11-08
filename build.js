@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const srcDir = path.join(__dirname, 'src');
 const templatesDir = path.join(__dirname, 'templates');
@@ -124,7 +125,10 @@ const organizationJsonLd = {
         "@type": "Person",
         "name": "ゆるボドゲパパ"
     },
-    "sameAs": []
+    "sameAs": [
+        "https://www.instagram.com/tokyo_boardgame_club/",
+        "https://x.com/yulbodogepapa"
+    ]
 };
 
 // トップページ専用 Organization 構造化データ
@@ -134,7 +138,16 @@ const homeOrganizationJsonLd = {
     "@id": "https://tokyo-boardgame-club.com/#organization",
     "name": "東京ボードゲーム会",
     "url": "https://tokyo-boardgame-club.com/",
-    "description": "東京エリアで初心者や社会人向けにボードゲーム会を运营するコミュニティ"
+    "logo": domain + "/images/tokyo_logo_color.png?v=2",
+    "description": "東京エリアで初心者や社会人向けにボードゲーム会を運営するコミュニティ",
+    "founder": {
+        "@type": "Person",
+        "name": "ゆるボドゲパパ"
+    },
+    "sameAs": [
+        "https://www.instagram.com/tokyo_boardgame_club/",
+        "https://x.com/yulbodogepapa"
+    ]
 };
 
 // FAQ 構造化データ
@@ -303,6 +316,14 @@ generatedPages.push('/');
 
 // 2. プロフィール (/about)
 const aboutContent = fs.readFileSync(path.join(srcDir, 'about.html'), 'utf8');
+const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ゆるボドゲパパ",
+    "description": "200種類以上のボードゲームを遊んだ経験をもとに、初心者向けのボードゲーム会を東京（新宿・北千住周辺）で主催している。",
+    "url": "https://tokyo-boardgame-club.com/about/",
+    "sameAs": ["https://x.com/yulbodogepapa"]
+};
 const aboutHtml = renderTemplate(aboutContent, {
     title: '主催者プロフィール｜ゆるボドゲパパ・200種以上のボードゲーム経験',
     description: '葛飾区在住・3児の父・会社員。200種以上のボードゲームを体験したゆるボドゲパパが、遊びながら学べる東京ボードゲーム会を主催。初心者でも安心な会の主催者について。',
@@ -310,6 +331,7 @@ const aboutHtml = renderTemplate(aboutContent, {
     pathDepth: '../',
     jsonLd: [
         organizationJsonLd,
+        personJsonLd,
         {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -488,7 +510,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         <span class="info-icon">📍</span>
                         <div class="info-text-wrapper">
                             <span class="info-label">開催場所</span>
-                            <span class="info-val" style="font-size:0.78rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン' : '新宿駅・北千住駅周辺の駅前レンタルスペース'}</span>
+                            <span class="info-val" style="font-size:0.78rem; font-weight:700;">${typeInfo.badgeClass === 'online' ? 'オンライン' : (key === 'nisa' ? '渋谷のカフェ' : '新宿駅・北千住駅・東京駅周辺の駅前レンタルスペース')}</span>
                         </div>
                     </div>
                     <div class="info-item">
@@ -516,6 +538,11 @@ const eventsIndexContent = `
     <div class="container-inner">
         <h2 class="section-title">ボードゲーム会紹介</h2>
         <p class="section-subtitle">ゆるボドゲパパが主催する、プレイスタイルや目的に合わせた特徴的なボードゲーム会です。</p>
+        <div class="area-search-links" style="margin: -2rem 0 2.5rem; text-align: center;">
+            <span style="font-weight: 700; color: var(--color-text-muted); margin-right: 10px;">📍 エリアから探す：</span>
+            <a href="/area/kitasenju/" class="cta-button secondary" style="padding: 8px 20px; font-size: 0.95rem; margin: 4px;">北千住のボードゲーム会</a>
+            <a href="/area/shinjuku/" class="cta-button secondary" style="padding: 8px 20px; font-size: 0.95rem; margin: 4px;">新宿のボードゲーム会</a>
+        </div>
         <div class="activities-grid">
             ${eventCardsHtml}
         </div>
@@ -688,9 +715,19 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
     `).join('\n') : '';
 
     const relatedBlogsHtml = (typeInfo.relatedColumns || []).map(postId => {
-        const post = BLOG_POSTS.find(p => p.id === postId);
+        const post = BLOG_POSTS.find(p => p.id === postId || p.slug === postId);
         return post ? `<a href="/blog/${post.slug}/" class="nw-rel-link">📖 ${post.title}</a>` : '';
     }).join('\n');
+
+    const summaryLocationText = typeInfo.badgeClass === 'online'
+        ? 'オンライン（Zoom）'
+        : (key === 'nisa' ? '渋谷のカフェ' : '新宿駅・北千住駅・東京駅周辺の駅前レンタルスペース');
+    const matchedScheduleForCap = SCHEDULE_DATA.find(e => e.typeKey === key && e.capacity);
+    const typicalCapacity = matchedScheduleForCap ? matchedScheduleForCap.capacity : 4;
+    const summarySentences = (typeInfo.desc || '').match(/[^。！？]+[。！？]?/g) || [];
+    const summaryLeadText = summarySentences.length > 2
+        ? summarySentences.slice(-2).join('')
+        : (typeInfo.desc || '');
 
     const detailContent = `
     <style>
@@ -711,6 +748,9 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         .nw-h1{font-size:2.3rem;font-weight:900;line-height:1.3;margin:10px 0 16px;color:var(--color-text-main)}
         @media(max-width:768px){.nw-h1{font-size:1.9rem}}
         @media(max-width:640px){.nw-h1{font-size:1.55rem}}
+        .event-summary { background:#f7f7f2; border-left:4px solid var(--color-primary,#00B4D8); padding:12px 16px; margin:12px 0; font-size:.95rem; line-height:1.6; }
+        .event-summary-lead { margin:0 0 8px; font-weight:bold; }
+        .event-summary ul { margin:0; padding-left:1.2em; }
         .nw-sub{font-size:1.35rem;font-weight:700;color:var(--color-primary-hover);margin-bottom:18px;line-height:1.7}
         @media(max-width:640px){.nw-sub{font-size:1.1rem}}
         .nw-desc{font-size:1.2rem;line-height:1.75;color:var(--color-text-muted);margin-bottom:18px}
@@ -812,6 +852,16 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                 <div>
                     <p class="nw-cat">${typeInfo.emoji || '🎲'} ${typeInfo.badge}<span class="nw-badge">${typeInfo.badgeClass === 'online' ? 'オンライン開催' : 'リアル開催'}</span></p>
                     <h1 class="nw-h1">${typeInfo.name}</h1>
+                    <div class="event-summary">
+                      <p class="event-summary-lead">${summaryLeadText}</p>
+                      <ul>
+                        <li>対象: 初心者歓迎・一人参加歓迎</li>
+                        <li>参加費: ${typeInfo.fee}</li>
+                        <li>持ち物: ${typeInfo.items || 'なし'}</li>
+                        <li>場所: ${summaryLocationText}</li>
+                        <li>人数: 通常${typicalCapacity}名程度</li>
+                      </ul>
+                    </div>
                     <p class="nw-sub">${typeInfo.subtitle || ''}</p>
                     <p class="nw-desc">${typeInfo.desc}</p>
 
@@ -839,7 +889,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
                         </tr>
                         <tr>
                             <th>開催場所</th>
-                            <td>${typeInfo.badgeClass === 'online' ? 'オンライン（Zoom）開催。お申し込み後に接続URLを個別にご案内します。' : '新宿駅・北千住駅・東京駅周辺の駅前レンタルスペース<br><span style="color:var(--color-primary-hover);font-weight:700;">※参加者のプライバシーと安全のため、詳細な会場住所・部屋番号はお申し込み後に個別にメールでご案内します</span>'}</td>
+                            <td>${typeInfo.badgeClass === 'online' ? 'オンライン（Zoom）開催。お申し込み後に接続URLを個別にご案内します。' : (key === 'nisa' ? '渋谷のカフェ<br><span style="color:var(--color-primary-hover);font-weight:700;">※参加者のプライバシーと安全のため、詳細な会場はお申し込み後に個別にメールでご案内します</span>' : '新宿駅・北千住駅・東京駅周辺の駅前レンタルスペース<br><span style="color:var(--color-primary-hover);font-weight:700;">※参加者のプライバシーと安全のため、詳細な会場住所・部屋番号はお申し込み後に個別にメールでご案内します</span>')}</td>
                         </tr>
                         <tr>
                             <th>参加費</th>
@@ -908,12 +958,30 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
 
             <!-- 関連コラム -->
             ${relatedBlogsHtml ? `
-            <div class="nw-sec">
+            <div class="nw-sec related-blog">
                 <h2 class="nw-ttl">💡 関連コラム</h2>
                 <div class="nw-rel-grid">${relatedBlogsHtml}</div>
             </div>
             <hr class="nw-div">
             ` : ''}
+
+            ${key === 'catan' ? `
+            <div class="nw-sec">
+                <h2 class="nw-ttl">👩 女性限定のカタン会も開催中</h2>
+                <div class="nw-rel-grid">
+                    <a href="/events/catan-women/" class="nw-rel-link">🎲 女性限定カタン会（東京・初心者歓迎）の詳細を見る</a>
+                </div>
+            </div>
+            <hr class="nw-div">
+            ` : (key === 'catan-women' ? `
+            <div class="nw-sec">
+                <h2 class="nw-ttl">🎲 通常のカタン会も開催中</h2>
+                <div class="nw-rel-grid">
+                    <a href="/events/catan/" class="nw-rel-link">🎲 東京のカタン会（男女問わず参加OK・初心者歓迎）の詳細を見る</a>
+                </div>
+            </div>
+            <hr class="nw-div">
+            ` : '')}
 
             <!-- 注意事項 -->
             ${notesHtml ? `
@@ -1026,17 +1094,346 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         description: `${typeInfo.subtitle || ''} ${typeInfo.desc.substring(0, 100)}...`
     };
 
+    const eventFaqJsonLd = (typeInfo.faq && typeInfo.faq.length > 0) ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": typeInfo.faq.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+            }
+        }))
+    } : null;
+
+    const eventPageJsonLd = [organizationJsonLd, eventJsonLd, breadcrumbJsonLd];
+    if (eventFaqJsonLd) {
+        eventPageJsonLd.push(eventFaqJsonLd);
+    }
+
     const detailHtml = renderTemplate(detailContent, {
         title: seoMeta.title,
         description: seoMeta.description,
         canonical: `${domain}/events/${key}/`,
         pathDepth: '../../',
-        jsonLd: [organizationJsonLd, eventJsonLd, breadcrumbJsonLd]
+        jsonLd: eventPageJsonLd
     });
 
     fs.mkdirSync(path.join(distDir, 'events', key), { recursive: true });
     fs.writeFileSync(path.join(distDir, 'events', key, 'index.html'), detailHtml);
     generatedPages.push(`/events/${key}/`);
+});
+
+// 3. 地域別ページ (/area/kitasenju/, /area/shinjuku/)
+const AREA_PAGES = [
+    {
+        slug: 'kitasenju',
+        locationName: '北千住',
+        title: '北千住 ボードゲーム会｜初心者歓迎・一人参加OK',
+        description: '北千住駅周辺で開催する初心者向けボードゲーム会。一人参加歓迎・ルール説明あり・少人数制。直近の開催日程と参加費を掲載。',
+        h1: '北千住のボードゲーム会（初心者歓迎）',
+        overview: '北千住駅周辺の駅前レンタルスペースで、初心者向けのボードゲーム会を開いています。一人参加が多く、ルール説明から始めるため初めての方でも安心して参加できます。',
+        access: '北千住駅はJR常磐線、東京メトロ日比谷線・千代田線、東武スカイツリーライン、つくばエクスプレスが乗り入れています。詳細な会場は申込後にメールでご案内します。',
+        faq: [
+            {
+                q: '一人でも参加できますか？',
+                a: 'はい、一人参加が多い会ですので大丈夫です。通常4名程度の少人数で開催しています。'
+            },
+            {
+                q: '持ち物は？',
+                a: 'カタン会・モノポリー会・NISAボードゲーム会は持ち物はありません。キャッシュフローゲーム会のみ筆記用具と電卓（スマートフォンの電卓アプリ可）をご持参ください。'
+            },
+            {
+                q: 'どこで開催しますか？',
+                a: '北千住駅周辺の駅前レンタルスペースで開催します。詳細な会場は申込後にメールでご案内します。'
+            },
+            {
+                q: 'キャンセルはできますか？',
+                a: 'はい、キャンセルや日時の変更は、申込受付メールへの返信か事前連絡で対応しています。無断キャンセルはお控えください。'
+            }
+        ]
+    },
+    {
+        slug: 'shinjuku',
+        locationName: '新宿',
+        title: '新宿 ボードゲーム会｜初心者歓迎・一人参加OK',
+        description: '新宿駅周辺で開催する初心者向けボードゲーム会。一人参加歓迎・ルール説明あり・少人数制。直近の開催日程と参加費を掲載。',
+        h1: '新宿のボードゲーム会（初心者歓迎）',
+        overview: '新宿駅周辺の駅前レンタルスペースで、初心者向けのボードゲーム会を開いています。一人参加が多く、ルール説明から始めるため初めての方でも安心して参加できます。',
+        access: '新宿駅は多くの路線が乗り入れるターミナル駅です。詳細な会場は申込後にメールでご案内します。',
+        faq: [
+            {
+                q: '一人でも参加できますか？',
+                a: 'はい、一人参加が多い会ですので大丈夫です。通常4名程度の少人数で開催しています。'
+            },
+            {
+                q: '持ち物は？',
+                a: 'カタン会・モノポリー会・NISAボードゲーム会は持ち物はありません。キャッシュフローゲーム会のみ筆記用具と電卓（スマートフォンの電卓アプリ可）をご持参ください。'
+            },
+            {
+                q: 'どこで開催しますか？',
+                a: '新宿駅周辺の駅前レンタルスペースで開催します。詳細な会場は申込後にメールでご案内します。'
+            },
+            {
+                q: 'キャンセルはできますか？',
+                a: 'はい、キャンセルや日時の変更は、申込受付メールへの返信か事前連絡で対応しています。無断キャンセルはお控えください。'
+            }
+        ]
+    }
+];
+
+AREA_PAGES.forEach(area => {
+    const now = new Date();
+    const futureAreaEvents = SCHEDULE_DATA.filter(event => {
+        const dateStr = event.date.split(' ')[0];
+        const eventDate = new Date(dateStr + ' 23:59:59');
+        return event.location === area.locationName && eventDate >= now;
+    });
+
+    let areaScheduleHtml = '';
+    if (futureAreaEvents.length > 0) {
+        const itemsHtml = futureAreaEvents.slice(0, 12).map(event => {
+            const typeInfo = GAME_MEETING_TYPES[event.typeKey] || {};
+            let spotsHtml = '';
+            if (event.spotsLeft === 0) {
+                spotsHtml = `<span class="nw-spot su">満席</span>`;
+            } else if (event.spotsLeft === 1) {
+                spotsHtml = `<span class="nw-spot su">残り枠: ${event.spotsLeft}名</span>`;
+            } else if (event.spotsLeft === 2) {
+                spotsHtml = `<span class="nw-spot sw">残り枠: ${event.spotsLeft}名</span>`;
+            } else {
+                spotsHtml = `<span class="nw-spot sn">残り枠: ${event.spotsLeft}名</span>`;
+            }
+            const dp = event.date.split(' ');
+            const doStr = dp[0];
+            const toStr = dp[1] || '';
+            const dop = doStr.split('/');
+            const dow = ['日', '月', '火', '水', '木', '金', '土'][new Date(parseInt(dop[0], 10), parseInt(dop[1], 10) - 1, parseInt(dop[2], 10)).getDay()];
+            const formattedDate = `${doStr}(${dow}) ${toStr}`;
+            return `<li><span class="nw-off">${area.locationName}</span>${spotsHtml}<span class="dt">${formattedDate}</span><a href="/events/${event.typeKey}/" style="font-weight:700;color:var(--color-primary-hover);text-decoration:none;">${typeInfo.name || event.typeKey}</a></li>`;
+        }).join('\n');
+        areaScheduleHtml = `<ul class="nw-sched">${itemsHtml}</ul>`;
+    } else {
+        areaScheduleHtml = `<p class="nw-detail-text">現在予定されている${area.locationName}の開催はありません。他のエリアは <a href="/events/">/events/</a> へ</p>`;
+    }
+
+    const activeTypeKeys = [...new Set(futureAreaEvents.map(e => e.typeKey))].filter(k => GAME_MEETING_TYPES[k]);
+    let areaGameCardsHtml = '';
+    if (activeTypeKeys.length > 0) {
+        areaGameCardsHtml = `<div class="activities-grid">` + activeTypeKeys.map(key => {
+            const typeInfo = GAME_MEETING_TYPES[key];
+            const fallbackImagePath = typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png';
+            const webpImagePath = fallbackImagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp');
+            return `
+                <article class="activity-card animate-on-scroll fade-up visible">
+                    <div class="act-left-column">
+                        <div class="act-image-wrapper-nested">
+                            <picture>
+                                <source srcset="${webpImagePath}" type="image/webp">
+                                <img src="${fallbackImagePath}" alt="${typeInfo.name}" class="act-img" loading="lazy">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="act-content">
+                        <div class="act-meta">
+                            <span class="act-badge ${typeInfo.badgeClass}">${typeInfo.emoji || '🎲'} ${typeInfo.badge}</span>
+                        </div>
+                        <h3 class="act-title">${typeInfo.name}</h3>
+                        <p class="act-desc">${typeInfo.desc}</p>
+                        <div class="act-quick-info">
+                            <div class="info-item">
+                                <span class="info-icon">💰</span>
+                                <div class="info-text-wrapper">
+                                    <span class="info-label">参加費</span>
+                                    <span class="info-val font-highlight">${typeInfo.fee}</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon">👜</span>
+                                <div class="info-text-wrapper">
+                                    <span class="info-label">持ち物</span>
+                                    <span class="info-val" style="font-size:0.82rem;">${typeInfo.items || 'なし'}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="act-actions" style="margin-top:auto;">
+                            <a href="/events/${key}/" class="cta-button primary mini-cta">
+                                <span>詳しく見る / 日程確認</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }).join('\n') + `</div>`;
+    } else {
+        areaGameCardsHtml = `<p class="nw-detail-text">現在予定されている${area.locationName}の開催はありません。他のエリアは <a href="/events/">/events/</a> へ</p>`;
+    }
+
+    const flowSteps = ['自己紹介', 'ルール説明', 'ゲームスタート（プレイしながら丁寧に教えます）', '振り返り', '終了'];
+    const flowHtml = `
+        <div class="nw-flow-timeline">
+            ${flowSteps.map((step, idx) => `
+                <div class="nw-flow-step">
+                    <span class="nw-flow-num">${idx + 1}</span>
+                    <span class="nw-flow-text">${step}</span>
+                </div>
+            `).join('\n')}
+        </div>
+    `;
+
+    const faqHtml = area.faq.map(item => `
+        <details class="nw-faq-item">
+            <summary>${item.q}</summary>
+            <div class="nw-faq-ans"><p>${item.a}</p></div>
+        </details>
+    `).join('\n');
+
+    const areaContent = `
+    <style>
+        html,body,.app-container{overflow-x:hidden}
+        .nw-ev-outer{width:100%;padding:0 2% 80px;box-sizing:border-box;overflow-x:hidden}
+        @media(max-width:640px){.nw-ev-outer{padding:0 14px 60px}}
+        .nw-ev-inner{width:100%;max-width:1000px;margin:0 auto}
+        .nw-bread{display:flex;align-items:center;gap:6px;font-size:1.15rem;color:var(--color-text-muted);margin:20px 0 28px;flex-wrap:wrap}
+        .nw-bread a{color:var(--color-primary-hover);text-decoration:none;font-weight:600}
+        .nw-bread a:hover{text-decoration:underline}
+        @media(max-width:640px){.nw-bread{font-size:.9rem}}
+        .nw-h1{font-size:2.3rem;font-weight:900;line-height:1.3;margin:10px 0 16px;color:var(--color-text-main)}
+        @media(max-width:768px){.nw-h1{font-size:1.9rem}}
+        @media(max-width:640px){.nw-h1{font-size:1.55rem}}
+        .nw-sec{margin-bottom:36px}
+        .nw-ttl{font-size:1.5rem;font-weight:800;color:var(--color-text-main);margin-bottom:16px;display:flex;align-items:center;gap:8px;border-left:5px solid var(--color-primary,#8B6F5E);padding-left:14px}
+        .nw-div{border:none;border-top:1px dashed rgba(62,50,42,.15);margin:28px 0}
+        .nw-detail-text{font-size:1.2rem;line-height:1.8;color:var(--color-text-muted)}
+        @media(max-width:640px){.nw-sec{margin-bottom:24px}.nw-ttl{font-size:1.2rem;margin-bottom:12px}.nw-div{margin:20px 0}.nw-detail-text{font-size:1rem;line-height:1.7}}
+        .nw-sched{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+        .nw-sched li{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--color-bg-primary,#faf8f6);border-radius:8px;border:1px solid rgba(62,50,42,.08);font-size:1.15rem;flex-wrap:wrap;min-width:0}
+        .nw-sched .dt{font-weight:700;color:var(--color-text-main);min-width:0}
+        .nw-spot{font-size:.95rem;font-weight:800;padding:3px 12px;border-radius:50px;white-space:nowrap}
+        .su{background:#fde8e8;color:#c0392b}.sw{background:#fef3e2;color:#d68910}.sn{background:#e8f5e9;color:#2e7d32}
+        .nw-off{background:var(--color-primary-light,#f0e8e3);color:var(--color-primary-hover,#6b4f3f);font-size:.9rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap}
+        @media(max-width:640px){.nw-sched li{font-size:.95rem;padding:10px 12px;gap:8px}.nw-spot{font-size:.85rem}.nw-off{font-size:.8rem}}
+        .nw-flow-timeline{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:8px 0}
+        .nw-flow-step{display:inline-flex;align-items:center;gap:10px;background:var(--color-bg-primary,#faf8f6);border:1px solid rgba(62,50,42,.12);border-radius:50px;padding:9px 20px;font-size:1.15rem;font-weight:700;color:var(--color-text-main);box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+        .nw-flow-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--color-primary,#8B6F5E);color:#fff;font-size:.85rem;font-weight:900;border-radius:50%;flex-shrink:0}
+        .nw-flow-text{line-height:1.4}
+        @media(max-width:640px){.nw-flow-timeline{gap:8px}.nw-flow-step{font-size:.95rem;padding:7px 14px;gap:8px}.nw-flow-num{width:20px;height:20px;font-size:.75rem}}
+        .nw-faq{display:flex;flex-direction:column;gap:8px}
+        .nw-faq-item{background:var(--color-bg-primary,#faf8f6);border-radius:8px;border:1px solid rgba(62,50,42,.1);overflow:hidden}
+        .nw-faq-item summary{padding:16px 20px;font-size:1.25rem;font-weight:700;color:var(--color-text-main);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none}
+        .nw-faq-item summary::-webkit-details-marker{display:none}
+        .nw-faq-item summary::after{content:"＋";font-size:1.2rem;font-weight:900;color:var(--color-primary,#8B6F5E);flex-shrink:0}
+        .nw-faq-item[open] summary::after{content:"－"}
+        .nw-faq-ans{padding:6px 20px 18px;font-size:1.15rem;line-height:1.8;color:var(--color-text-muted);border-top:1px solid rgba(62,50,42,.08)}
+        .nw-faq-ans p{margin:12px 0 0}
+        @media(max-width:640px){.nw-faq-item summary{font-size:1.05rem;padding:13px 14px}.nw-faq-ans{font-size:1rem;padding:5px 14px 14px}}
+        .nw-cta-bot{display:flex;justify-content:center;margin-top:40px}
+        .nw-cta-bot a{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 44px;font-size:1.4rem;font-weight:800;border-radius:8px;text-decoration:none;box-shadow:var(--shadow-md);background:var(--color-primary,#8B6F5E);color:#fff;width:100%;max-width:520px;text-align:center;transition:opacity .2s}
+        .nw-cta-bot a:hover{opacity:.85}
+        @media(max-width:640px){.nw-cta-bot a{font-size:1.05rem;padding:14px 20px}}
+    </style>
+    <div class="nw-ev-outer">
+        <div class="nw-ev-inner">
+            <!-- パンくず -->
+            <nav class="nw-bread" aria-label="パンくずリスト">
+                <a href="/">ホーム</a><span>›</span>
+                <a href="/events/">ボードゲーム会紹介</a><span>›</span>
+                <span>${area.h1}</span>
+            </nav>
+
+            <h1 class="nw-h1">${area.h1}</h1>
+
+            <!-- 1. 概要 -->
+            <div class="nw-sec">
+                <div class="event-summary">
+                    <p class="event-summary-lead">${area.overview}</p>
+                </div>
+            </div>
+
+            <hr class="nw-div">
+
+            <!-- 2. 直近の開催予定 -->
+            <div class="nw-sec">
+                <h2 class="nw-ttl">📅 直近の${area.locationName}での開催予定</h2>
+                ${areaScheduleHtml}
+            </div>
+
+            <hr class="nw-div">
+
+            <!-- 3. 開催しているゲーム会 -->
+            <div class="nw-sec">
+                <h2 class="nw-ttl">🎲 ${area.locationName}で開催しているゲーム会</h2>
+                ${areaGameCardsHtml}
+            </div>
+
+            <hr class="nw-div">
+
+            <!-- 4. アクセス -->
+            <div class="nw-sec">
+                <h2 class="nw-ttl">🚃 アクセス</h2>
+                <p class="nw-detail-text">${area.access}</p>
+            </div>
+
+            <hr class="nw-div">
+
+            <!-- 5. はじめての方へ -->
+            <div class="nw-sec">
+                <h2 class="nw-ttl">🔰 はじめての方へ（当日の流れ）</h2>
+                ${flowHtml}
+            </div>
+
+            <hr class="nw-div">
+
+            <!-- 6. よくある質問 -->
+            <div class="nw-sec">
+                <h2 class="nw-ttl">❓ よくある質問</h2>
+                <div class="nw-faq">${faqHtml}</div>
+            </div>
+
+            <!-- 7. 申込CTA -->
+            <div class="nw-cta-bot">
+                <a href="/reservation/">日程を選んで参加を申し込む <span>→</span></a>
+            </div>
+        </div>
+    </div>
+    `;
+
+    const areaBreadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "ホーム", "item": domain + "/" },
+            { "@type": "ListItem", "position": 2, "name": "ボードゲーム会紹介", "item": domain + "/events/" },
+            { "@type": "ListItem", "position": 3, "name": area.h1, "item": `${domain}/area/${area.slug}/` }
+        ]
+    };
+
+    const areaFaqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": area.faq.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+            }
+        }))
+    };
+
+    const areaHtml = renderTemplate(areaContent, {
+        title: area.title,
+        description: area.description,
+        canonical: `${domain}/area/${area.slug}/`,
+        pathDepth: '../../',
+        jsonLd: [organizationJsonLd, areaBreadcrumbJsonLd, areaFaqJsonLd]
+    });
+
+    fs.mkdirSync(path.join(distDir, 'area', area.slug), { recursive: true });
+    fs.writeFileSync(path.join(distDir, 'area', area.slug, 'index.html'), areaHtml);
+    generatedPages.push(`/area/${area.slug}/`);
 });
 
 // --------------------------------------------------------------------------
@@ -1120,11 +1517,76 @@ fs.writeFileSync(path.join(distDir, 'blog', 'index.html'), blogIndexHtml);
 generatedPages.push('/blog/');
 
 // 2. 個別ブログ詳細 (/blog/[slug])
+// git履歴から各記事の初回コミット日（datePublished）と最終更新日（dateModified）を取得
+const blogGitDates = {};
+try {
+    const initialIdToSlug = {
+        post_1: 'haa-tte-iu-game',
+        post_2: 'katakanashi',
+        post_3: 'catan-beginner-tips',
+        post_6: 'nisa-board-game',
+        post_7: 'board-game-friends',
+        post_8: 'brain-refresh',
+        post_9: 'beginner-guide-tokyo',
+        post_10: 'negotiation-skills'
+    };
+    const commitLines = execSync('git log --reverse --format="%H|%ad" --date=short -- schedule.js', {
+        cwd: lpProjectDir,
+        encoding: 'utf8'
+    }).trim().split('\n').filter(Boolean);
+
+    for (const line of commitLines) {
+        const [hash, commitDate] = line.split('|');
+        let histCode = execSync(`git show ${hash}:schedule.js`, { cwd: lpProjectDir, encoding: 'utf8' });
+        histCode += '\nmodule.exports = { BLOG_POSTS: typeof BLOG_POSTS !== "undefined" ? BLOG_POSTS : [] };';
+        let histPosts = [];
+        try {
+            const histMod = eval(histCode);
+            histPosts = histMod.BLOG_POSTS || [];
+        } catch (err) {
+            histPosts = [];
+        }
+        for (const hp of histPosts) {
+            if (hp.id === 'post_4' || hp.id === 'post_5') continue;
+            const slug = hp.slug || initialIdToSlug[hp.id];
+            if (!slug) continue;
+            const serialized = JSON.stringify({
+                title: hp.title,
+                summary: hp.summary,
+                content: hp.content,
+                imagePath: hp.imagePath
+            });
+            if (!blogGitDates[slug]) {
+                blogGitDates[slug] = {
+                    datePublished: commitDate,
+                    dateModified: commitDate,
+                    lastSerialized: serialized
+                };
+            } else if (blogGitDates[slug].lastSerialized !== serialized) {
+                blogGitDates[slug].dateModified = commitDate;
+                blogGitDates[slug].lastSerialized = serialized;
+            }
+        }
+    }
+} catch (gitErr) {
+    console.warn('Warning: Could not read git history for blog dates:', gitErr.message);
+}
+
 BLOG_POSTS.forEach((post, index) => {
     const prevPost = index > 0 ? BLOG_POSTS[index - 1] : null;
     const nextPost = index < BLOG_POSTS.length - 1 ? BLOG_POSTS[index + 1] : null;
 
     const { webpUrl, fallbackUrl } = getBlogThumbnailUrls(post);
+
+    const gitDateInfo = blogGitDates[post.slug] || {};
+    const datePublished = gitDateInfo.datePublished || null;
+    const dateModified = gitDateInfo.dateModified || null;
+
+    let updatedDateDisplayHtml = '';
+    if (dateModified) {
+        const [y, m, d] = dateModified.split('-').map(Number);
+        updatedDateDisplayHtml = `<p class="blog-updated-date" style="font-size: 0.85rem; color: var(--color-text-light); font-weight: 600; margin-top: -12px; margin-bottom: 16px;">最終更新日: ${y}年${m}月${d}日</p>`;
+    }
 
     let prevNextHtml = '';
     if (prevPost || nextPost) {
@@ -1150,6 +1612,7 @@ BLOG_POSTS.forEach((post, index) => {
                         <span style="font-size: 0.78rem; font-weight: 800; padding: 3px 10px; background-color: var(--color-primary-light); color: var(--color-primary-hover); border-radius: 50px;">${post.categoryName}</span>
                     </div>
                     <h1 style="font-size: 1.8rem; font-weight: 900; color: var(--color-text-main); line-height: 1.35; margin-bottom: 20px;">${post.title}</h1>
+                    ${updatedDateDisplayHtml}
                     <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 25px; border: 1px solid rgba(62, 50, 42, 0.05);">
                         <picture>
                             <source srcset="${webpUrl}" type="image/webp">
@@ -1168,16 +1631,13 @@ BLOG_POSTS.forEach((post, index) => {
     </article>
     `;
 
-    const dateParts = post.date.split('.');
-    const isoDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
-
     const blogJsonLd = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.summary,
-        "datePublished": isoDate,
-        "dateModified": isoDate,
+        ...(datePublished ? { "datePublished": datePublished } : {}),
+        ...(dateModified ? { "dateModified": dateModified } : {}),
         "author": {
             "@type": "Person",
             "name": "ゆるボドゲパパ"
@@ -1190,7 +1650,11 @@ BLOG_POSTS.forEach((post, index) => {
                 "url": domain + "/images/tokyo_logo_color.png?v=2"
             }
         },
-        "image": domain + "/images/ogp-main.png"
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `${domain}/blog/${post.slug}/`
+        },
+        "image": domain + fallbackUrl
     };
 
     const breadcrumbJsonLd = {

@@ -41,28 +41,24 @@ const GAME_MEETING_TYPES = {
         items: "なし",
         faq: [
             {
-                q: "カタンを一度もやったことがないのですが、参加できますか？",
-                a: "もちろんです。ルールの説明から丁寧に進めます。人生ゲームくらいしかやったことない方も多数参加されています。難しい予習は不要です。"
+                q: "初心者でも参加できますか？",
+                a: "はい、初心者歓迎です。当日、ルール説明から始めるため初めての方でも参加できます。"
             },
             {
-                q: "一人での参加は浮きませんか？",
-                a: "参加者のほぼ全員が一人参加です。初対面でもゲームを通じてすぐに打ち解けられる雰囲気があるので安心してください。"
+                q: "一人でも大丈夫ですか？",
+                a: "はい、一人参加が多い会ですので大丈夫です。通常4名程度の少人数で開催しています。"
             },
             {
-                q: "東京のどのエリアで開催していますか？",
-                a: "新宿・北千住エリアを中心に開催しています。詳細な会場住所はお申し込み後に個別にメールでご案内します。"
+                q: "参加費は？",
+                a: "参加費は初回500円です。"
             },
             {
-                q: "カタン会はどのくらいの頻度で開催されていますか？",
-                a: "東京では週に複数回のカタン会を開催しています。新宿・北千住エリアで定期的に実施しているので、都合の良い日程をお選びいただけます。"
+                q: "持ち物は？",
+                a: "持ち物はありません。"
             },
             {
-                q: "勧誘や営業などが心配です",
-                a: "ご安心ください。当会は純粋にゲームを楽しむことを目的としたコミュニティです。いかなる形の勧誘・営業行為も規約で固く禁止しています。"
-            },
-            {
-                q: "申し込み後に連絡はきますか？",
-                a: "はい。お申し込みいただいたメールアドレス宛に、詳細な会場住所・集合方法をご案内します。必ず受信できるメールアドレスを登録してください。"
+                q: "どこで開催しますか？",
+                a: "会場は新宿駅・北千住駅・東京駅周辺の駅前レンタルスペースです。詳細は申込後にメールで案内します。"
             }
         ],
         notes: [
@@ -85,20 +81,38 @@ const GAME_MEETING_TYPES = {
         badge: "女性限定",
         badgeClass: "offline",
         emoji: "👩🎲🤝",
-        desc: "カタンって聞いたことありますか？戦略と交渉が盛り上がる楽しいボードゲームなんです！今回は『同性同士で気兼ねなく遊びたい』というお声にお応えして、初めてでも安心して遊べる女性限定のカタン会を開催します！ルールから丁寧に説明しますし、女性だけの参加者で進めるので、周りを気にせずリラックスして楽しめます。",
+        desc: "カタンって聞いたことありますか？戦略と交渉が盛り上がる楽しいボードゲームなんです！今回は『女性同士で気兼ねなく遊びたい』というお声にお応えして、初めてでも安心して遊べる女性限定のカタン会を開催します！参加者は女性限定です。進行・ルール説明は主催者のゆるボドゲパパ（男性）が務めますので、初めての方でもリラックスして楽しめます。",
         recommend: [
             "女性同士で気兼ねなくボードゲームを楽しみたい方",
             "カタンに興味があるが、やったことがない方",
             "新しい趣味や、安心して話せる友達を見つけたい方"
         ],
         details: `【女性限定】初心者大歓迎！和気あいあいとカタンを楽しみましょう！
-カタンって聞いたことありますか？戦略と交渉が盛り上がる楽しいボードゲームなんです！今回は『同性同士で気兼ねなく遊びたい』というお声にお応えして、初めてでも安心して遊べる女性限定のカタン会を開催します！
+カタンって聞いたことありますか？戦略と交渉が盛り上がる楽しいボードゲームなんです！今回は『女性同士で気兼ねなく遊びたい』というお声にお応えして、初めてでも安心して遊べる女性限定のカタン会を開催します！
 
-主催の私は『ゆるボドゲパパ』と申します。普段はIT企業で働きながらボードゲームを嗜む、3児の父です。ルールから丁寧に説明しますし、女性だけの参加者で進めるので、周りを気にせずリラックスして楽しめます。
+参加者は女性限定です。進行は主催者のゆるボドゲパパ（男性）が務めます。普段はIT企業で働きながらボードゲームを嗜む、3児の父です。ルールから丁寧に説明しますので、初めての方でもリラックスして楽しめます。
 ※会場やルールは通常のカタン会と同様に、初心者向けにレクチャーします。`,
         flow: "自己紹介 → ルール説明 → ゲームスタート（プレイしながら丁寧に教えます） → 振り返り → 終了",
         fee: "初回500円",
         items: "なし",
+        faq: [
+            {
+                q: "参加できるのは女性だけですか？",
+                a: "はい、参加者は女性限定です。進行は主催者のゆるボドゲパパ（男性）が務めます。"
+            },
+            {
+                q: "カタンが初めてでも大丈夫ですか？",
+                a: "はい、大丈夫です。当日はルール説明から始めるため、初めての方でも参加できます。"
+            },
+            {
+                q: "一人でも参加できますか？",
+                a: "はい、一人参加が多い会ですので安心して参加できます。"
+            },
+            {
+                q: "参加費と持ち物は？",
+                a: "参加費は初回500円、持ち物はありません。"
+            }
+        ],
         notes: [
             "営業、宣伝、勧誘行為を目的とした参加はお辞めください。",
             "無断キャンセルはお控えください。",
@@ -131,6 +145,28 @@ const GAME_MEETING_TYPES = {
         flow: "自己紹介 → ルール説明 → ゲームスタート（プレイしながら丁寧に教えます） → 振り返り → 終了",
         fee: "無料",
         items: "なし",
+        faq: [
+            {
+                q: "初心者でも参加できますか？",
+                a: "はい、初心者歓迎です。当日、ルール説明から始めるため初めての方でも参加できます。"
+            },
+            {
+                q: "一人でも大丈夫ですか？",
+                a: "はい、一人参加が多い会ですので大丈夫です。通常4名程度の少人数で開催しています。"
+            },
+            {
+                q: "参加費は？",
+                a: "参加費は無料です。"
+            },
+            {
+                q: "持ち物は？",
+                a: "持ち物はありません。"
+            },
+            {
+                q: "どこで開催しますか？",
+                a: "会場は新宿駅・北千住駅・東京駅周辺の駅前レンタルスペースです。詳細は申込後にメールで案内します。"
+            }
+        ],
         notes: [
             "営業、宣伝、勧誘行為を目的とした参加はお辞めください。",
             "無断キャンセルはお控えください。"
@@ -140,7 +176,7 @@ const GAME_MEETING_TYPES = {
             { age: "30代男性（公務員）", text: "ワイワイ楽しみながら投資の考え方が学めて、とても有意義な時間でした。" },
             { age: "40代男性（事務職）", text: "ゲームを通じて学ぶことで、日常の仕事にも応用できる新しい視点が得られました。" }
         ],
-        relatedColumns: ["post_4", "post_10"],
+        relatedColumns: ["post_17", "post_22", "post_10"],
         imagePath: "images/monopoly.png"
     },
     cashflow: {
@@ -172,20 +208,24 @@ const GAME_MEETING_TYPES = {
 「お金の知識を身につけたいけれど、何から始めればいいか分からない」「将来のための資産形成や投資に興味があるが難しく考えがち」そんな投資初心者の方へおすすめの東京でのキャッシュフローゲーム会です。`,
         faq: [
             {
-                q: "東京のどこで開催していますか？",
-                a: "新宿駅・北千住駅・渋谷駅周辺のアクセスが良い駅前レンタルスペースで開催しています。申し込み後に詳細な会場をメールでお知らせします。"
+                q: "初心者でも参加できますか？",
+                a: "はい、初心者歓迎です。当日、ルール説明から始めるため初めての方でも参加できます。"
             },
             {
-                q: "キャッシュフローゲームを知らなくても参加できますか？",
-                a: "はい、ルールの説明から丁寧にやります。ゲーム自体が初めての方がほとんどです。"
+                q: "一人でも大丈夫ですか？",
+                a: "はい、一人参加が多い会ですので大丈夫です。通常4名程度の少人数で開催しています。"
             },
             {
-                q: "電卓は必ず必要ですか？",
-                a: "はい、計算が多いゲームなので必要です。スマートフォンの電卓アプリで問題ありません。筆記用具（ペン）もお持ちください。"
+                q: "参加費は？",
+                a: "参加費は500円です。"
             },
             {
-                q: "投資の知識がなくても大丈夫ですか？",
-                a: "むしろ知識ゼロの方こそ参加してほしい会です。「投資って難しそう」というイメージが変わる体験ができます。"
+                q: "持ち物は？",
+                a: "筆記用具と電卓（スマホの電卓アプリ可）が必要です。"
+            },
+            {
+                q: "どこで開催しますか？",
+                a: "会場は新宿駅・北千住駅・東京駅周辺の駅前レンタルスペースです。詳細は申込後にメールで案内します。"
             }
         ],
         flow: "ルールの説明 → ゲーム開始（プレイしながら丁寧に教えます） → シェアリング（振り返り） → 終了",
@@ -198,7 +238,7 @@ const GAME_MEETING_TYPES = {
             { age: "30代女性（会社員）", text: "投資には興味があったものの、本を読んでも挫折ばかり。ボードゲームを通して『資産』と『負債』の違いが体感としてスッと入ってきました。" },
             { age: "40代男性（エンジニア）", text: "自分のお金の流れを客観的に見直す良いきっかけになりました。初心者でも分かりやすくフォローしてもらえたので安心でした。" }
         ],
-        relatedColumns: ["post_5", "post_8"],
+        relatedColumns: ["post_19", "post_22", "post_8"],
         imagePath: "images/cashflow_game.png"
     },
     communication_skills: {
@@ -272,6 +312,28 @@ const GAME_MEETING_TYPES = {
         flow: "自己紹介 → ルール説明 → ゲームスタート（プレイしながら丁寧に教えます） → 振り返り → 終了",
         fee: "無料（※カフェの飲食代のみ自己負担）",
         items: "なし",
+        faq: [
+            {
+                q: "初心者でも参加できますか？",
+                a: "はい、初心者歓迎です。当日、ルール説明から始めるため初めての方でも参加できます。"
+            },
+            {
+                q: "一人でも大丈夫ですか？",
+                a: "はい、一人参加が多い会ですので大丈夫です。通常4名程度の少人数で開催しています。"
+            },
+            {
+                q: "参加費は？",
+                a: "参加費は無料です（カフェの飲食代のみ自己負担）。"
+            },
+            {
+                q: "持ち物は？",
+                a: "持ち物はありません。"
+            },
+            {
+                q: "どこで開催しますか？",
+                a: "会場は渋谷のカフェです。詳細は申込後にメールで案内します。"
+            }
+        ],
         notes: [
             "無断キャンセルはご遠慮ください。"
         ],
@@ -279,7 +341,7 @@ const GAME_MEETING_TYPES = {
             { age: "20代女性（接客業）", text: "NISAって難しそう…と避けていましたが、非課税の威力をゲームで体験して『これはやらなきゃ損！』と実感しました。第一歩を踏み出せそうです。" },
             { age: "30代男性（フリーランス）", text: "和気あいあいとした雰囲気で、質問もしやすかったです。ただの勉強ではなく、遊びながら学べるのであっという間の時間でした。" }
         ],
-        relatedColumns: ["post_6", "post_7"],
+        relatedColumns: ["post_6", "post_22", "post_7"],
         imagePath: "images/nisa_game.png"
     }
 };
@@ -316,7 +378,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 3
+        spotsLeft: 1
     },
     {
         id: "event_new_04",
@@ -382,7 +444,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_10",
@@ -393,7 +455,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 1
+        spotsLeft: 2
     },
     {
         id: "event_new_11",
@@ -415,7 +477,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 1
+        spotsLeft: 2
     },
     {
         id: "event_new_13",
@@ -426,7 +488,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 2
+        spotsLeft: 1
     },
     {
         id: "event_new_14",
@@ -437,7 +499,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 2
+        spotsLeft: 1
     },
     {
         id: "event_new_15",
@@ -448,7 +510,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 1
+        spotsLeft: 2
     },
     {
         id: "event_new_17",
@@ -459,7 +521,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_18",
@@ -470,7 +532,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 2
+        spotsLeft: 3
     },
     {
         id: "event_new_19",
@@ -481,7 +543,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_20",
@@ -492,7 +554,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 3
+        spotsLeft: 2
     },
     {
         id: "event_new_21",
@@ -503,7 +565,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 1
+        spotsLeft: 3
     },
     {
         id: "event_new_22",
@@ -514,7 +576,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 3
+        spotsLeft: 2
     },
     {
         id: "event_new_23",
@@ -536,7 +598,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_25",
@@ -547,7 +609,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_26",
@@ -558,7 +620,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_27",
@@ -569,7 +631,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_28",
@@ -580,7 +642,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_29",
@@ -591,7 +653,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_30",
@@ -602,7 +664,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_31",
@@ -613,7 +675,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_32",
@@ -624,7 +686,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_33",
@@ -635,7 +697,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_34",
@@ -646,7 +708,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_35",
@@ -657,7 +719,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_36",
@@ -668,7 +730,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_37",
@@ -679,7 +741,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_38",
@@ -690,7 +752,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_39",
@@ -701,7 +763,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_40",
@@ -712,7 +774,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_41",
@@ -723,7 +785,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_42",
@@ -734,7 +796,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_43",
@@ -745,7 +807,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_44",
@@ -756,7 +818,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_45",
@@ -767,7 +829,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_46",
@@ -778,7 +840,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_47",
@@ -789,7 +851,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_48",
@@ -800,7 +862,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_49",
@@ -811,7 +873,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_50",
@@ -822,7 +884,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_51",
@@ -833,7 +895,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_52",
@@ -844,7 +906,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_53",
@@ -855,7 +917,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_54",
@@ -866,7 +928,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_55",
@@ -877,7 +939,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_56",
@@ -888,7 +950,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_57",
@@ -899,7 +961,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_58",
@@ -910,7 +972,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_59",
@@ -921,7 +983,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_60",
@@ -932,7 +994,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_61",
@@ -943,7 +1005,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_62",
@@ -954,7 +1016,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_63",
@@ -965,7 +1027,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_64",
@@ -976,7 +1038,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_65",
@@ -987,7 +1049,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_66",
@@ -998,7 +1060,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_67",
@@ -1009,7 +1071,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_68",
@@ -1020,7 +1082,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_69",
@@ -1031,7 +1093,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_70",
@@ -1042,7 +1104,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_71",
@@ -1053,7 +1115,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_72",
@@ -1064,7 +1126,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_73",
@@ -1075,7 +1137,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_74",
@@ -1086,7 +1148,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_75",
@@ -1097,7 +1159,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_76",
@@ -1108,7 +1170,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_77",
@@ -1119,7 +1181,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_78",
@@ -1130,7 +1192,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_79",
@@ -1141,7 +1203,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_80",
@@ -1152,7 +1214,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_81",
@@ -1163,7 +1225,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_82",
@@ -1174,7 +1236,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_83",
@@ -1185,7 +1247,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_84",
@@ -1196,7 +1258,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_85",
@@ -1207,7 +1269,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_86",
@@ -1218,7 +1280,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_87",
@@ -1229,7 +1291,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_88",
@@ -1240,7 +1302,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_89",
@@ -1251,7 +1313,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_90",
@@ -1262,7 +1324,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_91",
@@ -1273,7 +1335,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_92",
@@ -1284,7 +1346,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_93",
@@ -1295,7 +1357,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_94",
@@ -1306,7 +1368,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_95",
@@ -1317,7 +1379,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_96",
@@ -1328,7 +1390,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_97",
@@ -1339,7 +1401,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_98",
@@ -1350,7 +1412,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_99",
@@ -1361,7 +1423,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_100",
@@ -1372,7 +1434,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_101",
@@ -1383,7 +1445,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_102",
@@ -1394,7 +1456,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_103",
@@ -1405,7 +1467,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_104",
@@ -1416,7 +1478,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_105",
@@ -1427,7 +1489,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_106",
@@ -1438,7 +1500,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_107",
@@ -1449,7 +1511,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_108",
@@ -1460,7 +1522,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_109",
@@ -1471,7 +1533,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_110",
@@ -1482,7 +1544,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_111",
@@ -1493,7 +1555,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_112",
@@ -1504,7 +1566,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_113",
@@ -1515,7 +1577,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_114",
@@ -1526,7 +1588,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_115",
@@ -1537,7 +1599,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_116",
@@ -1548,7 +1610,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_117",
@@ -1559,7 +1621,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_118",
@@ -1570,7 +1632,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_119",
@@ -1581,7 +1643,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_120",
@@ -1592,7 +1654,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_121",
@@ -1603,7 +1665,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_122",
@@ -1614,7 +1676,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_123",
@@ -1625,7 +1687,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_124",
@@ -1636,7 +1698,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_125",
@@ -1647,7 +1709,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_126",
@@ -1658,7 +1720,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_127",
@@ -1669,7 +1731,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_128",
@@ -1680,7 +1742,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_129",
@@ -1691,7 +1753,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_130",
@@ -1702,7 +1764,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_131",
@@ -1713,7 +1775,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_132",
@@ -1724,7 +1786,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_133",
@@ -1735,7 +1797,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_134",
@@ -1746,7 +1808,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_135",
@@ -1757,7 +1819,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_136",
@@ -1768,7 +1830,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_137",
@@ -1779,7 +1841,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_138",
@@ -1790,7 +1852,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_139",
@@ -1801,7 +1863,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_140",
@@ -1812,7 +1874,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_141",
@@ -1823,7 +1885,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_142",
@@ -1834,7 +1896,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_143",
@@ -1845,7 +1907,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_144",
@@ -1856,7 +1918,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_145",
@@ -1867,7 +1929,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_146",
@@ -1878,7 +1940,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_147",
@@ -1889,7 +1951,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_148",
@@ -1900,7 +1962,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_149",
@@ -1911,7 +1973,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_150",
@@ -1922,7 +1984,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_151",
@@ -1933,7 +1995,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_152",
@@ -1944,7 +2006,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_153",
@@ -1955,7 +2017,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_154",
@@ -1966,7 +2028,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_155",
@@ -1977,7 +2039,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_156",
@@ -1988,7 +2050,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_157",
@@ -1999,7 +2061,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_158",
@@ -2010,7 +2072,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_159",
@@ -2021,7 +2083,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_160",
@@ -2032,7 +2094,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_161",
@@ -2043,7 +2105,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_162",
@@ -2054,7 +2116,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_163",
@@ -2065,7 +2127,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_164",
@@ -2076,7 +2138,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_165",
@@ -2087,7 +2149,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_166",
@@ -2098,7 +2160,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_167",
@@ -2109,7 +2171,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_168",
@@ -2120,7 +2182,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_169",
@@ -2131,7 +2193,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_170",
@@ -2142,7 +2204,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_171",
@@ -2153,7 +2215,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_172",
@@ -2164,7 +2226,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_173",
@@ -2175,7 +2237,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_174",
@@ -2186,7 +2248,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_175",
@@ -2197,7 +2259,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_176",
@@ -2208,7 +2270,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_177",
@@ -2219,7 +2281,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_178",
@@ -2230,7 +2292,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_179",
@@ -2241,7 +2303,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_180",
@@ -2252,7 +2314,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_181",
@@ -2263,7 +2325,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_182",
@@ -2274,7 +2336,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_183",
@@ -2285,7 +2347,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_184",
@@ -2296,7 +2358,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_185",
@@ -2307,7 +2369,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_186",
@@ -2318,7 +2380,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_187",
@@ -2329,7 +2391,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_188",
@@ -2340,7 +2402,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_189",
@@ -2351,7 +2413,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_190",
@@ -2362,7 +2424,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_191",
@@ -2373,7 +2435,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_192",
@@ -2384,7 +2446,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_193",
@@ -2395,7 +2457,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_194",
@@ -2406,7 +2468,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_195",
@@ -2417,7 +2479,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_196",
@@ -2428,7 +2490,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_197",
@@ -2439,7 +2501,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_198",
@@ -2450,7 +2512,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_199",
@@ -2461,7 +2523,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_200",
@@ -2472,7 +2534,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_201",
@@ -2483,7 +2545,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_202",
@@ -2494,7 +2556,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_203",
@@ -2505,7 +2567,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_204",
@@ -2516,7 +2578,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_205",
@@ -2527,7 +2589,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_206",
@@ -2538,7 +2600,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_207",
@@ -2549,7 +2611,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_208",
@@ -2560,7 +2622,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_209",
@@ -2571,7 +2633,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_210",
@@ -2582,7 +2644,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_211",
@@ -2593,7 +2655,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_212",
@@ -2604,7 +2666,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_213",
@@ -2615,7 +2677,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_214",
@@ -2626,7 +2688,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_215",
@@ -2637,7 +2699,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_216",
@@ -2648,7 +2710,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_217",
@@ -2659,7 +2721,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_218",
@@ -2670,7 +2732,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_219",
@@ -2681,7 +2743,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_220",
@@ -2692,7 +2754,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_221",
@@ -2703,7 +2765,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_222",
@@ -2714,7 +2776,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_223",
@@ -2725,7 +2787,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_224",
@@ -2736,7 +2798,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=渋谷駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_225",
@@ -2747,7 +2809,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_226",
@@ -2758,7 +2820,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_227",
@@ -2769,7 +2831,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_228",
@@ -2780,7 +2842,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_229",
@@ -2791,7 +2853,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_230",
@@ -2802,7 +2864,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_231",
@@ -2813,7 +2875,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_232",
@@ -2824,7 +2886,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 3
     },
     {
         id: "event_new_233",
@@ -2835,7 +2897,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=新宿駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 1
     },
     {
         id: "event_new_234",
@@ -2846,7 +2908,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://x.gd/NEcsM",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_235",
@@ -2857,7 +2919,7 @@ const SCHEDULE_DATA = [
         mapUrl: "https://maps.google.com/?q=北千住駅",
         locationUrl: "",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     },
     {
         id: "event_new_236",
@@ -2868,7 +2930,7 @@ const SCHEDULE_DATA = [
         mapUrl: "",
         locationUrl: "https://meet.google.com/aht-ebnt-abi",
         capacity: 4,
-        spotsLeft: 4
+        spotsLeft: 2
     }
 ];
 
@@ -2961,6 +3023,15 @@ const BLOG_POSTS = [
             <h3 style="font-size: 1.25rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; color: var(--color-text-main); border-left: 4px solid var(--color-primary); padding-left: 10px;">◆さらに本格的にお金の教養を学びたい方へ</h3>
             <p>モノポリーは投資の基本を楽しく学ぶのに最高のゲームですが、「もう少し現実世界に近い形で、本格的にお金の勉強をしてみたい」という方には、『キャッシュフローゲーム』という別のボードゲームも非常におすすめです。<br>大ベストセラー本『金持ち父さん 貧乏父さん』の著者が考案したゲームで、自分の財務諸表（貸借対照表や損益計算書）を実際に鉛筆で書き込みながら進めるため、より実践的なお金の教養が身につきます。</p>
             <p>東京ボードゲーム会では、どちらのゲームも北千住や新宿の会場で定期的に開催しており、私がイチからルールを優しくレクチャーします。「まずはモノポリーから」「本格的なキャッシュフローゲームに挑戦したい」どちらも大歓迎ですので、ぜひ一度体験しに来てください！</p>
+
+            <div class="related-blog related-columns-area" style="margin-top: 30px;">
+                <p class="related-title">あわせて読みたい</p>
+                <div class="related-links-grid">
+                    <a href="/events/monopoly/" class="related-blog-link">🎩 東京のモノポリー会（初心者向け）</a>
+                    <a href="/events/cashflow/" class="related-blog-link">📈 東京の初心者向けキャッシュフローゲーム会</a>
+                    <a href="/blog/investment-board-game/" class="related-blog-link">📖 投資を学べるボードゲーム3選【東京で体験できるゲーム会も紹介】</a>
+                </div>
+            </div>
         `
     },
     {
@@ -3130,6 +3201,13 @@ const BLOG_POSTS = [
                 <a href="/events/cashflow/" class="cta-button primary" style="width: 100%; max-width: 400px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: 800; border-radius: var(--radius-sm); font-size: 1.05rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: var(--shadow-sm);">
                     <span>💴 キャッシュフローゲーム体験イベントの詳細・日程はこちら</span><span class="arrow">→</span>
                 </a>
+            </div>
+
+            <div class="related-blog related-columns-area" style="margin-top: 30px;">
+                <p class="related-title">あわせて読みたい</p>
+                <div class="related-links-grid">
+                    <a href="/blog/investment-board-game/" class="related-blog-link">📖 投資を学べるボードゲーム3選【東京で体験できるゲーム会も紹介】</a>
+                </div>
             </div>
         `
     },
@@ -3442,7 +3520,7 @@ const BLOG_POSTS = [
             <p>私たちは、会社や家以外の「ふらっと立ち寄れる居心地のいい居場所」を作ることをコンセプトにしています。そのため、参加者の皆様が不安を一切感じず、純粋にゲームを楽しめる環境を維持するために、以下のルールを厳格に適用しています。</p>
             <ul>
                 <li><strong>勧誘行為・営業活動の完全禁止:</strong> マルチ商法、ネットワークビジネス、宗教、政治活動、他イベントへの引き抜きなど、一切の営業・勧誘行為を禁止しています。万が一これらが発覚した場合、理由の如何を問わず、その場で即退場処分とし、以後の参加を一切お断り（出禁）としています。</li>
-                <li><strong>マウンティング・初心者いびりの禁止:</strong> 「なんでそんな下手なプレイをするんだ」「ルールも知らないのか」といった、相手を不快にさせるマウンティングやガチプレイの押し付けを禁止しています。当会は、主催者のおひげさんがルールを優しくレクチャーするため、初心者や人生ゲームしかやったことがない方でも安心して楽しめます。</li>
+                <li><strong>マウンティング・初心者いびりの禁止:</strong> 「なんでそんな下手なプレイをするんだ」「ルールも知らないのか」といった、相手を不快にさせるマウンティングやガチプレイの押し付けを禁止しています。当会は、主催者のゆるボドゲパパがルールを優しくレクチャーするため、初心者や人生ゲームしかやったことがない方でも安心して楽しめます。</li>
                 <li><strong>連絡先交換の強要禁止:</strong> 初対面でしつこく連絡先を聞く行為や、個人情報を強要する行為は禁止です。当会では、参加者が安心してプライベートな距離感を保てるように配慮しています。</li>
             </ul>
 
@@ -3456,7 +3534,7 @@ const BLOG_POSTS = [
     }
 ,
     {
-        id: "post_12",
+        id: "post_22",
         slug: "investment-board-game",
         category: "investment",
         categoryName: "投資とお金",
