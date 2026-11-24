@@ -411,20 +411,28 @@ generatedPages.push('/reservation/thanks/');
 // --------------------------------------------------------------------------
 
 // 1. イベント一覧 (/events)
+function getEventDeadline(dateStr) {
+    const dateOnly = (dateStr || '').split(' ')[0];
+    const [y, m, d] = dateOnly.split('/').map(Number);
+    // 開催日の前日 21:00:00 で申し込み締め切り
+    return new Date(y, m - 1, d - 1, 21, 0, 0);
+}
+
 let eventCardsHtml = '';
 Object.keys(GAME_MEETING_TYPES).forEach(key => {
     const typeInfo = GAME_MEETING_TYPES[key];
     const webpImagePath = typeInfo.imagePath ? '/' + typeInfo.imagePath.replace(/\.(jpeg|jpg|png)$/i, '.webp') : '/images/fv_bg.webp';
     const fallbackImagePath = typeInfo.imagePath ? '/' + typeInfo.imagePath : '/images/fv_bg.png';
 
-    // 直近の開催予定日を抽出（当日から数えて31日後まで、最大8件）
+    // 直近の開催予定日を抽出（前日21:00締切前、かつ当日から数えて31日後まで、最大8件）
     const now = new Date();
     const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
     maxDate.setHours(23, 59, 59, 999);
     const futureEvents = SCHEDULE_DATA.filter(event => {
         const dateStr = event.date.split(' ')[0];
         const eventDate = new Date(dateStr + ' 23:59:59');
-        return event.typeKey === key && eventDate >= now && eventDate <= maxDate;
+        const deadline = getEventDeadline(event.date);
+        return event.typeKey === key && now < deadline && eventDate <= maxDate;
     });
 
     let scheduleListHtml = '';
@@ -454,7 +462,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             }
 
             scheduleListHtml += `
-                <li class="upcoming-item">
+                <li class="upcoming-item" data-event-date="${dateOnly}">
                     <span class="upcoming-date">📅 ${formattedDate} (${locLabel})</span>
                     ${spotsText}
                 </li>
@@ -601,14 +609,15 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
         `;
     }
 
-    // このイベントに紐づく近日日程 (過去日は除外、当日から数えて31日後まで、最大8件)
+    // このイベントに紐づく近日日程 (前日21:00締切前、かつ当日から数えて31日後まで、最大8件)
     const now = new Date();
     const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
     maxDate.setHours(23, 59, 59, 999);
     const futureEvents = SCHEDULE_DATA.filter(event => {
         const dateStr = event.date.split(' ')[0]; // "2026/07/19"
         const eventDate = new Date(dateStr + ' 23:59:59'); // その日の終わりまで有効とする
-        return event.typeKey === key && eventDate >= now && eventDate <= maxDate;
+        const deadline = getEventDeadline(event.date);
+        return event.typeKey === key && now < deadline && eventDate <= maxDate;
     });
 
     let scheduleHtml = '';
@@ -641,7 +650,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             const formattedDate = `${dateOnly}(${dayOfWeek}) ${timeOnly}`;
 
             scheduleHtml += `
-                <li class="schedule-item">
+                <li class="schedule-item" data-event-date="${dateOnly}">
                     <div class="schedule-meta">
                         ${typeLabel}
                         ${spotsLabel}
@@ -678,7 +687,7 @@ Object.keys(GAME_MEETING_TYPES).forEach(key => {
             const dow2 = ['日','月','火','水','木','金','土'][new Date(parseInt(dop2[0]),parseInt(dop2[1])-1,parseInt(dop2[2])).getDay()];
             const fd2 = `${do2}(${dow2}) ${to2}`;
             const lc2 = isOnline2 ? 'Zoom' : event.location;
-            heroScheduleHtml += `<li><span class="nw-off">${offLabel}</span>${spotsHtml}<span class="dt">${fd2}　${lc2}</span></li>`;
+            heroScheduleHtml += `<li data-event-date="${do2}"><span class="nw-off">${offLabel}</span>${spotsHtml}<span class="dt">${fd2}　${lc2}</span></li>`;
         });
     } else {
         heroScheduleHtml = `<li style="color:var(--color-text-muted);font-size:1rem;">現在調整中。確定次第公開します！</li>`;
@@ -1186,9 +1195,8 @@ const AREA_PAGES = [
 AREA_PAGES.forEach(area => {
     const now = new Date();
     const futureAreaEvents = SCHEDULE_DATA.filter(event => {
-        const dateStr = event.date.split(' ')[0];
-        const eventDate = new Date(dateStr + ' 23:59:59');
-        return event.location === area.locationName && eventDate >= now;
+        const deadline = getEventDeadline(event.date);
+        return event.location === area.locationName && now < deadline;
     });
 
     let areaScheduleHtml = '';
@@ -1211,7 +1219,7 @@ AREA_PAGES.forEach(area => {
             const dop = doStr.split('/');
             const dow = ['日', '月', '火', '水', '木', '金', '土'][new Date(parseInt(dop[0], 10), parseInt(dop[1], 10) - 1, parseInt(dop[2], 10)).getDay()];
             const formattedDate = `${doStr}(${dow}) ${toStr}`;
-            return `<li><span class="nw-off">${area.locationName}</span>${spotsHtml}<span class="dt">${formattedDate}</span><a href="/events/${event.typeKey}/" style="font-weight:700;color:var(--color-primary-hover);text-decoration:none;">${typeInfo.name || event.typeKey}</a></li>`;
+            return `<li data-event-date="${doStr}"><span class="nw-off">${area.locationName}</span>${spotsHtml}<span class="dt">${formattedDate}</span><a href="/events/${event.typeKey}/" style="font-weight:700;color:var(--color-primary-hover);text-decoration:none;">${typeInfo.name || event.typeKey}</a></li>`;
         }).join('\n');
         areaScheduleHtml = `<ul class="nw-sched">${itemsHtml}</ul>`;
     } else {

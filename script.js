@@ -75,8 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // 2. Schedule Data Preprocessing (displayDate Auto-generation)
+    // 2. Schedule Data Preprocessing (displayDate Auto-generation & 前日21:00締切)
     // ==========================================================================
+    function getEventDeadline(dateStr) {
+        const dateOnly = (dateStr || '').split(' ')[0];
+        const parts = dateOnly.split('/');
+        if (parts.length === 3) {
+            const y = parseInt(parts[0], 10);
+            const m = parseInt(parts[1], 10) - 1;
+            const d = parseInt(parts[2], 10);
+            // 開催日の前日 21:00:00 で申し込み締め切り
+            return new Date(y, m, d - 1, 21, 0, 0);
+        }
+        return new Date(dateStr);
+    }
+
     if (typeof SCHEDULE_DATA !== 'undefined') {
         SCHEDULE_DATA.forEach(event => {
             event.rawDate = event.date; // JSON-LD生成用
@@ -109,6 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 静的HTML内の日程リストでも、前日21:00を過ぎた日程をリアルタイムで非表示にする
+    const nowForStaticCheck = new Date();
+    document.querySelectorAll('li[data-event-date]').forEach(li => {
+        const dateAttr = li.getAttribute('data-event-date');
+        if (dateAttr && nowForStaticCheck >= getEventDeadline(dateAttr)) {
+            li.remove();
+        }
+    });
 
     // ==========================================================================
     // 3. アコーディオン開閉ロジック
@@ -165,12 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date();
         studyGroupDateSelect.innerHTML = ''; // クリア
 
-        // 選択されたゲーム会に紐付く未来日程を取得（当日から31日後まで）
+        // 選択されたゲーム会に紐付く未来日程を取得（前日21:00締切前、かつ当日から31日後まで）
         const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
         maxDate.setHours(23, 59, 59, 999);
         const matchedSchedules = SCHEDULE_DATA.filter(event => {
             const eventDate = new Date(event.date);
-            return eventDate >= now && eventDate <= maxDate && event.typeKey === typeKey;
+            const deadline = getEventDeadline(event.date);
+            return now < deadline && eventDate <= maxDate && event.typeKey === typeKey;
         });
 
         if (matchedSchedules.length > 0) {
@@ -232,13 +255,14 @@ document.addEventListener('DOMContentLoaded', () => {
             studyGroupTypeSelect.value = eventParam;
             updateDateDropdown(eventParam);
 
-            // 未来の有効な日程を自動選択（当日から31日後まで）
+            // 未来の有効な日程を自動選択（前日21:00締切前、かつ当日から31日後まで）
             const now = new Date();
             const maxDate = new Date(now.getTime() + 31 * 24 * 60 * 60 * 1000);
             maxDate.setHours(23, 59, 59, 999);
             const matchedEvent = SCHEDULE_DATA.find(event => {
                 const eventDate = new Date(event.date);
-                return eventDate >= now && eventDate <= maxDate && event.typeKey === eventParam && event.spotsLeft > 0;
+                const deadline = getEventDeadline(event.date);
+                return now < deadline && eventDate <= maxDate && event.typeKey === eventParam && event.spotsLeft > 0;
             });
 
             if (matchedEvent) {
@@ -290,6 +314,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedEvent = SCHEDULE_DATA.find(evt => evt.id === eventId);
             if (!selectedEvent) {
                 alert('選択された日程が見つかりません。');
+                return;
+            }
+
+            if (new Date() >= getEventDeadline(selectedEvent.date)) {
+                alert('選択された日程のお申し込みは締め切られました（開催日前日21:00締切）。別の日程を選択してください。');
+                updateDateDropdown(typeKey);
                 return;
             }
 
